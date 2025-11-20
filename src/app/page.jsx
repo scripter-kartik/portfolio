@@ -1,9 +1,9 @@
-import Home from "@/pages/home/page.jsx";
-import Project from "@/pages/project/page.jsx";
-import Skills from "@/pages/skills/page.jsx";
-import About from "@/pages/about/page.jsx";
-import Contact from "@/pages/contact/page.jsx";
-import Footer from "@/pages/footer/page.jsx";
+import Home from "@/components/Home"
+import Project from "@/components/Project";
+import Skills from "@/components/Skills";
+import About from "@/components/About";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Page() {
   return (

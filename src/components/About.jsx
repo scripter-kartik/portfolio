@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <div>
+    <div id="about-me">
       <div className="w-[1324px] flex items-center">
         <img className="w-7 h-8 mr-6" src="/hashtag2.png" alt="" />
         <h1 className="mr-8 text-white text-4xl font-fira-code font-semibold">
@@ -31,13 +31,10 @@ export default function About() {
               the newest technologies and frameworks.
             </p>
           </div>
-          <button>
-            <img className="w-[180px]" src="/Button.png" alt="" />
-          </button>
         </div>
         <div className="flex flex-col items-center relative">
           <img className="w-[450px] h-[600px]" src="/profile2.png" alt="" />
-          <img className="w-[340px]" src="/Horizontal.png" alt="" />
+          <img className="w-[360px] mt-1" src="/Horizontal.png" alt="" />
           <img
             className="absolute left-4 bg-transparent top-16 w-24 h-24"
             src="/Frame3.png"

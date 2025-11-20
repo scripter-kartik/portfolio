@@ -2,8 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playwrite+AU+QLD:wght@100..400&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap");
+
 * {
-  background-color: #282c33;
+  background-color: black;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -13,8 +14,10 @@
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .hide-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 /* Alternative: Hide scrollbar globally */
@@ -25,4 +28,64 @@ html::-webkit-scrollbar {
 html {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.track {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 15s linear infinite;
+}
+
+.track span {
+  font-family: "Fira Code";
+  font-size: 22px;
+  padding-right: 3rem;
+  /* space between repeats */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+.dual-border {
+  border-top: 0.5px solid #ABB2BF;
+  /* gray */
+  border-bottom: 0.5px solid #C778DD;
+  /* purple */
+  animation: borderSwap 5s linear infinite;
+}
+
+@keyframes borderSwap {
+  0% {
+    border-top-color: #ABB2BF;
+    /* gray */
+    border-bottom-color: #C778DD;
+    /* purple */
+  }
+
+  50% {
+    border-top-color: #C778DD;
+    /* purple */
+    border-bottom-color: #ABB2BF;
+    /* gray */
+  }
+
+  100% {
+    border-top-color: #ABB2BF;
+    /* gray */
+    border-bottom-color: #C778DD;
+    /* purple */
+  }
 }

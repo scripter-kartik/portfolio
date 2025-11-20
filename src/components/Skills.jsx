@@ -1,6 +1,6 @@
 export default function Skills() {
   return (
-    <div>
+    <div id="skills">
       <div className="flex items-center w-[1324px]">
         <img className="w-6 h-7 mr-2" src="/hashtag2.png" alt="" />
         <h1 className="text-white font-fira-code text-4xl mr-6">skills</h1>
