@@ -2,82 +2,92 @@ import Link from "next/link";
 
 export default function Project() {
     return (
-        <div id="works">
-            <div className="flex items-center justify-between gap-2 w-[1324px]">
-                <div className="flex items-center gap-2">
-                    <img className="w-6 h-7" src="/hashtag2.png" alt="" />
-                    <h1 className="text-4xl font-fira-code text-white mr-10">projects</h1>
-                    <img className="w-[600px]" src="/Horizontal.png" alt="" />
+        <div id="works" className="w-full flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-12 md:py-16 lg:py-20 relative">
+            {/* Header Section */}
+            <div className="flex items-center justify-between gap-2 w-full max-w-[1324px] mb-8 md:mb-12 lg:mb-16">
+                <div className="flex items-center gap-2 md:gap-3 w-full">
+                    <img className="w-5 h-6 md:w-6 md:h-7 flex-shrink-0" src="/hashtag2.png" alt="" />
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl font-fira-code text-white whitespace-nowrap">projects</h1>
+                    <img className="w-full h-[2px] max-w-[200px] sm:max-w-[300px] md:max-w-[400px] lg:max-w-[1324px] ml-4 md:ml-10" src="/Horizontal.png" alt="" />
                 </div>
             </div>
-            <div className="absolute left-0 top-[1200px]">
-                <img src="/Frame.png" alt="" />
+
+            {/* Decorative Images - Hidden on mobile, visible on larger screens */}
+            <div className="hidden 2xl:block absolute 2xl:left-[-180px] 2xl:top-[300px]">
+                <img src="/Frame.png" alt="" className="2xl:w-[50px]" />
             </div>
-            <div className="absolute right-0 top-[1400px]">
-                <img className="w-[110px] h-[180px]" src="/Rectangle.png" alt="" />
+            <div className="hidden 2xl:block absolute 2xl:right-[-160px] 2xl:top-[500px]">
+                <img className="w-[80px] h-[130px] xl:w-[110px] xl:h-[180px]" src="/Rectangle.png" alt="" />
             </div>
-            <div className="mt-16 flex gap-12">
-                <div>
-                    <div className="border-[1px] border-[#ABB2BF] w-[410px]">
-                        <img className="w-[410px] h-full" src="/blogspot.png" alt="" />
+
+            {/* Projects Grid */}
+            <div className="w-full max-w-[1324px] grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
+                {/* Project 1 - BlogSpot */}
+                <div className="w-full max-w-[410px] mx-auto md:mx-0">
+                    <div className="border-[1px] border-[#ABB2BF] w-full">
+                        <img className="w-full h-auto object-cover" src="/blogspot.png" alt="BlogSpot Project" />
                     </div>
-                    <div className="border-x-[1px] border-b-[1px] border-[#ABB2BF] w-[410px] h-[50px] flex items-center px-3 py-2 gap-4 font-fira-code text-[#ABB2BF]">
+                    <div className="border-x-[1px] border-b-[1px] border-[#ABB2BF] w-full min-h-[50px] flex flex-wrap items-center px-3 py-2 gap-2 sm:gap-3 md:gap-4 font-fira-code text-sm sm:text-base text-[#ABB2BF]">
                         <p>Next.js</p>
                         <p>Tailwind</p>
                         <p>MongoDB</p>
                         <p>cloudinary</p>
                     </div>
-                    <div className="border-[1px] border-[#ABB2BF] w-[410px] h-[175px] px-4 py-3 text-white font-fira-code flex flex-col gap-4">
-                        <h1 className="text-[30px]">BlogSpot</h1>
-                        <p className="text-[#ABB2BF]">your blogging workspace</p>
-                        <a href="https://blogspot-wine.vercel.app" target="_blank" rel="noopener noreferrer">
-                            <button className="mb-5">
-                                <img src="/LiveButton.png" alt="" />
+                    <div className="border-[1px] border-[#ABB2BF] w-full min-h-[175px] px-4 py-4 md:py-5 text-white font-fira-code flex flex-col gap-3 md:gap-4">
+                        <h1 className="text-2xl sm:text-[28px] md:text-[30px]">BlogSpot</h1>
+                        <p className="text-sm sm:text-base text-[#ABB2BF]">your blogging workspace</p>
+                        <a href="https://blogspot-wine.vercel.app" target="_blank" rel="noopener noreferrer" className="mt-auto">
+                            <button className="hover:opacity-80 transition-opacity">
+                                <img src="/LiveButton.png" alt="View Live Project" className="w-auto h-[40px] sm:h-[45px]" />
                             </button>
                         </a>
                     </div>
                 </div>
-                <div>
-                    <div className="border-[1px] border-[#ABB2BF] w-[410px]">
-                        <img className="w-[410px]" src="/inkshelf.png" alt="" />
+
+                {/* Project 2 - InkShelf */}
+                <div className="w-full max-w-[410px] mx-auto md:mx-0">
+                    <div className="border-[1px] border-[#ABB2BF] w-full">
+                        <img className="w-full h-auto object-cover" src="/inkshelf.png" alt="InkShelf Project" />
                     </div>
-                    <div className="border-x-[1px] border-b-[1px] border-[#ABB2BF] w-[410px] h-[50px] flex items-center px-3 py-2 gap-4 font-fira-code text-[#ABB2BF]">
+                    <div className="border-x-[1px] border-b-[1px] border-[#ABB2BF] w-full min-h-[50px] flex flex-wrap items-center px-3 py-2 gap-2 sm:gap-3 md:gap-4 font-fira-code text-sm sm:text-base text-[#ABB2BF]">
                         <p>Next.js</p>
                         <p>Tailwind</p>
                         <p>API</p>
                         <p>Open Library</p>
                     </div>
-                    <div className="border-[1px] border-[#ABB2BF] w-[410px] h-[175px] px-4 py-3 text-white font-fira-code flex flex-col gap-4">
-                        <h1 className="text-[30px]">InkShelf</h1>
-                        <p className="text-[#ABB2BF]">your online bookshelf</p>
-                        <a href="https://ink-shelf.vercel.app" target="_blanck" rel="noopener noreferrer">
-                            <button>
-                                <img src="/LiveButton.png" alt="" />
+                    <div className="border-[1px] border-[#ABB2BF] w-full min-h-[175px] px-4 py-4 md:py-5 text-white font-fira-code flex flex-col gap-3 md:gap-4">
+                        <h1 className="text-2xl sm:text-[28px] md:text-[30px]">InkShelf</h1>
+                        <p className="text-sm sm:text-base text-[#ABB2BF]">your online bookshelf</p>
+                        <a href="https://ink-shelf.vercel.app" target="_blank" rel="noopener noreferrer" className="mt-auto">
+                            <button className="hover:opacity-80 transition-opacity">
+                                <img src="/LiveButton.png" alt="View Live Project" className="w-auto h-[40px] sm:h-[45px]" />
                             </button>
                         </a>
                     </div>
                 </div>
-                <div>
-                    <div className="border-[1px] border-[#ABB2BF] w-[410px]">
-                        <img className="w-[410px]" src="/tunetogether.png" alt="" />
+
+                {/* Project 3 - Tune-Together */}
+                <div className="w-full max-w-[410px] mx-auto md:mx-0 md:col-span-2 xl:col-span-1">
+                    <div className="border-[1px] border-[#ABB2BF] w-full">
+                        <img className="w-full h-auto object-cover" src="/tunetogether.png" alt="Tune-Together Project" />
                     </div>
-                    <div className="border-x-[1px] border-b-[1px] border-[#ABB2BF] w-[410px] h-[50px] flex items-center px-3 py-2 gap-4 font-fira-code text-[#ABB2BF]">
+                    <div className="border-x-[1px] border-b-[1px] border-[#ABB2BF] w-full min-h-[50px] flex flex-wrap items-center px-3 py-2 gap-2 sm:gap-3 md:gap-4 font-fira-code text-sm sm:text-base text-[#ABB2BF]">
                         <p>Next.js</p>
                         <p>Socket.io</p>
                         <p>Clerk</p>
                         <p>Tailwind</p>
                     </div>
-                    <div className="border-[1px] border-[#ABB2BF] w-[410px] h-[175px] px-4 py-3 text-white font-fira-code flex flex-col gap-4">
-                        <h1 className="text-[30px]">Tune-Together</h1>
-                        <p className="text-[#ABB2BF]">chat powered by music</p>
-                        <a href="https://tunetogether.vercel.app" target="_blanck" rel="noopener noreferrer">
-                            <button>
-                                <img src="/LiveButton.png" alt="" />
+                    <div className="border-[1px] border-[#ABB2BF] w-full min-h-[175px] px-4 py-4 md:py-5 text-white font-fira-code flex flex-col gap-3 md:gap-4">
+                        <h1 className="text-2xl sm:text-[28px] md:text-[30px]">Tune-Together</h1>
+                        <p className="text-sm sm:text-base text-[#ABB2BF]">chat powered by music</p>
+                        <a href="https://tunetogether.vercel.app" target="_blank" rel="noopener noreferrer" className="mt-auto">
+                            <button className="hover:opacity-80 transition-opacity">
+                                <img src="/LiveButton.png" alt="View Live Project" className="w-auto h-[40px] sm:h-[45px]" />
                             </button>
                         </a>
                     </div>
                 </div>
             </div>
-        </div >
+        </div>
     );
 }

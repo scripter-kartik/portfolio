@@ -15,9 +15,7 @@
 /* Hide scrollbar for IE, Edge and Firefox */
 .hide-scrollbar {
   -ms-overflow-style: none;
-  /* IE and Edge */
   scrollbar-width: none;
-  /* Firefox */
 }
 
 /* Alternative: Hide scrollbar globally */
@@ -43,9 +41,31 @@ html {
 
 .track span {
   font-family: "Fira Code";
-  font-size: 22px;
-  padding-right: 3rem;
-  /* space between repeats */
+  font-size: 14px;
+  /* Mobile default */
+  padding-right: 2rem;
+}
+
+/* Responsive marquee text sizes */
+@media (min-width: 640px) {
+  .track span {
+    font-size: 16px;
+    padding-right: 2.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .track span {
+    font-size: 18px;
+    padding-right: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .track span {
+    font-size: 22px;
+    padding-right: 3rem;
+  }
 }
 
 @keyframes marquee {
@@ -58,34 +78,41 @@ html {
   }
 }
 
-
 .dual-border {
   border-top: 0.5px solid #ABB2BF;
-  /* gray */
   border-bottom: 0.5px solid #C778DD;
-  /* purple */
   animation: borderSwap 5s linear infinite;
 }
 
 @keyframes borderSwap {
   0% {
     border-top-color: #ABB2BF;
-    /* gray */
     border-bottom-color: #C778DD;
-    /* purple */
   }
 
   50% {
     border-top-color: #C778DD;
-    /* purple */
     border-bottom-color: #ABB2BF;
-    /* gray */
   }
 
   100% {
     border-top-color: #ABB2BF;
-    /* gray */
     border-bottom-color: #C778DD;
-    /* purple */
   }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
 }

@@ -9,10 +9,10 @@ export default function Page() {
   return (
     <div className="min-h-screen overflow-auto hide-scrollbar flex flex-col justify-between items-center">
       <Home />
-      <div className="mt-36">
+      <div className="mt-12">
         <Project />
       </div>
-      <div className="mt-36">
+      <div className="mt-12">
         <Skills />
       </div>
       <div className="mt-36">
