@@ -33,9 +33,9 @@ export default function Home() {
       <Navbar />
 
       {/* Main Content */}
-      <div className="w-full max-w-[1324px] mt-40 sm:mt-28 md:mt-24 lg:mt-48 xl:mt-40 flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16 xl:gap-20 2xl:gap-[150px] px-4 sm:px-8 md:px-12 lg:px-8 xl:px-0">
+      <div className="max-w-[1324px] mt-24 sm:mt-28 md:mt-24 lg:mt-48 xl:mt-40 flex flex-col lg:flex-row items-center justify-center gap-16 lg:gap-16 xl:gap-20 2xl:gap-[150px] px-4 sm:px-8 md:px-12 lg:px-8 xl:px-0">
         {/* Text Content */}
-        <div className="flex flex-col items-center md:items-center justify-center text-balance gap-8 sm:gap-10 md:gap-6 lg:gap-16 xl:gap-12 w-full sm:w-full md:w-auto lg:w-auto">
+        <div className="flex flex-col items-center md:items-center justify-center text-balance gap-8 sm:gap-10 md:gap-6 lg:gap-16 xl:gap-12 w-full sm:w-full md:w-400px lg:w-auto">
           <h1
             style={{ wordSpacing: "10px" }}
             className="w-full max-w-[700px] text-white text-[24px] sm:text-[28px] md:text-[30px] lg:text-5xl xl:text-5xl 2xl:text-[55px] font-semibold leading-snug sm:leading-snug md:leading-tight text-center md:text-center lg:text-left"
@@ -76,7 +76,7 @@ export default function Home() {
 
 
       {/* Marquee Section */}
-      <div className="dual-border absolute border-[#ABB2BF] p-1 sm:p-2.5 md:p-3 w-screen h-[60px] sm:h-[70px] md:h-[80px] lg:h-[100px] left-0 bottom-10 overflow-hidden flex items-center z-10 bg-black">
+      <div className="dual-border fixed border-[#ABB2BF] p-1 sm:p-2.5 md:p-3 w-screen h-[60px] sm:h-[70px] md:h-[80px] lg:h-[100px] left-0 bottom-[0.2px] overflow-hidden flex items-center z-10 bg-black">
         <div className="marquee">
           <div className="track text-xl">
             <span className="text-[#C778DD]">// Building simple and clean websites — Making things easy to use — Focusing on clarity — </span>

@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <div className="w-full flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-12 mt-16 md:mt-20 lg:mt-24">
+    <div className="w-full flex flex-col items-center lg:mb-[100px] md:mb-[80px] sm:mb-[70px] mb-[60px] px-4 sm:px-6 md:px-8 lg:px-12 mt-16 md:mt-20 lg:mt-24">
       {/* Divider Line */}
       <div className="w-screen h-[1px] bg-[#ABB2BF]" />
 
