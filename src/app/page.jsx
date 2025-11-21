@@ -15,15 +15,15 @@ export default function Page() {
       <div className="mt-12">
         <Skills />
       </div>
-      <div className="mt-36">
+      <div className="mt-12">
         <About />
       </div>
       <div className="mt-36">
         <Contact />
       </div>
-      <div className="mt-36">
+      <div className="mt-12">
         <Footer />
       </div>
     </div>
   );
-}
+} 

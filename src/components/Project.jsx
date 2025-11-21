@@ -11,12 +11,11 @@ export default function Project() {
                     <img className="w-full h-[2px] max-w-[200px] sm:max-w-[300px] md:max-w-[400px] lg:max-w-[1324px] ml-4 md:ml-10" src="/Horizontal.png" alt="" />
                 </div>
             </div>
-
             {/* Decorative Images - Hidden on mobile, visible on larger screens */}
-            <div className="hidden 2xl:block absolute 2xl:left-[-180px] 2xl:top-[300px]">
+            <div className="hidden 2xl:block absolute 2xl:left-[-250px] 2xl:top-[300px]">
                 <img src="/Frame.png" alt="" className="2xl:w-[50px]" />
             </div>
-            <div className="hidden 2xl:block absolute 2xl:right-[-160px] 2xl:top-[500px]">
+            <div className="hidden 2xl:block absolute 2xl:right-[-250px] 2xl:top-[500px]">
                 <img className="w-[80px] h-[130px] xl:w-[110px] xl:h-[180px]" src="/Rectangle.png" alt="" />
             </div>
 
