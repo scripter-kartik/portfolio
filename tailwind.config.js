@@ -13,7 +13,7 @@ module.exports = {
         "intel-mono": ["Intel One Mono", "monospace"],
         lato: ["Lato", "sans-serif"],
         playwrite: ["Playwrite AU QLD", "cursive"],
-        "winky-rough": ["Winky Rough", "cursive"],
+        "winky-rough": ["Winky Rough", "cursive"], 
       },
     },
   },
