@@ -7,21 +7,21 @@ import Footer from "@/components/Footer";
 
 export default function Page() {
   return (
-    <div className="min-h-screen overflow-auto hide-scrollbar flex flex-col justify-between items-center">
+    <div className="min-h-screen overflow-hidden hide-scrollbar flex flex-col justify-between items-center">
       <Home />
-      <div className="mt-8 sm:mt-12 md:mt-16">
+      <div >
         <Project />
       </div>
-      <div className="mt-8 sm:mt-12 md:mt-16 lg:mt-20">
+      <div>
         <Skills />
       </div>
-      <div className="mt-8 sm:mt-12 md:mt-16 lg:mt-20">
+      <div>
         <About />
       </div>
-      <div className="mt-16 sm:mt-24 md:mt-28 lg:mt-32 xl:mt-36">
+      <div>
         <Contact />
       </div>
-      <div className="mt-8 sm:mt-12 md:mt-16">
+      <div>
         <Footer />
       </div>
     </div>

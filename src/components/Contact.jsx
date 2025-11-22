@@ -1,6 +1,6 @@
 export default function Contact() {
   return (
-    <div id="contacts" className="w-full flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 py-12 sm:py-14 md:py-16 lg:py-20 relative">
+    <div id="contacts" className="w-full flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 py-2 sm:py-14 md:py-16 lg:py-20 relative">
       {/* Header Section */}
       <div className="flex items-center justify-between gap-2 w-full max-w-[1324px] mb-6 sm:mb-8 md:mb-10 lg:mb-12 xl:mb-16">
         <div className="flex items-center gap-2 md:gap-3 w-full">

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Project() {
     return (
-        <div id="works" className="w-full flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 py-12 sm:py-14 md:py-16 lg:py-20 2xl:-mt-[106px] relative">
+        <div id="works" className="w-full flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 -mt-12 sm:py-14 md:py-16 lg:py-20 2xl:-mt-[106px] relative">
             {/* Header Section */}
             <div className="flex items-center justify-between gap-2 w-full max-w-[1324px] mb-6 sm:mb-8 md:mb-10 lg:mb-12 xl:mb-16">
                 <div className="flex items-center gap-2 md:gap-3 w-full">
