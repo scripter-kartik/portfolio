@@ -7,18 +7,15 @@
   background-color: black;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
 .hide-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
-/* Alternative: Hide scrollbar globally */
 html::-webkit-scrollbar {
   display: none;
 }
@@ -42,11 +39,9 @@ html {
 .track span {
   font-family: "Fira Code";
   font-size: 14px;
-  /* Mobile default */
   padding-right: 2rem;
 }
 
-/* Responsive marquee text sizes */
 @media (min-width: 640px) {
   .track span {
     font-size: 16px;

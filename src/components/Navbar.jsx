@@ -28,7 +28,6 @@ const Navbar = () => {
         <div className='fixed top-0 left-0 right-0 z-[9999] bg-black'>
             <div className="flex justify-center py-3 sm:py-4 px-4 sm:px-6 lg:px-8">
                 <div className="w-full max-w-[1324px] h-[56px] sm:h-[61px] flex items-center justify-between">
-                    {/* Logo Section */}
                     <div className="flex items-center gap-2 sm:gap-3">
                         <img className="w-[20px] h-[20px] sm:w-[22px] sm:h-[22px] md:w-[26px] md:h-[26px]" src="/profile3.png" alt="" />
                         <h1 className="font-fira-code font-bold text-white text-lg sm:text-xl md:text-2xl">
@@ -36,7 +35,6 @@ const Navbar = () => {
                         </h1>
                     </div>
 
-                    {/* Desktop Navigation */}
                     <div className="hidden lg:flex gap-6 xl:gap-8 2xl:gap-[32px]">
                         <div className="flex items-center gap-1">
                             <img className="w-[10px] h-[16px] xl:w-[12px] xl:h-[18px]" src="/hashtag.png" alt="" />
@@ -76,7 +74,6 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                    {/* Mobile Menu Button */}
                     <button
                         onClick={toggleMenu}
                         className="lg:hidden flex flex-col gap-1.5 w-8 h-8 justify-center items-center relative z-50"
@@ -98,7 +95,6 @@ const Navbar = () => {
                 </div>
             </div>
 
-            {/* Mobile Menu */}
             <div
                 className={`lg:hidden absolute top-[56px] sm:top-[61px] left-0 right-0 bg-black border-t border-[#ABB2BF] transition-all duration-300 overflow-hidden ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                     }`}

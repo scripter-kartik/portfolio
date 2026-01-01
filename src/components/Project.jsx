@@ -3,7 +3,6 @@ import Link from "next/link";
 export default function Project() {
     return (
         <div id="works" className="w-full flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 -mt-12 sm:py-14 md:py-16 lg:py-20 2xl:-mt-[106px] relative">
-            {/* Header Section */}
             <div className="flex items-center justify-between gap-2 w-full max-w-[1324px] mb-6 sm:mb-8 md:mb-10 lg:mb-12 xl:mb-16">
                 <div className="flex items-center gap-2 md:gap-3 w-full">
                     <img className="w-4 h-5 sm:w-5 sm:h-6 md:w-6 md:h-7 flex-shrink-0" src="/hashtag2.png" alt="" />
@@ -11,17 +10,13 @@ export default function Project() {
                     <img className="w-full h-[2px] max-w-[100px] xs:max-w-[150px] sm:max-w-[200px] md:max-w-[300px] lg:max-w-[400px] xl:max-w-[600px] 2xl:max-w-[1324px] ml-2 sm:ml-4 md:ml-6 lg:ml-10" src="/Horizontal.png" alt="" />
                 </div>
             </div>
-            {/* Decorative Images - Hidden on mobile, visible on larger screens */}
             <div className="hidden 2xl:block absolute 2xl:left-[-250px] 2xl:top-[300px]">
                 <img src="/Frame.png" alt="" className="2xl:w-[50px]" />
             </div>
             <div className="hidden 2xl:block absolute 2xl:right-[-250px] 2xl:top-[500px]">
                 <img className="w-[80px] h-[130px] xl:w-[110px] xl:h-[180px]" src="/Rectangle.png" alt="" />
             </div>
-
-            {/* Projects Grid */}
             <div className="w-full max-w-[1324px] grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12">
-                {/* Project 1 - BlogSpot */}
                 <div className="w-full max-w-[410px] mx-auto md:mx-0">
                     <div className="border-[1px] border-[#ABB2BF] w-full">
                         <img className="w-full h-auto object-cover" src="/blogspot.png" alt="BlogSpot Project" />
@@ -43,7 +38,6 @@ export default function Project() {
                     </div>
                 </div>
 
-                {/* Project 2 - InkShelf */}
                 <div className="w-full max-w-[410px] mx-auto md:mx-0">
                     <div className="border-[1px] border-[#ABB2BF] w-full">
                         <img className="w-full h-auto object-cover" src="/inkshelf.png" alt="InkShelf Project" />
@@ -64,8 +58,6 @@ export default function Project() {
                         </a>
                     </div>
                 </div>
-
-                {/* Project 3 - Tune-Together */}
                 <div className="w-full max-w-[410px] mx-auto md:mx-0 md:col-span-2 xl:col-span-1">
                     <div className="border-[1px] border-[#ABB2BF] w-full">
                         <img className="w-full h-auto object-cover" src="/tunetogether.png" alt="Tune-Together Project" />
