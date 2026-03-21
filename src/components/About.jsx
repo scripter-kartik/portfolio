@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <div id="about-me" className="w-full flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 sm:py-14 md:py-16 lg:py-20 relative">
+    <div id="about-me" className="w-full flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 sm:py-14 md:py-16 lg:py-20 mb-20 sm:mb-2 relative">
       <div className="flex items-center justify-between gap-2 w-full max-w-[1324px] mb-6 sm:mb-8 md:mb-10 lg:mb-12 xl:mb-16">
         <div className="flex items-center gap-2 md:gap-3 w-full">
           <img className="w-4 h-5 sm:w-5 sm:h-6 md:w-6 md:h-7 flex-shrink-0" src="/hashtag2.png" alt="" />

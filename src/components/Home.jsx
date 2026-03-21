@@ -67,15 +67,15 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="dual-border fixed border-[#ABB2BF] p-1 sm:p-2 md:p-2.5 lg:p-3 w-screen h-[50px] sm:h-[60px] md:h-[70px] lg:h-[80px] xl:h-[100px] left-0 bottom-[0.2px] overflow-hidden flex items-center z-10 bg-black">
+      <div className="dual-border border-[#ABB2BF] p-1 mt-24 mb-32 sm:mt-20 sm:mb-20 lg:mt-44 xl:mt-24 2xl:mt-28 sm:p-2 md:p-2.5 lg:p-3 w-screen h-[50px] sm:h-[60px] md:h-[70px] lg:h-[80px] xl:h-[100px] left-0 bottom-[0.2px] overflow-hidden flex items-center z-10 bg-black">
         <div className="marquee">
           <div className="track">
-            <span className="text-[#C778DD]">// Building simple and clean websites — Making things easy to use — Focusing on clarity — </span>
-            <span className="text-[#ABB2BF]">// Turning ideas into real projects — Keeping everything smooth — Caring about small details — </span>
-            <span className="text-[#C778DD]">// Writing organized code — Improving designs — Making interactions feel natural — </span>
-            <span className="text-[#ABB2BF]">// Learning new things every day — Getting better with each project — Keeping work neat and simple — </span>
-            <span className="text-[#C778DD]">// Building simple and clean websites — Making things easy to use — Focusing on clarity — </span>
-            <span className="text-[#ABB2BF]">// Turning ideas into real projects — Keeping everything smooth — Caring about small details — </span>
+            <span className="text-[#C778DD]">Building simple and clean websites — Making things easy to use — Focusing on clarity</span>
+            <span className="text-[#ABB2BF]">Turning ideas into real projects — Keeping everything smooth — Caring about small details</span>
+            <span className="text-[#C778DD]">Writing organized code — Improving designs — Making interactions feel natural</span>
+            <span className="text-[#ABB2BF]">Learning new things every day — Getting better with each project — Keeping work neat and simple</span>
+            <span className="text-[#C778DD]">Building simple and clean websites — Making things easy to use — Focusing on clarity</span>
+            <span className="text-[#ABB2BF]">Turning ideas into real projects — Keeping everything smooth — Caring about small details</span>
           </div>
         </div>
       </div>

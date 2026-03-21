@@ -28,9 +28,9 @@ export default function Project() {
                         <p>cloudinary</p>
                     </div>
                     <div className="border-[1px] border-[#ABB2BF] w-full min-h-[165px] sm:min-h-[175px] px-3 sm:px-4 py-3 sm:py-4 md:py-5 text-white font-fira-code flex flex-col gap-2 sm:gap-3 md:gap-4">
-                        <h1 className="text-xl sm:text-2xl md:text-[28px] lg:text-[30px]">BlogSpot</h1>
+                        <h1 className="text-xl sm:text-2xl md:text-[28px] lg:text-[30px]">BlogForge</h1>
                         <p className="text-xs sm:text-sm md:text-base text-[#ABB2BF]">your blogging workspace</p>
-                        <a href="https://blogspot-wine.vercel.app" target="_blank" rel="noopener noreferrer" className="mt-auto">
+                        <a href="https://blog-forge-weld.vercel.app" target="_blank" rel="noopener noreferrer" className="mt-auto">
                             <button className="hover:opacity-80 transition-opacity">
                                 <img src="/LiveButton.png" alt="View Live Project" className="w-auto h-[36px] sm:h-[40px] md:h-[45px]" />
                             </button>

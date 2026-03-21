@@ -74,25 +74,25 @@ html {
 }
 
 .dual-border {
-  border-top: 0.5px solid #ABB2BF;
-  border-bottom: 0.5px solid #C778DD;
+  border-top: 0.5px solid #abb2bf;
+  border-bottom: 0.5px solid #c778dd;
   animation: borderSwap 5s linear infinite;
 }
 
 @keyframes borderSwap {
   0% {
-    border-top-color: #ABB2BF;
-    border-bottom-color: #C778DD;
+    border-top-color: #abb2bf;
+    border-bottom-color: #c778dd;
   }
 
   50% {
-    border-top-color: #C778DD;
-    border-bottom-color: #ABB2BF;
+    border-top-color: #c778dd;
+    border-bottom-color: #abb2bf;
   }
 
   100% {
-    border-top-color: #ABB2BF;
-    border-bottom-color: #C778DD;
+    border-top-color: #abb2bf;
+    border-bottom-color: #c778dd;
   }
 }
 
@@ -110,4 +110,10 @@ html {
 
 .animate-fadeIn {
   animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }
