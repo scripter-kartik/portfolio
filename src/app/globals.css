@@ -3,12 +3,32 @@
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playwrite+AU+QLD:wght@100..400&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap");
 
-* {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   background-color: transparent;
 }
 
+html,
 body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100svh;
   background-color: #000000;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .hide-scrollbar::-webkit-scrollbar {
@@ -35,7 +55,7 @@ html::-webkit-scrollbar-thumb {
 
 html {
   scrollbar-width: thin;
-  scrollbar-color: #000000;
+  scrollbar-color:#000000;
 }
 
 .marquee {

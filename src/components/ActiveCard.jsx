@@ -25,7 +25,6 @@ export default function ActiveCard() {
 
   return (
     <div className="border border-[#2a1f3d] rounded-lg bg-[#0d0d0d] p-4 font-mono flex flex-col gap-3 w-full">
-      {/* Status */}
       <div className="flex items-center gap-2 text-xs text-gray-500">
         <span className="w-2 h-2 rounded-full bg-green-500 animate-[pulse_2s_ease-in-out_infinite]" />
         active
@@ -38,7 +37,6 @@ export default function ActiveCard() {
         <div className="text-[10px] text-gray-600 mt-1">commits this year</div>
       </div>
 
-      {/* Bar chart */}
       <div className="flex items-end gap-0.5 h-10">
         {BARS.map((v, i) => (
           <div

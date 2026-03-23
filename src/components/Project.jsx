@@ -1,10 +1,8 @@
-import Link from "next/link";
-
 export default function Project() {
   return (
     <div
       id="works"
-      className="w-full flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 -mt-12 sm:py-14 md:py-16 lg:py-20 2xl:-mt-[16px] relative"
+      className="w-full flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 pt-6 pb-12 sm:py-14 md:py-16 lg:py-20 relative"
     >
       <div className="flex items-center justify-between gap-2 w-full max-w-[1324px] mb-6 sm:mb-8 md:mb-10 lg:mb-12 xl:mb-16">
         <div className="flex items-center gap-2 md:gap-3 w-full">
@@ -16,11 +14,7 @@ export default function Project() {
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-fira-code text-white whitespace-nowrap">
             projects
           </h1>
-          <img
-            className="w-full h-[2px] max-w-[100px] xs:max-w-[150px] sm:max-w-[200px] md:max-w-[300px] lg:max-w-[400px] xl:max-w-[600px] 2xl:max-w-[1324px] ml-2 sm:ml-4 md:ml-6 lg:ml-10"
-            src="/Horizontal.png"
-            alt=""
-          />
+          <div className="h-px flex-1 ml-2 sm:ml-4 md:ml-6 lg:ml-10 bg-gradient-to-r from-[#C778DD] via-[#ABB2BF] to-transparent" />
         </div>
       </div>
       <div className="hidden 2xl:block absolute 2xl:left-[-250px] 2xl:top-[300px]">
@@ -65,7 +59,7 @@ export default function Project() {
                 <img
                   src="/LiveButton.png"
                   alt="View Live Project"
-                  className="w-auto h-[36px] sm:h-[40px] md:h-[45px]"
+                  className="w-auto max-w-full h-[36px] sm:h-[40px] md:h-[45px]"
                 />
               </button>
             </a>
@@ -103,7 +97,7 @@ export default function Project() {
                 <img
                   src="/LiveButton.png"
                   alt="View Live Project"
-                  className="w-auto h-[36px] sm:h-[40px] md:h-[45px]"
+                  className="w-auto max-w-full h-[36px] sm:h-[40px] md:h-[45px]"
                 />
               </button>
             </a>
@@ -140,7 +134,7 @@ export default function Project() {
                 <img
                   src="/LiveButton.png"
                   alt="View Live Project"
-                  className="w-auto h-[36px] sm:h-[40px] md:h-[45px]"
+                  className="w-auto max-w-full h-[36px] sm:h-[40px] md:h-[45px]"
                 />
               </button>
             </a>

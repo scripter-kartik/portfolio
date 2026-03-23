@@ -122,7 +122,6 @@ export default function TerminalCard() {
 
   return (
     <div className="border border-[#2a1f3d] rounded-lg overflow-hidden bg-[#0d0d0d] w-full font-mono">
-      {/* Title bar */}
       <div className="bg-[#161025] px-4 py-2.5 flex items-center gap-2 border-b border-[#2a1f3d]">
         <span className="w-2.5 h-2.5 rounded-full bg-[#3d1e1e]" />
         <span className="w-2.5 h-2.5 rounded-full bg-[#3d3520]" />
@@ -130,13 +129,11 @@ export default function TerminalCard() {
         <span className="text-[#554870] text-xs ml-2">kartik@dev ~ bash</span>
       </div>
 
-      {/* Scrollable body */}
       <div
         ref={bodyRef}
         className="p-4 h-[220px] overflow-y-auto text-sm leading-relaxed"
         style={{ scrollbarWidth: "none" }}
       >
-        {/* Current command line */}
         <div className="flex items-baseline gap-1.5">
           <span className="text-violet-600 select-none">❯</span>
           <span className="text-slate-200">{typedCmd}</span>
