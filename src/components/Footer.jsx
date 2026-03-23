@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="flex items-start justify-start flex-col gap-3 sm:gap-4 md:gap-5 w-full sm:w-auto">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-0">
             <div className="flex items-center">
-              <img className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 flex-shrink-0" src="/profile3.png" alt="" />
+              <img className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 flex-shrink-0 rounded-full" src="/kartikLabsLogo.png" alt="" />
               <h1 className="text-base sm:text-lg md:text-xl text-white font-fira-code mr-4 sm:mr-6 md:mr-8">Kartik</h1>
             </div>
             <p className="text-xs sm:text-sm md:text-base text-[#ABB2BF] font-fira-code break-all md:break-normal">
@@ -120,7 +120,7 @@ export default function Footer() {
         style={{ wordSpacing: "5px" }}
         className="text-xs sm:text-sm md:text-base lg:text-lg mt-8 sm:mt-10 md:mt-12 lg:mt-16 font-fira-code text-[#ABB2BF] mb-4 sm:mb-5 text-center px-4"
       >
-        © Copyright 2025. Made by Kartik
+        © Copyright 2026. Made by Kartik
       </p>
     </div>
   );

@@ -66,7 +66,7 @@ export default function Home() {
 
               <button
                 onClick={() => scrollToSection("works")}
-                className="w-full sm:w-[180px] md:w-[200px] lg:w-[260px] h-[44px] sm:h-[48px] md:h-[52px] bg-gradient-to-r from-[#C778DD] to-white p-[2px] flex items-center justify-center text-sm sm:text-base md:text-lg font-fira-code hover:shadow-[0_0_20px_#C778DD55]"
+                className="hidden sm:flex w-full sm:w-[180px] md:w-[200px] lg:w-[260px] h-[44px] sm:h-[48px] md:h-[52px] bg-gradient-to-r from-[#C778DD] to-white p-[2px] items-center justify-center text-sm sm:text-base md:text-lg font-fira-code hover:shadow-[0_0_20px_#C778DD55]"
               >
                 <span className="w-full h-full bg-black flex items-center justify-center px-3 text-white">
                   View our Work
@@ -200,7 +200,7 @@ export default function Home() {
               <button
                 type="button"
                 onClick={() => scrollToSection("works")}
-                className="h-11 px-5 rounded-xl border border-[#1F2532] bg-[#070A11] text-[#E5E7EB] hover:text-white hover:border-[#C778DD80] hover:shadow-[0_0_16px_#C778DD33] transition-all duration-200 flex items-center gap-2 font-fira-code text-sm sm:text-base flex-shrink-0"
+                className="hidden sm:flex h-11 px-5 rounded-xl border border-[#1F2532] bg-[#070A11] text-[#E5E7EB] hover:text-white hover:border-[#C778DD80] hover:shadow-[0_0_16px_#C778DD33] transition-all duration-200 items-center gap-2 font-fira-code text-sm sm:text-base flex-shrink-0"
               >
                 <span>View Work</span>
                 <svg
