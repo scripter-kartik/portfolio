@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <div className="w-full flex flex-col items-center lg:mb-[100px] md:mb-[80px] sm:mb-[70px] mb-[60px] px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 mt-12 sm:mt-14 md:mt-16 lg:mt-20 xl:mt-24">
-      <div className="w-screen h-[1px] bg-[#ABB2BF]" />
+    <div className="w-full flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 mt-12 sm:mt-14 md:mt-16 lg:mt-20 xl:mt-24">
+      <div className="w-full h-[1px] bg-[#ABB2BF]" />
 
       <div className="w-full max-w-[1324px] flex flex-col sm:flex-row sm:items-start md:items-center justify-between gap-6 sm:gap-8 px-4 sm:px-6 md:px-8 lg:px-10 mt-6 sm:mt-8 md:mt-10">        <div className="flex items-start justify-start flex-col gap-3 sm:gap-4 md:gap-5 w-full sm:w-auto">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-0">

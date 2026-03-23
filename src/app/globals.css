@@ -4,7 +4,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playwrite+AU+QLD:wght@100..400&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap");
 
 * {
-  background-color: black;
+  background-color: transparent;
+}
+
+body {
+  background-color: #000000;
 }
 
 .hide-scrollbar::-webkit-scrollbar {
@@ -17,12 +21,21 @@
 }
 
 html::-webkit-scrollbar {
-  display: none;
+  width: 4px;
+}
+
+html::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #c778dd;
+  border-radius: 10px;
 }
 
 html {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  scrollbar-width: thin;
+  scrollbar-color: #000000;
 }
 
 .marquee {
@@ -115,5 +128,27 @@ html {
 @keyframes blink {
   50% {
     opacity: 0;
+  }
+}
+
+.gradient-bg {
+  background: #000000;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 20% 40%, #c778dd28 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 70%, #9b3dba22 0%, transparent 55%),
+    radial-gradient(ellipse 40% 40% at 50% 10%, #7b2d9220 0%, transparent 50%);
+  background-size: 200% 200%;
+  animation: gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
   }
 }

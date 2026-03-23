@@ -7,9 +7,9 @@ import Footer from "@/components/Footer";
 
 export default function Page() {
   return (
-    <div className="min-h-screen overflow-hidden hide-scrollbar flex flex-col justify-between items-center">
+    <div className="min-h-screen overflow-x-hidden overflow-y-auto hide-scrollbar flex flex-col items-stretch">
       <Home />
-      <div >
+      <div>
         <Project />
       </div>
       <div>
