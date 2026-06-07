@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
+
   const calendarLink =
     "https://calendar.google.com/calendar/u/0/r/eventedit?text=Project%20Call%20with%20Kartik%20Labs&details=Let%20us%20discuss%20your%20project%20requirements.";
 
@@ -37,20 +38,20 @@ export default function Home() {
       className="relative flex flex-col items-center min-h-screen overflow-x-hidden bg-transparent"
     >
       <Navbar />
-      <div className="w-full max-w-[1324px] mt-20 sm:mt-24 md:mt-20 lg:mt-32 xl:mt-28 2xl:mt-40 flex flex-col lg:flex-row items-center justify-center gap-10 sm:gap-12 md:gap-14 lg:gap-12 xl:gap-16 2xl:gap-[150px] px-4 sm:px-6 md:px-8 lg:px-8 xl:px-0 pt-4 sm:pt-6">
-        <div className="flex flex-col items-center lg:items-start justify-center gap-6 w-full lg:w-auto order-2 lg:order-1">
-          <h1 className="text-[20px] sm:text-[24px] md:text-[30px] lg:text-[36px] xl:text-[44px] 2xl:text-[60px] font-semibold text-center lg:text-left bg-gradient-to-r from-white to-[#C778DD] bg-clip-text text-transparent leading-tight">
+      <div className="w-full max-w-[1324px] mt-28 sm:mt-32 md:mt-36 lg:mt-32 xl:mt-28 2xl:mt-40 flex flex-col lg:flex-row items-center justify-center gap-10 sm:gap-12 md:gap-14 lg:gap-12 xl:gap-16 2xl:gap-[150px] px-6 sm:px-8 lg:px-10 pt-4 sm:pt-6">
+        <div className="flex flex-col items-center lg:items-start justify-center gap-6 w-full lg:w-auto">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[36px] xl:text-[44px] 2xl:text-[60px] font-semibold text-center lg:text-left bg-gradient-to-r from-white to-[#C778DD] bg-clip-text text-transparent leading-tight">
             Full-stack products, shipped clean.
           </h1>
 
           <div className="flex flex-col gap-4 w-full items-center lg:items-start">
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#ABB2BF] font-fira-code text-center lg:text-left leading-relaxed max-w-[62ch]">
+            <p className="text-base sm:text-lg md:text-xl text-[#ABB2BF] font-fira-code text-center lg:text-left leading-relaxed max-w-[62ch]">
               Passionate about crafting seamless web experiences.
             </p>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#ABB2BF] font-fira-code text-center lg:text-left leading-relaxed max-w-[62ch]">
+            <p className="text-base sm:text-lg md:text-xl text-[#ABB2BF] font-fira-code text-center lg:text-left leading-relaxed max-w-[62ch]">
               Clean on the front. Solid on the back.
             </p>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#ABB2BF] font-fira-code text-center lg:text-left leading-relaxed mb-5 max-w-[62ch]">
+            <p className="text-base sm:text-lg md:text-xl text-[#ABB2BF] font-fira-code text-center lg:text-left leading-relaxed mb-5 max-w-[62ch]">
               Turning ideas into products that actually work.
             </p>
 
@@ -77,9 +78,9 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mt-12 w-full max-w-[1324px] mx-auto px-4 sm:px-6 md:px-8 lg:px-8 xl:px-0">
-        <div className="w-full max-w-[960px] mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-          <div className="flex items-center gap-2">
+      <div className="mt-12 w-full max-w-[1324px] mx-auto px-6 sm:px-8 lg:px-10">
+        <div className="w-full max-w-[960px] mx-auto flex flex-col sm:flex-row items-center sm:justify-between gap-4">
+          <div className="flex items-center gap-2 justify-center sm:justify-start">
             <img className="w-3 h-3 animate-pulse" src="/greendot.png" alt="" />
             <p className="text-gray-400 text-sm sm:text-base">
               Available for opportunities
@@ -87,7 +88,7 @@ export default function Home() {
           </div>
 
           <div className="w-full sm:w-auto overflow-x-auto hide-scrollbar">
-            <div className="min-w-max flex items-center gap-2">
+            <div className="min-w-max flex items-center justify-center sm:justify-start gap-2">
               <a
                 href="https://github.com/scripter-kartik"
                 target="_blank"
@@ -123,7 +124,7 @@ export default function Home() {
               </a>
 
               <a
-                href="https://x.com/kartikLabs"
+                href="https://x.com/0xkar7ik"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={actionButtonClass}
@@ -219,7 +220,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full max-w-[1324px] mx-auto px-4 sm:px-6 md:px-8 lg:px-8 xl:px-0 mt-10 mb-16">
+      <div className="w-full max-w-[1324px] mx-auto px-6 sm:px-8 lg:px-10 mt-10 mb-16">
         <div className="w-full max-w-[960px] mx-auto border border-gray-800 rounded-xl p-4 sm:p-6 bg-transparent overflow-x-auto">
           <div className="flex items-center justify-between mb-6 min-w-[260px] gap-3">
             <div className="flex items-center gap-4">

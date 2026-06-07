@@ -3,6 +3,13 @@
 import React, { useState } from "react";
 
 const Navbar = () => {
+  const navLinks = [
+    { id: "home", label: "home" },
+    { id: "works", label: "works" },
+    { id: "about-me", label: "about-me" },
+    { id: "contacts", label: "contacts" },
+  ];
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId) => {
@@ -10,7 +17,7 @@ const Navbar = () => {
     if (element) {
       const offset = -120;
       const elementPosition =
-        element.getBoundingClientRect().top + window.pageYOffset;
+        element.getBoundingClientRect().top + window.scrollY;
       const offsetPosition = elementPosition + offset;
 
       window.scrollTo({
@@ -18,6 +25,11 @@ const Navbar = () => {
         behavior: "smooth",
       });
     }
+    setIsMenuOpen(false);
+  };
+
+  const handleNavClick = (id) => {
+    scrollToSection(id);
     setIsMenuOpen(false);
   };
 
@@ -41,58 +53,21 @@ const Navbar = () => {
           </div>
 
           <div className="hidden lg:flex gap-6 xl:gap-8 2xl:gap-[32px]">
-            <div className="flex items-center gap-1">
-              <img
-                className="w-[10px] h-[16px] xl:w-[12px] xl:h-[18px]"
-                src="/hashtag.png"
-                alt=""
-              />
-              <button
-                onClick={() => scrollToSection("home")}
-                className="font-fira-code text-[#ABB2BF] text-lg xl:text-xl 2xl:text-2xl hover:text-white transition-colors"
-              >
-                home
-              </button>
-            </div>
-            <div className="flex items-center gap-1">
-              <img
-                className="w-[10px] h-[16px] xl:w-[12px] xl:h-[18px]"
-                src="/hashtag.png"
-                alt=""
-              />
-              <button
-                onClick={() => scrollToSection("works")}
-                className="font-fira-code text-[#ABB2BF] text-lg xl:text-xl 2xl:text-2xl hover:text-white transition-colors"
-              >
-                works
-              </button>
-            </div>
-            <div className="flex items-center gap-1">
-              <img
-                className="w-[10px] h-[16px] xl:w-[12px] xl:h-[18px]"
-                src="/hashtag.png"
-                alt=""
-              />
-              <button
-                onClick={() => scrollToSection("about-me")}
-                className="font-fira-code text-[#ABB2BF] text-lg xl:text-xl 2xl:text-2xl hover:text-white transition-colors"
-              >
-                about-me
-              </button>
-            </div>
-            <div className="flex items-center gap-1">
-              <img
-                className="w-[10px] h-[16px] xl:w-[12px] xl:h-[18px]"
-                src="/hashtag.png"
-                alt=""
-              />
-              <button
-                onClick={() => scrollToSection("contacts")}
-                className="font-fira-code text-[#ABB2BF] text-lg xl:text-xl 2xl:text-2xl hover:text-white transition-colors"
-              >
-                contacts
-              </button>
-            </div>
+            {navLinks.map((link) => (
+              <div key={link.id} className="flex items-center gap-1">
+                <img
+                  className="w-[10px] h-[16px] xl:w-[12px] xl:h-[18px]"
+                  src="/hashtag.png"
+                  alt=""
+                />
+                <button
+                  onClick={() => handleNavClick(link.id)}
+                  className="font-fira-code text-[#ABB2BF] text-lg xl:text-xl 2xl:text-2xl hover:text-white transition-colors"
+                >
+                  {link.label}
+                </button>
+              </div>
+            ))}
           </div>
 
           <button
@@ -125,58 +100,21 @@ const Navbar = () => {
         }`}
       >
         <div className="flex flex-col py-4 px-6 gap-5 sm:gap-6">
-          <div className="flex items-center gap-2">
-            <img
-              className="w-[10px] h-[16px] sm:w-[12px] sm:h-[18px]"
-              src="/hashtag.png"
-              alt=""
-            />
-            <button
-              onClick={() => scrollToSection("home")}
-              className="font-fira-code text-[#ABB2BF] text-lg sm:text-xl hover:text-white transition-colors text-left"
-            >
-              home
-            </button>
-          </div>
-          <div className="flex items-center gap-2">
-            <img
-              className="w-[10px] h-[16px] sm:w-[12px] sm:h-[18px]"
-              src="/hashtag.png"
-              alt=""
-            />
-            <button
-              onClick={() => scrollToSection("works")}
-              className="font-fira-code text-[#ABB2BF] text-lg sm:text-xl hover:text-white transition-colors text-left"
-            >
-              works
-            </button>
-          </div>
-          <div className="flex items-center gap-2">
-            <img
-              className="w-[10px] h-[16px] sm:w-[12px] sm:h-[18px]"
-              src="/hashtag.png"
-              alt=""
-            />
-            <button
-              onClick={() => scrollToSection("about-me")}
-              className="font-fira-code text-[#ABB2BF] text-lg sm:text-xl hover:text-white transition-colors text-left"
-            >
-              about-me
-            </button>
-          </div>
-          <div className="flex items-center gap-2">
-            <img
-              className="w-[10px] h-[16px] sm:w-[12px] sm:h-[18px]"
-              src="/hashtag.png"
-              alt=""
-            />
-            <button
-              onClick={() => scrollToSection("contacts")}
-              className="font-fira-code text-[#ABB2BF] text-lg sm:text-xl hover:text-white transition-colors text-left"
-            >
-              contacts
-            </button>
-          </div>
+          {navLinks.map((link) => (
+            <div key={link.id} className="flex items-center gap-2">
+              <img
+                className="w-[10px] h-[16px] sm:w-[12px] sm:h-[18px]"
+                src="/hashtag.png"
+                alt=""
+              />
+              <button
+                onClick={() => handleNavClick(link.id)}
+                className="font-fira-code text-[#ABB2BF] text-lg sm:text-xl hover:text-white transition-colors text-left"
+              >
+                {link.label}
+              </button>
+            </div>
+          ))}
         </div>
       </div>
     </div>

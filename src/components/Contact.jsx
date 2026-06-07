@@ -20,7 +20,8 @@ export default function Contact() {
 
   const calendarLink =
     "https://calendar.google.com/calendar/u/0/r/eventedit?text=Project%20Call%20with%20Kartik%20Labs&details=Let%20us%20discuss%20your%20project%20requirements.";
-  const xLink = "https://x.com/kartikLabs";
+  const xLink = "https://x.com/0xkar7ik";
+
   const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
   const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
   const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
@@ -51,10 +52,23 @@ ${formData.message}`;
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+    if (
+      !formData.name.trim() ||
+      !formData.email.trim() ||
+      !formData.message.trim()
+    ) {
       setStatus({
         type: "error",
         message: "Please fill name, email, and message before sending.",
+      });
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setStatus({
+        type: "error",
+        message: "Please enter a valid email address.",
       });
       return;
     }
@@ -77,7 +91,7 @@ ${formData.message}`;
             message: formData.message,
             to_email: "agarwalkartik704@gmail.com",
           },
-          { publicKey }
+          { publicKey },
         );
 
         setStatus({
@@ -88,7 +102,8 @@ ${formData.message}`;
         openMailFallback();
         setStatus({
           type: "success",
-          message: "Mail app opened with your message details. Send it to complete.",
+          message:
+            "Mail app opened with your message details. Send it to complete.",
         });
       }
 
@@ -156,7 +171,7 @@ ${formData.message}`;
                   </svg>
                 </span>
                 <span className="font-fira-code text-sm sm:text-base">
-                  @kartikLabs
+                  @0xkar7ik
                 </span>
               </a>
 

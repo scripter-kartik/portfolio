@@ -3,19 +3,26 @@ export default function Footer() {
     "h-10 w-10 rounded-lg border border-[#1F2532] bg-[#070A11] text-[#9CA3AF] hover:text-white hover:border-[#C778DD80] transition-all duration-200 inline-flex items-center justify-center";
   const calendarLink =
     "https://calendar.google.com/calendar/u/0/r/eventedit?text=Project%20Call%20with%20Kartik%20Labs&details=Let%20us%20discuss%20your%20project%20requirements.";
+  const xLink = "https://x.com/0xkar7ik";
 
   return (
     <div className="w-full flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 mt-12 sm:mt-14 md:mt-16 lg:mt-20 xl:mt-24">
       <div className="w-full h-[1px] bg-[#ABB2BF]" />
 
-      <div className="w-full max-w-[1324px] flex flex-col sm:flex-row sm:items-start md:items-center justify-between gap-6 sm:gap-8 mt-6 sm:mt-8 md:mt-10">
+      <div className="w-full max-w-[1324px] flex flex-col sm:flex-row sm:items-start md:items-center justify-between gap-6 sm:gap-8 mt-4 sm:mt-6 md:mt-8">
         <div className="flex items-start justify-start flex-col gap-3 sm:gap-4 md:gap-5 w-full sm:w-auto">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-0">
-            <div className="flex items-center">
-              <img className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 flex-shrink-0 rounded-full" src="/kartikLabsLogo.png" alt="" />
-              <h1 className="text-base sm:text-lg md:text-xl text-white font-fira-code mr-4 sm:mr-6 md:mr-8">Kartik</h1>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-8">
+            <div className="flex items-center gap-3">
+              <img
+                className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 rounded-full"
+                src="/kartikLabsLogo.png"
+                alt=""
+              />
+              <h1 className="text-base sm:text-lg md:text-xl text-white font-fira-code">
+                Kartik
+              </h1>
             </div>
-            <p className="text-xs sm:text-sm md:text-base text-[#ABB2BF] font-fira-code break-all md:break-normal">
+            <p className="text-xs sm:text-sm md:text-base text-gray-custom font-fira-code break-all md:break-normal">
               agarwalkartik704@gmail.com
             </p>
           </div>
@@ -26,7 +33,9 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col justify-center items-start sm:items-center gap-2 sm:gap-3 w-full sm:w-auto">
-          <h1 className="text-lg sm:text-xl md:text-2xl text-[#C778DD] font-fira-code mb-2 sm:mb-3 md:mb-5">Media</h1>
+          <h1 className="text-lg sm:text-xl md:text-2xl text-[#C778DD] font-fira-code mb-2 sm:mb-3 md:mb-5">
+            Media
+          </h1>
           <div className="flex items-center flex-wrap gap-3 sm:gap-4">
             <a
               href="https://github.com/scripter-kartik"
@@ -61,7 +70,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="https://x.com/kartikLabs"
+              href={xLink}
               target="_blank"
               rel="noopener noreferrer"
               className={mediaButtonClass}
@@ -118,7 +127,7 @@ export default function Footer() {
 
       <p
         style={{ wordSpacing: "5px" }}
-        className="text-xs sm:text-sm md:text-base lg:text-lg mt-8 sm:mt-10 md:mt-12 lg:mt-16 font-fira-code text-[#ABB2BF] mb-4 sm:mb-5 text-center px-4"
+        className="text-xs sm:text-sm md:text-base lg:text-lg mt-8 sm:mt-10 md:mt-12 lg:mt-16 font-fira-code text-gray-custom mb-4 sm:mb-5 text-center px-4"
       >
         © Copyright 2026. Made by Kartik
       </p>

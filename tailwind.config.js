@@ -7,12 +7,17 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: "#C778DD",
+        "gray-custom": "#ABB2BF",
+        "dark-bg": "#070A11",
+      },
       fontFamily: {
         "fira-code": ["Fira Code", "monospace"],
         "intel-mono": ["Intel One Mono", "monospace"],
         lato: ["Lato", "sans-serif"],
         playwrite: ["Playwrite AU QLD", "cursive"],
-        "winky-rough": ["Winky Rough", "cursive"], 
+        "winky-rough": ["Winky Rough", "cursive"],
       },
     },
   },
