@@ -151,7 +151,7 @@ export default function Footer() {
         style={{ wordSpacing: "5px" }}
         className="text-xs sm:text-sm md:text-base lg:text-lg mt-8 sm:mt-10 md:mt-12 lg:mt-16 font-fira-code text-gray-custom mb-4 sm:mb-5 text-center px-4"
       >
-        © Copyright 2026. Made by Kartik
+        © Copyright {new Date().getFullYear()}. Made by Kartik
       </p>
     </div>
   );

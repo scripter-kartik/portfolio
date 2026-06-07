@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { Outfit } from "next/font/google";
+import { Geist, Geist_Mono, Outfit, Fira_Code } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -15,6 +14,11 @@ const outfit = Outfit({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const firaCode = Fira_Code({
+  variable: "--font-fira-code",
   subsets: ["latin"],
 });
 
@@ -34,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${outfit.className} antialiased gradient-bg`}
+        className={`${geistSans.variable} ${geistMono.variable} ${firaCode.variable} ${outfit.className} antialiased gradient-bg`}
         suppressHydrationWarning
       >
         {children}
