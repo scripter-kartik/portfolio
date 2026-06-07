@@ -28,6 +28,13 @@ export default function Project() {
       image: "/vidtube.png",
       link: "https://VidTube-platform.vercel.app",
     },
+    {
+      title: "Edusity",
+      description: "university landing page",
+      tags: ["React", "Tailwind", "CSS"],
+      image: "/edusity.png",
+      link: "https://edu-sity-website.vercel.app",
+    },
   ];
 
   return (

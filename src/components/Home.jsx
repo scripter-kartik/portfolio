@@ -32,6 +32,18 @@ export default function Home() {
   const actionButtonClass =
     "h-11 w-11 rounded-xl border border-[#1F2532] bg-[#070A11] text-[#9CA3AF] hover:text-white hover:border-[#C778DD80] hover:shadow-[0_0_16px_#C778DD33] transition-all duration-200 flex items-center justify-center flex-shrink-0";
 
+  const TooltipButton = ({ text, children }) => (
+    <div className="relative group flex overflow-visible">
+      {children}
+
+      <div className="pointer-events-none absolute left-1/2 top-14 -translate-x-1/2 opacity-0 transition-all duration-200 group-hover:opacity-100 z-[9999]">
+        <div className="whitespace-nowrap rounded-lg border border-[#C778DD80] bg-[#070A11] px-3 py-1 text-xs text-white shadow-[0_0_16px_#C778DD33]">
+          {text}
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <div
       id="home"
@@ -87,116 +99,129 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="w-full sm:w-auto overflow-x-auto hide-scrollbar">
-            <div className="min-w-max flex items-center justify-center sm:justify-start gap-2">
-              <a
-                href="https://github.com/scripter-kartik"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={actionButtonClass}
-                aria-label="GitHub"
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  className="w-5 h-5"
-                  fill="currentColor"
-                  aria-hidden="true"
+          <div className="w-full sm:w-auto overflow-visible">
+            <div className="min-w-max flex items-center justify-center sm:justify-start gap-2 overflow-visible">
+              <TooltipButton text="View GitHub">
+                <a
+                  href="https://github.com/scripter-kartik"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={actionButtonClass}
+                  aria-label="GitHub"
                 >
-                  <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48v-1.7c-2.78.61-3.37-1.34-3.37-1.34-.45-1.16-1.12-1.47-1.12-1.47-.91-.63.07-.62.07-.62 1 .07 1.54 1.04 1.54 1.04.9 1.53 2.34 1.1 2.9.84.1-.64.35-1.1.64-1.35-2.22-.25-4.56-1.12-4.56-4.97 0-1.1.39-2 1.03-2.71-.1-.25-.45-1.28.1-2.66 0 0 .85-.27 2.78 1.03A9.62 9.62 0 0 1 12 6.85c.85 0 1.7.11 2.5.33 1.93-1.3 2.78-1.03 2.78-1.03.56 1.38.2 2.41.1 2.66.64.7 1.03 1.61 1.03 2.71 0 3.86-2.35 4.72-4.59 4.97.36.3.69.88.69 1.79v2.65c0 .26.18.58.69.48A10 10 0 0 0 12 2Z" />
-                </svg>
-              </a>
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="w-5 h-5"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48v-1.7c-2.78.61-3.37-1.34-3.37-1.34-.45-1.16-1.12-1.47-1.12-1.47-.91-.63.07-.62.07-.62 1 .07 1.54 1.04 1.54 1.04.9 1.53 2.34 1.1 2.9.84.1-.64.35-1.1.64-1.35-2.22-.25-4.56-1.12-4.56-4.97 0-1.1.39-2 1.03-2.71-.1-.25-.45-1.28.1-2.66 0 0 .85-.27 2.78 1.03A9.62 9.62 0 0 1 12 6.85c.85 0 1.7.11 2.5.33 1.93-1.3 2.78-1.03 2.78-1.03.56 1.38.2 2.41.1 2.66.64.7 1.03 1.61 1.03 2.71 0 3.86-2.35 4.72-4.59 4.97.36.3.69.88.69 1.79v2.65c0 .26.18.58.69.48A10 10 0 0 0 12 2Z" />
+                  </svg>
+                </a>
+              </TooltipButton>
 
-              <a
-                href="https://www.linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={actionButtonClass}
-                aria-label="LinkedIn"
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  className="w-5 h-5"
-                  fill="currentColor"
-                  aria-hidden="true"
+              <TooltipButton text="Connect on LinkedIn">
+                <a
+                  href="https://www.linkedin.com/in/kartik-agarwal-747289376/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={actionButtonClass}
+                  aria-label="LinkedIn"
                 >
-                  <path d="M6.94 8.5A1.56 1.56 0 1 1 6.94 5.4a1.56 1.56 0 0 1 0 3.1ZM5.5 9.8h2.9V19H5.5V9.8Zm4.72 0H13v1.25h.04c.4-.75 1.38-1.54 2.83-1.54 3.03 0 3.59 2 3.59 4.58V19h-2.9v-4.35c0-1.04-.02-2.38-1.45-2.38-1.46 0-1.68 1.13-1.68 2.3V19h-2.9V9.8Z" />
-                </svg>
-              </a>
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="w-5 h-5"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M6.94 8.5A1.56 1.56 0 1 1 6.94 5.4a1.56 1.56 0 0 1 0 3.1ZM5.5 9.8h2.9V19H5.5V9.8Zm4.72 0H13v1.25h.04c.4-.75 1.38-1.54 2.83-1.54 3.03 0 3.59 2 3.59 4.58V19h-2.9v-4.35c0-1.04-.02-2.38-1.45-2.38-1.46 0-1.68 1.13-1.68 2.3V19h-2.9V9.8Z" />
+                  </svg>
+                </a>
+              </TooltipButton>
 
-              <a
-                href="https://x.com/0xkar7ik"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={actionButtonClass}
-                aria-label="X"
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  className="w-5 h-5"
-                  fill="currentColor"
-                  aria-hidden="true"
+              <TooltipButton text="Follow on X">
+                <a
+                  href="https://x.com/0xkar7ik"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={actionButtonClass}
+                  aria-label="X"
                 >
-                  <path d="M18.9 3H22l-6.8 7.76L23 21h-6.1l-4.78-6.23L6.66 21H3.54l7.28-8.3L3 3h6.25l4.32 5.74L18.9 3Zm-1.07 16.2h1.72L8.3 4.72H6.45L17.83 19.2Z" />
-                </svg>
-              </a>
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="w-5 h-5"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M18.9 3H22l-6.8 7.76L23 21h-6.1l-4.78-6.23L6.66 21H3.54l7.28-8.3L3 3h6.25l4.32 5.74L18.9 3Zm-1.07 16.2h1.72L8.3 4.72H6.45L17.83 19.2Z" />
+                  </svg>
+                </a>
+              </TooltipButton>
 
-              <a
-                href="mailto:agarwalkartik704@gmail.com"
-                className={actionButtonClass}
-                aria-label="Email"
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  aria-hidden="true"
+              <TooltipButton text="Send Email">
+                <a
+                  href="mailto:agarwalkartik704@gmail.com"
+                  className={actionButtonClass}
+                  aria-label="Email"
                 >
-                  <rect x="3.5" y="5.5" width="17" height="13" rx="2" />
-                  <path d="m4.5 7 7.5 6 7.5-6" />
-                </svg>
-              </a>
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    aria-hidden="true"
+                  >
+                    <rect x="3.5" y="5.5" width="17" height="13" rx="2" />
+                    <path d="m4.5 7 7.5 6 7.5-6" />
+                  </svg>
+                </a>
+              </TooltipButton>
 
-              <button
-                type="button"
-                onClick={() => scrollToSection("about-me")}
-                className={actionButtonClass}
-                aria-label="Resume"
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  aria-hidden="true"
+              <TooltipButton text="View Resume">
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={actionButtonClass}
+                  aria-label="Resume"
                 >
-                  <path d="M8 3.5h6l4 4V20a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 6 20V5A1.5 1.5 0 0 1 7.5 3.5Z" />
-                  <path d="M14 3.5V8h4" />
-                  <path d="M9 12h6M9 15h6M9 18h4" />
-                </svg>
-              </button>
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 3.5h6l4 4V20a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 6 20V5A1.5 1.5 0 0 1 7.5 3.5Z" />
+                    <path d="M14 3.5V8h4" />
+                    <path d="M9 12h6M9 15h6M9 18h4" />
+                  </svg>
+                </a>
+              </TooltipButton>
 
-              <a
-                href={calendarLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={actionButtonClass}
-                aria-label="Schedule"
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  aria-hidden="true"
+              <TooltipButton text="Schedule a Call">
+                <a
+                  href={calendarLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={actionButtonClass}
+                  aria-label="Schedule"
                 >
-                  <rect x="3.5" y="5.5" width="17" height="15" rx="2" />
-                  <path d="M8 3.5v4M16 3.5v4M3.5 9.5h17" />
-                </svg>
-              </a>
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    aria-hidden="true"
+                  >
+                    <rect x="3.5" y="5.5" width="17" height="15" rx="2" />
+                    <path d="M8 3.5v4M16 3.5v4M3.5 9.5h17" />
+                  </svg>
+                </a>
+              </TooltipButton>
 
               <button
                 type="button"
