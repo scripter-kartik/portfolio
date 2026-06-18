@@ -10,7 +10,7 @@ export default function Footer() {
       {children}
 
       <div className="pointer-events-none absolute left-1/2 top-12 -translate-x-1/2 opacity-0 transition-all duration-200 group-hover:opacity-100 z-[9999]">
-        <div className="whitespace-nowrap rounded-lg border border-[#C778DD80] bg-[#070A11] px-3 py-1 text-xs text-white shadow-[0_0_16px_#C778DD33]">
+        <div className="whitespace-nowzrap rounded-lg border border-[#C778DD80] bg-[#070A11] px-3 py-1 text-xs text-white shadow-[0_0_16px_#C778DD33]">
           {text}
         </div>
       </div>
