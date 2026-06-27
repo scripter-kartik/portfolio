@@ -24,36 +24,36 @@ export default function ActiveCard() {
   }, []);
 
   return (
-    <div className="border border-[#2a1f3d] rounded-lg bg-[#0d0d0d] p-4 font-mono flex flex-col gap-3 w-full">
-      <div className="flex items-center gap-2 text-xs text-gray-500">
+    <div className="border border-white/[0.08] hover:border-emerald-400/40 rounded-xl bg-[#070A11]/60 backdrop-blur-md p-4 font-mono flex flex-col gap-3 w-full h-full shadow-[0_0_40px_rgba(34,197,94,0.05)] hover:shadow-[0_0_45px_rgba(34,197,94,0.12)] transition-all duration-300 overflow-hidden">
+      <div className="flex items-center gap-2 text-xs text-gray-500 font-fira-code">
         <span className="w-2 h-2 rounded-full bg-green-500 animate-[pulse_2s_ease-in-out_infinite]" />
         active
       </div>
 
       <div>
-        <div className="text-[28px] font-bold text-slate-100 leading-none">
+        <div className="text-[26px] font-bold text-white leading-none font-fira-code">
           {count}
         </div>
-        <div className="text-[10px] text-gray-600 mt-1">commits this year</div>
+        <div className="text-[10px] text-gray-500 mt-1 font-fira-code uppercase tracking-wider">commits this year</div>
       </div>
 
-      <div className="flex items-end gap-0.5 h-10">
+      <div className="flex items-end gap-0.5 h-9">
         {BARS.map((v, i) => (
           <div
             key={i}
-            className="flex-1 bg-[#2a1f3d] rounded-sm hover:bg-violet-700 transition-colors duration-200 cursor-default"
-            style={{ height: `${(v / maxBar) * 38}px` }}
+            className="flex-1 bg-emerald-950/60 rounded-sm hover:bg-emerald-400 transition-colors duration-200 cursor-default"
+            style={{ height: `${(v / maxBar) * 34}px` }}
           />
         ))}
       </div>
 
-      <div className="h-px bg-[#1a1330]" />
+      <div className="h-px bg-white/[0.06]" />
 
-      <div className="flex flex-wrap gap-1">
+      <div className="flex flex-wrap gap-1.5">
         {TAGS.map((tag) => (
           <span
             key={tag}
-            className="text-[9px] px-1.5 py-0.5 border border-[#2a1f3d] text-violet-400 rounded tracking-wide"
+            className="text-[9px] px-2 py-0.5 border border-emerald-400/20 bg-emerald-400/5 text-emerald-300 rounded-md tracking-wider font-fira-code font-medium uppercase"
           >
             {tag}
           </span>

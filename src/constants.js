@@ -16,28 +16,39 @@ export const NAV_LINKS = [
 
 export const PROJECTS = [
   {
-    title: "Vidtube",
-    image: "/vidtube.png",
-    tags: ["React", "Node.js", "Express", "MongoDB"],
-    description:
-      "A video-sharing platform with authentication, uploads, playlists, and creator-focused workflows.",
-    link: "#",
-  },
-  {
-    title: "TuneTogether",
-    image: "/tunetogether.png",
-    tags: ["Next.js", "Tailwind", "Socket.io"],
-    description:
-      "A collaborative music room app where people can queue tracks and listen together in real time.",
-    link: "#",
+    title: "BlogForge",
+    description: "your blogging workspace",
+    tags: ["Next.js", "Tailwind", "MongoDB", "cloudinary"],
+    image: "/blogspot.png",
+    link: "https://blog-forge-weld.vercel.app",
   },
   {
     title: "InkShelf",
+    description: "your online bookshelf",
+    tags: ["Next.js", "Tailwind", "API", "Open Library"],
     image: "/inkshelf.png",
-    tags: ["Next.js", "MongoDB", "Tailwind"],
-    description:
-      "A clean reading and publishing experience for browsing, saving, and managing written work.",
-    link: "#",
+    link: "https://ink-shelf.vercel.app",
+  },
+  {
+    title: "Tune-Together",
+    description: "chat powered by music",
+    tags: ["Next.js", "Socket.io", "Clerk", "Tailwind"],
+    image: "/tunetogether.png",
+    link: "https://tunetogether.vercel.app",
+  },
+  {
+    title: "VidTube",
+    description: "youtube clone platform",
+    tags: ["Next.js", "React", "Tailwind", "Appwrite"],
+    image: "/vidtube.png",
+    link: "https://VidTube-platform.vercel.app",
+  },
+  {
+    title: "Edusity",
+    description: "university landing page",
+    tags: ["React", "Tailwind", "CSS"],
+    image: "/edusity.png",
+    link: "https://edu-sity-website.vercel.app",
   },
 ];
 

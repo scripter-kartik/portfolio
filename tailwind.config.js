@@ -13,7 +13,7 @@ module.exports = {
         "dark-bg": "#070A11",
       },
       fontFamily: {
-        "fira-code": ["Fira Code", "monospace"],
+        "fira-code": ["var(--font-fira-code)", "monospace"],
         "intel-mono": ["Intel One Mono", "monospace"],
         lato: ["Lato", "sans-serif"],
         playwrite: ["Playwrite AU QLD", "cursive"],

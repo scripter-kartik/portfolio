@@ -1,112 +1,70 @@
-export default function Project() {
-  const projects = [
-    {
-      title: "BlogForge",
-      description: "your blogging workspace",
-      tags: ["Next.js", "Tailwind", "MongoDB", "cloudinary"],
-      image: "/blogspot.png",
-      link: "https://blog-forge-weld.vercel.app",
-    },
-    {
-      title: "InkShelf",
-      description: "your online bookshelf",
-      tags: ["Next.js", "Tailwind", "API", "Open Library"],
-      image: "/inkshelf.png",
-      link: "https://ink-shelf.vercel.app",
-    },
-    {
-      title: "Tune-Together",
-      description: "chat powered by music",
-      tags: ["Next.js", "Socket.io", "Clerk", "Tailwind"],
-      image: "/tunetogether.png",
-      link: "https://tunetogether.vercel.app",
-    },
-    {
-      title: "VidTube",
-      description: "youtube clone platform",
-      tags: ["Next.js", "React", "Tailwind", "Appwrite"],
-      image: "/vidtube.png",
-      link: "https://VidTube-platform.vercel.app",
-    },
-    {
-      title: "Edusity",
-      description: "university landing page",
-      tags: ["React", "Tailwind", "CSS"],
-      image: "/edusity.png",
-      link: "https://edu-sity-website.vercel.app",
-    },
-  ];
+import { PROJECTS } from "@/constants";
+import SectionHeader from "./SectionHeader";
 
+export default function Project() {
   return (
     <div
       id="works"
-      className="w-full flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 pt-6 pb-12 sm:py-14 md:py-16 lg:py-20 relative"
+      className="w-full flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 pt-6 pb-16 sm:py-20 relative"
     >
-      <div className="flex items-center justify-between gap-2 w-full max-w-[1324px] mb-6 sm:mb-8 md:mb-10 lg:mb-12 xl:mb-16">
-        <div className="flex items-center gap-2 md:gap-3 w-full">
-          <img
-            className="w-4 h-5 sm:w-5 sm:h-6 md:w-6 md:h-7 flex-shrink-0"
-            src="/hashtag2.png"
-            alt=""
-          />
-          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-fira-code text-white whitespace-nowrap">
-            projects
-          </h1>
-          <div className="h-px flex-1 ml-2 sm:ml-4 md:ml-6 lg:ml-10 bg-gradient-to-r from-[#C778DD] via-[#ABB2BF] to-transparent" />
-        </div>
-      </div>
+      <SectionHeader title="projects" />
 
-      <div className="hidden 2xl:block absolute 2xl:left-[-250px] 2xl:top-[300px]">
-        <img src="/Frame.png" alt="" className="2xl:w-[50px]" />
-      </div>
-      <div className="hidden 2xl:block absolute 2xl:right-[-250px] 2xl:top-[500px]">
-        <img
-          className="w-[80px] h-[130px] xl:w-[110px] xl:h-[180px]"
-          src="/Rectangle.png"
-          alt=""
-        />
-      </div>
-      <div className="w-full max-w-[1324px] grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12">
-        {projects.map((project) => (
-          <div
+      <div className="w-full max-w-[1324px] grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
+        {PROJECTS.map((project, idx) => (
+          <a
             key={project.title}
-            className="group w-full max-w-[410px] mx-auto md:mx-0 transition-transform duration-300 hover:-translate-y-2"
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group w-full rounded-2xl border border-white/[0.07] bg-[#070A11]/60 backdrop-blur-md overflow-hidden transition-all duration-400 hover:-translate-y-2 hover:border-[#C778DD]/40 hover:shadow-[0_8px_40px_rgba(199,120,221,0.14)] flex flex-col h-full"
+            style={{ animationDelay: `${idx * 0.08}s` }}
           >
-            <div className="border-[1px] border-[#ABB2BF] w-full">
+            {/* Image */}
+            <div className="relative aspect-[16/9] w-full overflow-hidden">
               <img
-                className="w-full h-auto object-cover"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.06]"
                 src={project.image}
-                alt={`${project.title} Project`}
+                alt={`${project.title} preview`}
               />
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#070A11] via-[#070A11]/30 to-transparent opacity-70 group-hover:opacity-50 transition-opacity duration-400" />
+              {/* Live badge */}
+              <span className="absolute top-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#05070c]/80 backdrop-blur-sm border border-white/[0.08] text-[10px] font-fira-code text-[#ABB2BF] opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0">
+                <svg viewBox="0 0 24 24" className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <path d="M7 17L17 7M17 7H7M17 7V17" />
+                </svg>
+                Live
+              </span>
             </div>
-            <div className="border-x-[1px] border-b-[1px] border-[#ABB2BF] w-full min-h-[50px] flex flex-wrap items-center px-3 py-2 gap-2 sm:gap-3 md:gap-4 font-fira-code text-xs sm:text-sm md:text-base text-[#ABB2BF]">
+
+            {/* Tags */}
+            <div className="flex flex-wrap items-center px-4 py-3 gap-1.5 border-b border-white/[0.05] bg-white/[0.01]">
               {project.tags.map((tag) => (
-                <p key={tag}>{tag}</p>
+                <span
+                  key={tag}
+                  className="font-fira-code text-[10px] px-2 py-0.5 rounded-full border border-[#C778DD]/20 bg-[#C778DD]/5 text-[#C778DD]/80 group-hover:border-[#C778DD]/40 group-hover:text-[#C778DD] transition-all duration-200"
+                >
+                  {tag}
+                </span>
               ))}
             </div>
-            <div className="border-[1px] border-[#ABB2BF] w-full min-h-[165px] sm:min-h-[175px] px-3 sm:px-4 py-3 sm:py-4 md:py-5 text-white font-fira-code flex flex-col gap-2 sm:gap-3 md:gap-4">
-              <h1 className="text-xl sm:text-2xl md:text-[28px] lg:text-[30px]">
+
+            {/* Info */}
+            <div className="p-5 flex flex-col flex-grow gap-2">
+              <h3 className="text-lg sm:text-xl font-semibold text-white group-hover:text-[#C778DD] transition-colors duration-200 tracking-tight">
                 {project.title}
-              </h1>
-              <p className="text-xs sm:text-sm md:text-base text-[#ABB2BF]">
+              </h3>
+              <p className="text-sm text-[#ABB2BF] leading-relaxed font-fira-code flex-grow">
                 {project.description}
               </p>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-auto"
-              >
-                <button className="hover:opacity-80 transition-opacity">
-                  <img
-                    src="/LiveButton.png"
-                    alt="View Live Project"
-                    className="w-auto max-w-full h-[36px] sm:h-[40px] md:h-[45px]"
-                  />
-                </button>
-              </a>
+              <div className="mt-3 flex items-center gap-1.5 text-[#C778DD] font-fira-code text-xs opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-x-1 group-hover:translate-x-0">
+                View project
+                <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </div>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </div>

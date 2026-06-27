@@ -1,22 +1,28 @@
+import SectionHeader from "./SectionHeader";
+
 export default function About() {
   return (
-    <div id="about-me" className="w-full flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 py-12 sm:py-14 md:py-16 lg:py-20 mb-16 sm:mb-2 relative">
-      <div className="flex items-center justify-between gap-2 w-full max-w-[1324px] mb-6 sm:mb-8 md:mb-10 lg:mb-12 xl:mb-16">
-        <div className="flex items-center gap-2 md:gap-3 w-full">
-          <img className="w-4 h-5 sm:w-5 sm:h-6 md:w-6 md:h-7 flex-shrink-0" src="/hashtag2.png" alt="" />
-          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-fira-code text-white whitespace-nowrap">about me</h1>
-          <div className="h-px flex-1 ml-2 sm:ml-4 md:ml-6 lg:ml-10 bg-gradient-to-r from-[#C778DD] via-[#ABB2BF] to-transparent" />
-        </div>
-      </div>
+    <div
+      id="about-me"
+      className="w-full flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 py-16 sm:py-20 relative"
+    >
+      <SectionHeader title="about me" />
 
-      <div className="w-full max-w-[1324px] flex flex-col lg:flex-row gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-24">
-        <div className="w-full lg:w-[55%] order-2 lg:order-1">
-          <div className="font-fira-code font-extralight text-[#ABB2BF] text-sm sm:text-base md:text-lg flex flex-col gap-4 sm:gap-5 md:gap-6 lg:gap-8 leading-relaxed lg:leading-loose">
-            <p className="text-white font-normal">Hello, I'm Kartik!</p>
+      <div className="w-full max-w-[1324px] flex flex-col lg:flex-row gap-10 md:gap-12 lg:gap-16 xl:gap-24">
+        {/* Bio */}
+        <div className="w-full lg:w-[55%] flex flex-col gap-5">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white">
+            Hello, I'm{" "}
+            <span className="bg-gradient-to-r from-white to-[#C778DD] bg-clip-text text-transparent">
+              Kartik!
+            </span>
+          </h2>
+
+          <div className="font-fira-code text-[#ABB2BF] text-sm sm:text-base flex flex-col gap-4 leading-relaxed">
             <p>
-              I'm a self-taught full-stack developer based in Delhi, India. I
-              build responsive websites from scratch and turn them into modern,
-              user-friendly web experiences.
+              I'm a self-taught full-stack developer based in Delhi, India.
+              I build responsive websites from scratch and turn them into
+              modern, user-friendly web experiences.
             </p>
             <p>
               Transforming creativity and knowledge into products has been my
@@ -31,67 +37,82 @@ export default function About() {
               intuitive, and enjoyable to use.
             </p>
           </div>
+
+          {/* Stat pills */}
+          <div className="flex flex-wrap gap-3 mt-2">
+            {[
+              { value: "1+", label: "Years experience" },
+              { value: "5+", label: "Projects shipped" },
+              { value: "∞", label: "Things to learn" },
+            ].map((stat) => (
+              <div
+                key={stat.label}
+                className="flex flex-col items-center px-5 py-3 rounded-xl border border-white/[0.07] bg-[#070A11]/50 backdrop-blur-sm hover:border-[#C778DD]/30 transition-all duration-200"
+              >
+                <span className="text-xl font-bold text-white font-fira-code">{stat.value}</span>
+                <span className="text-[11px] text-[#ABB2BF] font-fira-code mt-0.5">{stat.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div className="w-full lg:w-[45%] flex justify-center lg:justify-end order-1 lg:order-2">
-          <div className="w-full max-w-[420px] border border-gray-800 rounded-xl overflow-hidden">
-            <div className="flex items-center gap-2 px-4 py-3 border-b border-gray-800">
-              <div className="w-3 h-3 rounded-full bg-red-500" />
-              <div className="w-3 h-3 rounded-full bg-yellow-500" />
-              <div className="w-3 h-3 rounded-full bg-green-500" />
+        {/* JSON card */}
+        <div className="w-full lg:w-[45%] flex justify-center lg:justify-end">
+          <div className="w-full max-w-[420px] glass-card rounded-xl overflow-hidden">
+            {/* Title bar */}
+            <div className="flex items-center gap-2 px-4 py-3 border-b border-white/[0.06] bg-white/[0.01]">
+              <div className="w-3 h-3 rounded-full bg-[#ef4444]/70" />
+              <div className="w-3 h-3 rounded-full bg-[#eab308]/70" />
+              <div className="w-3 h-3 rounded-full bg-[#22c55e]/70" />
               <span className="ml-2 text-gray-500 font-fira-code text-xs">kartik.json</span>
             </div>
-            <div className="p-5 sm:p-6 font-fira-code text-sm sm:text-base flex flex-col gap-3 break-words">
-              <p className="text-gray-500">{"{"}</p>
+
+            {/* JSON body */}
+            <div className="p-5 sm:p-6 font-fira-code text-sm sm:text-base flex flex-col gap-2.5 break-words">
+              <p className="text-gray-600">{"{"}</p>
               <div className="flex flex-col gap-2 pl-4">
-                <p>
-                  <span className="text-[#C778DD]">"name"</span>
-                  <span className="text-gray-400">: </span>
-                  <span className="text-green-400">"Kartik"</span>
-                  <span className="text-gray-400">,</span>
-                </p>
-                <p>
-                  <span className="text-[#C778DD]">"role"</span>
-                  <span className="text-gray-400">: </span>
-                  <span className="text-green-400">"Full Stack Developer"</span>
-                  <span className="text-gray-400">,</span>
-                </p>
-                <p>
-                  <span className="text-[#C778DD]">"location"</span>
-                  <span className="text-gray-400">: </span>
-                  <span className="text-green-400">"Delhi, India"</span>
-                  <span className="text-gray-400">,</span>
-                </p>
-                <p>
-                  <span className="text-[#C778DD]">"experience"</span>
-                  <span className="text-gray-400">: </span>
-                  <span className="text-orange-400">"1+ years"</span>
-                  <span className="text-gray-400">,</span>
-                </p>
+                {[
+                  { key: "name", value: '"Kartik"', color: "text-green-400" },
+                  { key: "role", value: '"Full Stack Developer"', color: "text-green-400" },
+                  { key: "location", value: '"Delhi, India"', color: "text-green-400" },
+                  { key: "experience", value: '"1+ years"', color: "text-orange-400" },
+                ].map((row, i) => (
+                  <p key={i}>
+                    <span className="text-[#C778DD]">"{row.key}"</span>
+                    <span className="text-gray-400">: </span>
+                    <span className={row.color}>{row.value}</span>
+                    <span className="text-gray-400">,</span>
+                  </p>
+                ))}
+
                 <p>
                   <span className="text-[#C778DD]">"stack"</span>
                   <span className="text-gray-400">: [</span>
                 </p>
                 <div className="pl-4 flex flex-col gap-1">
-                  <p><span className="text-green-400">"Next.js"</span><span className="text-gray-400">,</span></p>
-                  <p><span className="text-green-400">"React"</span><span className="text-gray-400">,</span></p>
-                  <p><span className="text-green-400">"Node.js"</span><span className="text-gray-400">,</span></p>
-                  <p><span className="text-green-400">"MongoDB"</span><span className="text-gray-400">,</span></p>
-                  <p><span className="text-green-400">"Tailwind"</span></p>
+                  {["Next.js", "React", "Node.js", "MongoDB", "Tailwind"].map((s, i, arr) => (
+                    <p key={s}>
+                      <span className="text-green-400">"{s}"</span>
+                      {i < arr.length - 1 && <span className="text-gray-400">,</span>}
+                    </p>
+                  ))}
                 </div>
                 <p><span className="text-gray-400">],</span></p>
+
                 <p>
                   <span className="text-[#C778DD]">"available"</span>
                   <span className="text-gray-400">: </span>
                   <span className="text-blue-400">true</span>
                 </p>
               </div>
-              <p className="text-gray-500">{"}"}</p>
-              <p className="text-gray-500 flex items-center gap-1 mt-2">
-                <span className="text-[#C778DD]">$</span>
-                <span className="text-white">open to work</span>
-                <span className="inline-block w-2 h-4 bg-[#C778DD] animate-pulse ml-1" />
-              </p>
+              <p className="text-gray-600">{"}"}</p>
+
+              {/* Terminal prompt */}
+              <div className="mt-3 pt-3 border-t border-white/[0.05] flex items-center gap-1.5">
+                <span className="text-[#C778DD] font-bold">$</span>
+                <span className="text-white text-sm">open to work</span>
+                <span className="inline-block w-2 h-4 bg-[#C778DD] animate-pulse ml-0.5 rounded-sm" />
+              </div>
             </div>
           </div>
         </div>

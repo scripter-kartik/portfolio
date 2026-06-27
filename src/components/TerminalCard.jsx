@@ -116,22 +116,24 @@ export default function TerminalCard() {
     if (type === "success") return "text-green-400";
     if (type === "purple") return "text-violet-400";
     if (type === "warn") return "text-yellow-500";
-    if (type === "dim") return "text-[#2d2440]";
+    if (type === "dim") return "text-slate-600";
+    if (type === "cyan") return "text-cyan-400";
+    if (type === "red") return "text-red-400";
     return "text-slate-500";
   };
 
   return (
-    <div className="border border-[#2a1f3d] rounded-lg overflow-hidden bg-[#0d0d0d] w-full font-mono">
-      <div className="bg-[#161025] px-4 py-2.5 flex items-center gap-2 border-b border-[#2a1f3d]">
-        <span className="w-2.5 h-2.5 rounded-full bg-[#3d1e1e]" />
-        <span className="w-2.5 h-2.5 rounded-full bg-[#3d3520]" />
-        <span className="w-2.5 h-2.5 rounded-full bg-[#1e3d25]" />
-        <span className="text-[#554870] text-xs ml-2">kartik@dev ~ bash</span>
+    <div className="border border-white/[0.08] hover:border-[#C778DD]/40 rounded-xl overflow-hidden bg-[#070A11]/60 backdrop-blur-md w-full h-full font-mono shadow-[0_0_40px_rgba(199,120,221,0.05)] hover:shadow-[0_0_45px_rgba(199,120,221,0.12)] transition-all duration-300 flex flex-col">
+      <div className="bg-[#0b0e14]/80 px-3.5 py-2.5 flex items-center gap-2 border-b border-white/[0.06]">
+        <span className="w-2.5 h-2.5 rounded-full bg-[#ef4444]/60" />
+        <span className="w-2.5 h-2.5 rounded-full bg-[#eab308]/60" />
+        <span className="w-2.5 h-2.5 rounded-full bg-[#22c55e]/60" />
+        <span className="text-gray-500 text-xs ml-2 font-fira-code">kartik@dev ~ bash</span>
       </div>
 
       <div
         ref={bodyRef}
-        className="p-4 h-[220px] overflow-y-auto text-sm leading-relaxed"
+        className="p-3.5 flex-1 min-h-0 overflow-y-auto text-xs leading-relaxed sm:text-sm"
         style={{ scrollbarWidth: "none" }}
       >
         <div className="flex items-baseline gap-1.5">
