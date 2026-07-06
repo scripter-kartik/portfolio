@@ -12,10 +12,12 @@ export default function Project() {
 
   const handleDragEnd = (event, info) => {
     const swipeThreshold = 50;
-    if (info.offset.x < -swipeThreshold && activeIndex < PROJECTS.length - 1) {
-      setActiveIndex((prev) => prev + 1);
-    } else if (info.offset.x > swipeThreshold && activeIndex > 0) {
-      setActiveIndex((prev) => prev - 1);
+    const swipeVelocity = 400; // detect quick flicks
+    
+    if (info.offset.x < -swipeThreshold || info.velocity.x < -swipeVelocity) {
+      if (activeIndex < PROJECTS.length - 1) setActiveIndex((prev) => prev + 1);
+    } else if (info.offset.x > swipeThreshold || info.velocity.x > swipeVelocity) {
+      if (activeIndex > 0) setActiveIndex((prev) => prev - 1);
     }
   };
 
@@ -99,27 +101,39 @@ export default function Project() {
         ))}
       </div>
 
-      {/* ── MOBILE SWIPE CAROUSEL (Framer Motion) ── */}
-      <div className="md:hidden w-full overflow-visible relative flex flex-col items-center pb-8">
+      {/* ── MOBILE SWIPE CAROUSEL (3D Coverflow & Flicking) ── */}
+      <div 
+        className="md:hidden w-full overflow-visible relative flex flex-col items-center pb-8"
+        style={{ perspective: "1000px" }}
+      >
         <motion.div
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
-          dragElastic={0.25}
+          dragElastic={0.2}
           onDragEnd={handleDragEnd}
           className="flex gap-[4vw] pl-[9vw] pr-[9vw] cursor-grab active:cursor-grabbing w-full"
+          style={{ transformStyle: "preserve-3d" }}
           animate={{ x: `-${activeIndex * 86}vw` }}
-          transition={{ type: "spring", stiffness: 220, damping: 25 }}
+          transition={{ type: "spring", stiffness: 220, damping: 26 }}
         >
-          {PROJECTS.map((project, idx) => (
-            <motion.div
-              key={project.title}
-              animate={{ 
-                scale: activeIndex === idx ? 1 : 0.93,
-                opacity: activeIndex === idx ? 1 : 0.45,
-              }}
-              transition={{ duration: 0.35, ease: "easeOut" }}
-              className="group w-[82vw] rounded-2xl border border-white/[0.07] bg-[#070A11]/60 backdrop-blur-md overflow-hidden flex flex-col flex-shrink-0"
-            >
+          {PROJECTS.map((project, idx) => {
+            const isCenter = activeIndex === idx;
+            const isLeft = idx < activeIndex;
+            const isRight = idx > activeIndex;
+            
+            return (
+              <motion.div
+                key={project.title}
+                animate={{ 
+                  scale: isCenter ? 1 : 0.9,
+                  opacity: isCenter ? 1 : 0.4,
+                  rotateY: isCenter ? 0 : isRight ? -12 : 12,
+                  z: isCenter ? 0 : -80
+                }}
+                transition={{ duration: 0.35, ease: "easeOut" }}
+                className="group w-[82vw] rounded-2xl border border-white/[0.07] bg-[#070A11]/60 backdrop-blur-md overflow-hidden flex flex-col flex-shrink-0 origin-center"
+                style={{ backfaceVisibility: "hidden" }}
+              >
               <Link 
                 href={`/projects/${project.slug}`} 
                 className="block"
@@ -175,11 +189,11 @@ export default function Project() {
                     <svg viewBox="0 0 24 24" className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2.5">
                       <path d="M7 17L17 7M17 7H7M17 7V17" />
                     </svg>
-                  </a>
                 </div>
               </div>
             </motion.div>
-          ))}
+          );
+        })}
         </motion.div>
 
         {/* Carousel Indicators (Dots) */}
