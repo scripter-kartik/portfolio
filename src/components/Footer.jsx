@@ -18,8 +18,8 @@ export default function Footer() {
   return (
     <footer className="w-full flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 pt-12 pb-6 relative">
       <div className="w-full h-px bg-gradient-to-r from-transparent via-[#C778DD]/20 to-transparent mb-10" />
-      <div className="w-full max-w-[1324px] flex flex-col sm:flex-row sm:items-center justify-between gap-8">
-        <div className="flex flex-col gap-2">
+      <div className="w-full max-w-[1324px] flex flex-col sm:flex-row sm:items-center justify-between gap-8 text-center sm:text-left">
+        <div className="flex flex-col items-center sm:items-start gap-2">
           <div className="flex items-center gap-2.5">
             <img
               className="w-6 h-6 rounded-full border border-[#C778DD]/30 flex-shrink-0"
@@ -38,7 +38,7 @@ export default function Footer() {
             agarwalkartik704@gmail.com
           </a>
         </div>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col items-center sm:items-start gap-3">
           <p className="text-[#C778DD] font-fira-code text-sm font-semibold tracking-wide">
             Connect
           </p>
