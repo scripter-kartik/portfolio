@@ -30,8 +30,8 @@ export default function Skills() {
               The Magic Behind
             </h2>
             <div className="overflow-hidden relative w-full pt-2 pb-2">
-              <div className="absolute left-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-r from-[#0c101b] to-transparent pointer-events-none" />
-              <div className="absolute right-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-l from-[#0c101b] to-transparent pointer-events-none" />
+              <div className="absolute left-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-r from-[#070A11] to-transparent pointer-events-none" />
+              <div className="absolute right-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-l from-[#070A11] to-transparent pointer-events-none" />
               <div className="flex w-max animate-marquee">
                 {[...FULL_STACK_SKILLS, ...FULL_STACK_SKILLS].map((skill, index) => (
                   <span

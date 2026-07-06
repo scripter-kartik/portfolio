@@ -8,7 +8,7 @@ export default function Footer() {
   const TooltipButton = ({ text, children }) => (
     <div className="relative group flex">
       {children}
-      <div className="pointer-events-none absolute left-1/2 -top-9 -translate-x-1/2 opacity-0 transition-all duration-200 group-hover:opacity-100 z-50">
+      <div className="pointer-events-none absolute left-1/2 -top-9 -translate-x-1/2 opacity-0 transition-all duration-200 group-hover:opacity-100 z-50 hidden sm:block">
         <div className="whitespace-nowrap rounded-lg border border-[#C778DD]/40 bg-[#070A11]/95 backdrop-blur-md px-3 py-1.5 text-[11px] text-white shadow-[0_0_20px_rgba(199,120,221,0.2)]">
           {text}
         </div>

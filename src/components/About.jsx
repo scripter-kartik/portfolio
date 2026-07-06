@@ -33,18 +33,18 @@ export default function About() {
               intuitive, and enjoyable to use.
             </p>
           </div>
-          <div className="flex flex-wrap gap-3 mt-2">
+          <div className="grid grid-cols-3 gap-2.5 mt-2 w-full sm:w-auto max-w-[500px]">
             {[
-              { value: "1+", label: "Years experience" },
-              { value: "5+", label: "Projects shipped" },
-              { value: "∞", label: "Things to learn" },
+              { value: "1+", label: "Experience" },
+              { value: "5+", label: "Projects" },
+              { value: "∞", label: "Learning" },
             ].map((stat) => (
               <div
                 key={stat.label}
-                className="flex flex-col items-center px-5 py-3 rounded-xl border border-white/[0.07] bg-[#070A11]/50 backdrop-blur-sm hover:border-[#C778DD]/30 transition-all duration-200"
+                className="flex flex-col items-center px-3 py-2.5 rounded-xl border border-white/[0.07] bg-[#070A11]/50 backdrop-blur-sm hover:border-[#C778DD]/30 transition-all duration-200"
               >
-                <span className="text-xl font-bold text-white font-fira-code">{stat.value}</span>
-                <span className="text-[11px] text-[#ABB2BF] font-fira-code mt-0.5">{stat.label}</span>
+                <span className="text-lg sm:text-xl font-bold text-white font-fira-code">{stat.value}</span>
+                <span className="text-[10px] sm:text-[11px] text-[#ABB2BF] font-fira-code mt-0.5 text-center leading-none">{stat.label}</span>
               </div>
             ))}
           </div>
@@ -57,7 +57,7 @@ export default function About() {
               <div className="w-3 h-3 rounded-full bg-[#22c55e]/70" />
               <span className="ml-2 text-gray-500 font-fira-code text-xs">kartik.json</span>
             </div>
-            <div className="p-5 sm:p-6 font-fira-code text-sm sm:text-base flex flex-col gap-2.5 break-words">
+            <div className="p-4 sm:p-5 font-fira-code text-xs sm:text-sm flex flex-col gap-2.5 break-words">
               <p className="text-gray-600">{"{"}</p>
               <div className="flex flex-col gap-2 pl-4">
                 {[
