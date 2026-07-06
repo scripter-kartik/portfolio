@@ -101,10 +101,10 @@ export default function Home() {
               scalable code.
             </p>
 
-            <div className="animate-fade-up-delay-2 mt-8 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
+            <div className="animate-fade-up-delay-2 mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <button
                 onClick={() => scrollToSection("contacts")}
-                className="btn-gradient-border col-span-2 h-[46px] w-full sm:col-span-1 sm:w-[190px]"
+                className="btn-gradient-border h-[46px] w-full sm:w-[190px]"
               >
                 <span className="text-sm font-medium tracking-wide text-white font-fira-code">
                   Start a Project
@@ -137,8 +137,8 @@ export default function Home() {
               <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex items-center gap-2">
                   <span className="relative flex h-2.5 w-2.5">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-60" />
-                    <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500" />
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#C778DD] opacity-60" />
+                    <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#C778DD]" />
                   </span>
                   <span className="text-xs text-[#ABB2BF] font-fira-code">Available for new work</span>
                 </div>
@@ -170,33 +170,33 @@ export default function Home() {
             </div>
           </div>
 
-          <aside className="animate-fade-up-delay-2 grid min-w-0 gap-4">
+          <aside className="hidden lg:grid min-w-0 gap-4">
             <div className="relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[#070A11]/60 p-4 shadow-[0_0_50px_rgba(199,120,221,0.07)] backdrop-blur-md sm:p-5">
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#C778DD]/70 to-transparent" />
               <div className="flex flex-wrap items-center justify-between gap-3">
-                <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/[0.06] px-3 py-1 text-[11px] uppercase tracking-widest text-emerald-300 font-fira-code">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <div className="inline-flex items-center gap-2 rounded-full border border-[#C778DD]/25 bg-[#C778DD]/[0.08] px-3 py-1 text-[11px] uppercase tracking-widest text-[#C778DD] font-fira-code">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#C778DD] animate-pulse" />
                   Building now
                 </div>
                 <span className="text-[11px] text-[#6b7280] font-fira-code">Delhi, India</span>
               </div>
 
               <div className="mt-5 grid items-end gap-4 sm:grid-cols-[minmax(170px,240px)_1fr]">
-                <div className="relative flex min-h-[220px] items-center justify-center overflow-hidden rounded-xl border border-white/[0.06] bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.01))] sm:min-h-[250px]">
-                  <div className="absolute h-40 w-40 rounded-full border border-emerald-400/15 bg-emerald-400/[0.04] blur-xl" />
-                  <div className="relative flex h-32 w-32 items-center justify-center rounded-full border border-emerald-300/25 bg-[#07130c] shadow-[0_0_42px_rgba(34,197,94,0.14)] sm:h-36 sm:w-36">
-                    <div className="absolute inset-3 rounded-full border border-white/[0.06]" />
+                <div className="relative flex min-h-[220px] items-center justify-center overflow-hidden rounded-xl border border-[#C778DD]/[0.12] bg-[linear-gradient(180deg,rgba(199,120,221,0.06),rgba(199,120,221,0.01))] sm:min-h-[250px]">
+                  <div className="absolute h-40 w-40 rounded-full border border-[#C778DD]/15 bg-[#C778DD]/[0.05] blur-xl" />
+                  <div className="relative flex h-32 w-32 items-center justify-center rounded-full border border-[#C778DD]/30 bg-[#0d0118] shadow-[0_0_42px_rgba(199,120,221,0.2)] sm:h-36 sm:w-36">
+                    <div className="absolute inset-3 rounded-full border border-[#C778DD]/[0.1]" />
                     <svg
                       viewBox="0 0 120 120"
-                      className="h-24 w-24 text-emerald-200 sm:h-28 sm:w-28"
+                      className="h-24 w-24 sm:h-28 sm:w-28"
                       fill="none"
                       aria-hidden="true"
                     >
-                      <circle cx="60" cy="43" r="22" fill="#d9f99d" opacity="0.92" />
-                      <path d="M36 93c4.1-17.1 12.1-25.6 24-25.6S79.9 75.9 84 93" fill="#0f2f1c" />
-                      <path d="M39 47c4.8-14 11.8-21 21-21s16.2 7 21 21" stroke="#34d399" strokeWidth="6" strokeLinecap="round" />
-                      <path d="M45 45h30M45 54h30" stroke="#052e16" strokeWidth="4" strokeLinecap="round" />
-                      <path d="M36 93c4.1-17.1 12.1-25.6 24-25.6S79.9 75.9 84 93" stroke="#6ee7b7" strokeWidth="5" strokeLinecap="round" />
+                      <circle cx="60" cy="43" r="22" fill="#e8c8ff" opacity="0.85" />
+                      <path d="M36 93c4.1-17.1 12.1-25.6 24-25.6S79.9 75.9 84 93" fill="#1a0a2e" />
+                      <path d="M39 47c4.8-14 11.8-21 21-21s16.2 7 21 21" stroke="#C778DD" strokeWidth="6" strokeLinecap="round" />
+                      <path d="M45 45h30M45 54h30" stroke="#0d0118" strokeWidth="4" strokeLinecap="round" />
+                      <path d="M36 93c4.1-17.1 12.1-25.6 24-25.6S79.9 75.9 84 93" stroke="#d4a0e8" strokeWidth="5" strokeLinecap="round" />
                     </svg>
                     <span className="sr-only">Developer avatar</span>
                   </div>
@@ -204,9 +204,9 @@ export default function Home() {
 
                 <div className="grid gap-2.5">
                   {["Next.js interfaces", "Node.js APIs", "Realtime systems"].map((item) => (
-                    <div key={item} className="flex items-center justify-between gap-3 rounded-lg border border-white/[0.07] bg-white/[0.025] px-3 py-2.5">
+                    <div key={item} className="flex items-center justify-between gap-3 rounded-lg border border-[#C778DD]/[0.1] bg-[#C778DD]/[0.03] px-3 py-2.5 hover:border-[#C778DD]/25 hover:bg-[#C778DD]/[0.06] transition-colors duration-200">
                       <span className="text-xs text-[#ABB2BF] font-fira-code">{item}</span>
-                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#C778DD]" />
                     </div>
                   ))}
                 </div>
@@ -226,35 +226,37 @@ export default function Home() {
 
         <section className="mt-6 pb-4">
           <div className="w-full overflow-hidden rounded-2xl border border-white/[0.08] bg-[#070A11]/55 backdrop-blur-md">
-            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/[0.05] px-4 py-3.5 sm:px-5">
-              <div className="flex min-w-0 items-center gap-3">
+            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/[0.05] px-4 py-3 sm:px-5">
+              <div className="flex min-w-0 items-center gap-2">
                 <div className="flex shrink-0 gap-1.5">
-                  <div className="h-2.5 w-2.5 rounded-full bg-[#ef4444]/45" />
-                  <div className="h-2.5 w-2.5 rounded-full bg-[#eab308]/45" />
-                  <div className="h-2.5 w-2.5 rounded-full bg-[#22c55e]/45" />
+                  <div className="h-2 w-2 rounded-full bg-[#ef4444]/45" />
+                  <div className="h-2 w-2 rounded-full bg-[#eab308]/45" />
+                  <div className="h-2 w-2 rounded-full bg-[#22c55e]/45" />
                 </div>
-                <span className="truncate text-xs text-[#6b7280] font-fira-code">contributions - last 12 months</span>
+                <span className="truncate text-[11px] text-[#6b7280] font-fira-code">contributions · last 12 months</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[#C778DD] animate-pulse" />
                 <span className="text-[11px] text-[#6b7280] font-fira-code">@scripter-kartik</span>
               </div>
             </div>
-            <div className="overflow-x-auto px-4 py-4 hide-scrollbar sm:px-5">
-              {mounted && (
-                <GitHubCalendar
-                  className="github-calendar-green"
-                  username="scripter-kartik"
-                  colorScheme="dark"
-                  blockSize={11}
-                  blockMargin={4}
-                  fontSize={11}
-                  theme={{
-                    light: ["#ebfbee", "#b7efc5", "#74d99f", "#2fbf71", "#15803d"],
-                    dark: ["#07130c", "#0e4429", "#006d32", "#26a641", "#39d353"],
-                  }}
-                />
-              )}
+            <div className="overflow-x-auto hide-scrollbar px-3 py-4 sm:px-5" style={{ WebkitOverflowScrolling: "touch" }}>
+              <div style={{ minWidth: "max-content" }}>
+                {mounted && (
+                  <GitHubCalendar
+                    className="github-calendar-purple"
+                    username="scripter-kartik"
+                    colorScheme="dark"
+                    blockSize={11}
+                    blockMargin={4}
+                    fontSize={11}
+                    theme={{
+                      light: ["#f5e6fa", "#e1bdf0", "#c778dd", "#a945c7", "#7b2d92"],
+                      dark: ["#110a14", "#3e1a4d", "#6f2c8a", "#9b3dba", "#c778dd"],
+                    }}
+                  />
+                )}
+              </div>
             </div>
           </div>
         </section>
