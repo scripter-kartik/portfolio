@@ -58,23 +58,30 @@ export default function Skills() {
         </div>
 
         {/* Mobile Tabs for Skills */}
-        <div className="sm:hidden w-full flex flex-col gap-4">
-          <div className="flex border border-white/[0.06] p-1 bg-white/[0.01] rounded-xl backdrop-blur-sm">
+        <div className="sm:hidden w-full flex flex-col gap-4 mt-2">
+          {/* Custom Glass Tab Bar */}
+          <div className="flex border border-white/[0.08] p-1 bg-[#070A11]/60 backdrop-blur-md rounded-xl">
             {SKILL_GROUPS.map((group, idx) => (
               <button
                 key={group.title}
                 onClick={() => { playClick(); setActiveTab(idx); }}
-                className={`flex-1 py-2 text-xs font-fira-code rounded-lg transition-all duration-200 capitalize ${activeTab === idx ? "bg-[#C778DD]/10 border border-[#C778DD]/25 text-[#C778DD] font-semibold" : "text-[#ABB2BF] border border-transparent hover:text-white"}`}
+                className={`flex-1 py-2 text-[11px] font-fira-code rounded-lg transition-all duration-300 capitalize ${
+                  activeTab === idx 
+                    ? "bg-[#C778DD] text-black font-bold shadow-[0_0_15px_rgba(199,120,221,0.4)]" 
+                    : "text-[#ABB2BF] hover:text-white"
+                }`}
               >
                 {group.title.split(" ")[0]}
               </button>
             ))}
           </div>
-          <div className="w-full rounded-xl border border-white/[0.07] bg-[#070A11]/50 backdrop-blur-md p-4 min-h-[100px] flex flex-wrap gap-2">
+
+          {/* Active Skills List Panel */}
+          <div className="w-full rounded-xl border border-white/[0.07] bg-[#070A11]/60 backdrop-blur-md p-5 min-h-[120px] flex flex-wrap gap-2.5 shadow-[0_4px_24px_rgba(0,0,0,0.3)]">
             {SKILL_GROUPS[activeTab].items.map((item) => (
               <span
                 key={item}
-                className="font-fira-code text-xs px-2.5 py-1 rounded-lg border border-white/[0.06] bg-white/[0.025] text-[#ABB2BF]"
+                className="font-fira-code text-xs px-3 py-1.5 rounded-lg border border-[#C778DD]/20 bg-[#C778DD]/5 text-[#C778DD] transition-all duration-200"
               >
                 {item}
               </span>
