@@ -90,8 +90,19 @@ const Navbar = () => {
               </button>
             ))}
           </nav>
+          {/* Mobile Search/Terminal trigger */}
           <button
+            onClick={() => { playClick(); window.dispatchEvent(new CustomEvent("toggle-command-menu")); }}
+            className="lg:hidden flex w-9 h-9 items-center justify-center rounded-lg hover:bg-white/[0.05] text-[#ABB2BF] hover:text-white transition-colors relative z-50 mr-1"
+            aria-label="Open command palette"
+          >
+            <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.3-4.3" />
+            </svg>
+          </button>
 
+          <button
             onClick={() => { playClick(); setIsMenuOpen((v) => !v); }}
             className="lg:hidden flex flex-col gap-[5px] w-9 h-9 justify-center items-center rounded-lg hover:bg-white/[0.05] transition-colors relative z-50"
             aria-label="Toggle menu"
