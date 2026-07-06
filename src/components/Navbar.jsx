@@ -40,7 +40,7 @@ const Navbar = () => {
     <div
       className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-500 ${
         scrolled || isMenuOpen
-          ? "bg-[#05070c]/70 backdrop-blur-xl border-b border-white/[0.06] shadow-[0_4px_30px_rgba(0,0,0,0.4)]"
+          ? "bg-[#05070c] border-b border-white/[0.06] shadow-[0_4px_30px_rgba(0,0,0,0.4)]"
           : "bg-transparent"
       }`}
     >
@@ -104,7 +104,7 @@ const Navbar = () => {
 
       {/* Premium Mobile Menu Slide-in Panel */}
       <div
-        className={`lg:hidden fixed top-[52px] sm:top-[58px] left-0 right-0 bottom-0 bg-[#05070c]/70 backdrop-blur-2xl border-t border-white/[0.05] transition-all duration-300 flex flex-col p-6 gap-6 z-40 ${
+        className={`lg:hidden fixed top-[52px] sm:top-[58px] left-0 right-0 bottom-0 bg-[#05070c] border-t border-white/[0.05] transition-all duration-300 flex flex-col p-6 gap-6 z-40 ${
           isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0 pointer-events-none"
         }`}
       >
