@@ -50,7 +50,7 @@ export default function Skills() {
             </div>
           </div>
         </div>
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <div className="hidden sm:grid w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {SKILL_GROUPS.map((group, i) => (
             <div
               key={group.title}

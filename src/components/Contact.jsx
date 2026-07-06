@@ -159,11 +159,11 @@ export default function Contact() {
                 <span className="text-[#ABB2BF] font-fira-code text-xs">Email *</span>
                 <input type="email" name="email" value={formData.email} onChange={handleChange} className={inputClass} placeholder="you@email.com" />
               </label>
-              <label className="flex flex-col gap-1.5">
+              <label className="hidden sm:flex flex-col gap-1.5">
                 <span className="text-[#ABB2BF] font-fira-code text-xs">Company</span>
                 <input type="text" name="company" value={formData.company} onChange={handleChange} className={inputClass} placeholder="Company or brand" />
               </label>
-              <label className="flex flex-col gap-1.5">
+              <label className="hidden sm:flex flex-col gap-1.5">
                 <span className="text-[#ABB2BF] font-fira-code text-xs">Budget</span>
                 <select name="budget" value={formData.budget} onChange={handleChange} className={inputClass}>
                   <option value="" className="bg-[#070A11]">Select range</option>
@@ -173,11 +173,11 @@ export default function Contact() {
                   <option value="5000+" className="bg-[#070A11]">$5,000+</option>
                 </select>
               </label>
-              <label className="flex flex-col gap-1.5">
+              <label className="hidden sm:flex flex-col gap-1.5">
                 <span className="text-[#ABB2BF] font-fira-code text-xs">Preferred Date</span>
                 <input type="date" name="preferredDate" value={formData.preferredDate} onChange={handleChange} className={inputClass} />
               </label>
-              <label className="flex flex-col gap-1.5">
+              <label className="hidden sm:flex flex-col gap-1.5">
                 <span className="text-[#ABB2BF] font-fira-code text-xs">Preferred Time</span>
                 <input type="time" name="preferredTime" value={formData.preferredTime} onChange={handleChange} className={inputClass} />
               </label>

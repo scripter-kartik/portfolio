@@ -201,17 +201,17 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="grid auto-rows-[228px] items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-              <div className="min-h-0 min-w-0">
+            <div className="hidden md:grid grid-cols-2 lg:grid-cols-1 gap-6">
+              <div className="h-[280px] w-full">
                 <TerminalCard />
               </div>
-              <div className="min-h-0 min-w-0">
+              <div className="h-[280px] w-full">
                 <ActiveCard />
               </div>
             </div>
           </aside>
         </section>
-        <section className="mt-6 pb-4 grid grid-cols-1 xl:grid-cols-[1fr_350px] gap-6">
+        <section className="hidden md:grid mt-6 pb-4 grid-cols-1 xl:grid-cols-[1fr_350px] gap-6">
           <div className="w-full overflow-hidden rounded-2xl border border-white/[0.08] bg-[#070A11]/55 backdrop-blur-md flex flex-col">
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/[0.05] px-4 py-3 sm:px-5">
               <div className="flex min-w-0 items-center gap-2">
