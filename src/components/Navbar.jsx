@@ -1,23 +1,20 @@
 "use client";
-
 import React, { useState, useEffect } from "react";
-
+import { useUISound } from "@/hooks/useUISound";
 const Navbar = () => {
+  const { playClick } = useUISound();
   const navLinks = [
     { id: "home", label: "home" },
     { id: "works", label: "works" },
     { id: "about-me", label: "about-me" },
     { id: "contacts", label: "contacts" },
   ];
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
-
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
-
       const sections = navLinks.map((l) => document.getElementById(l.id)).filter(Boolean);
       let current = "home";
       for (const section of sections) {
@@ -30,8 +27,8 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
   const scrollToSection = (sectionId) => {
+    playClick();
     const element = document.getElementById(sectionId);
     if (element) {
       const offsetPosition = element.getBoundingClientRect().top + window.scrollY - 120;
@@ -39,7 +36,6 @@ const Navbar = () => {
     }
     setIsMenuOpen(false);
   };
-
   return (
     <div
       className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-500 ${
@@ -50,8 +46,8 @@ const Navbar = () => {
     >
       <div className="flex justify-center py-2 px-4 sm:px-6 lg:px-8">
         <div className="w-full max-w-[1324px] h-[52px] sm:h-[58px] flex items-center justify-between">
-          {/* Logo */}
           <button
+
             onClick={() => scrollToSection("home")}
             className="flex items-center gap-2.5 hover:opacity-80 transition-opacity group"
             aria-label="Go to top"
@@ -62,18 +58,17 @@ const Navbar = () => {
                 className="w-8 h-8 rounded-full border border-[#C778DD]/30 group-hover:border-[#C778DD]/60 transition-colors duration-300"
                 alt="Kartik Logo"
               />
-              <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-green-500 border-2 border-[#05070c] animate-pulse" />
+              <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-[#C778DD] border-2 border-[#05070c] animate-pulse" />
             </div>
             <span className="font-fira-code font-bold text-white text-base sm:text-lg tracking-tight">
               Kartik
             </span>
           </button>
-
-          {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
               <button
                 key={link.id}
+    
                 onClick={() => scrollToSection(link.id)}
                 className={`relative flex items-center gap-1 px-3.5 py-2 rounded-lg font-fira-code text-sm transition-all duration-200 group ${
                   activeSection === link.id
@@ -95,10 +90,9 @@ const Navbar = () => {
               </button>
             ))}
           </nav>
-
-          {/* Mobile hamburger */}
           <button
-            onClick={() => setIsMenuOpen((v) => !v)}
+
+            onClick={() => { playClick(); setIsMenuOpen((v) => !v); }}
             className="lg:hidden flex flex-col gap-[5px] w-9 h-9 justify-center items-center rounded-lg hover:bg-white/[0.05] transition-colors relative z-50"
             aria-label="Toggle menu"
           >
@@ -108,8 +102,6 @@ const Navbar = () => {
           </button>
         </div>
       </div>
-
-      {/* Mobile menu */}
       <div
         className={`lg:hidden absolute top-full left-0 right-0 bg-[#05070c]/98 backdrop-blur-2xl border-b border-white/[0.06] transition-all duration-400 overflow-hidden ${
           isMenuOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
@@ -135,5 +127,4 @@ const Navbar = () => {
     </div>
   );
 };
-
 export default Navbar;

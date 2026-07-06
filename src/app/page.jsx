@@ -5,7 +5,6 @@ import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
-
 export default function Page() {
   return (
     <PageTransition>

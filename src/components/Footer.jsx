@@ -2,11 +2,9 @@ export default function Footer() {
   const mediaButtonClass =
     "h-10 w-10 shrink-0 rounded-lg border border-white/[0.07] bg-white/[0.03] text-[#6b7280] hover:text-white hover:border-[#C778DD]/40 hover:bg-[#C778DD]/5 transition-all duration-150 inline-flex items-center justify-center";
   const footerIconClass = "footer-icon-svg";
-
   const calendarLink =
     "https://calendar.google.com/calendar/u/0/r/eventedit?text=Project%20Call%20with%20Kartik%20Labs&details=Let%20us%20discuss%20your%20project%20requirements.";
   const xLink = "https://x.com/0xkar7ik";
-
   const TooltipButton = ({ text, children }) => (
     <div className="relative group flex">
       {children}
@@ -17,14 +15,10 @@ export default function Footer() {
       </div>
     </div>
   );
-
   return (
     <footer className="w-full flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 pt-12 pb-6 relative">
-      {/* Top divider */}
       <div className="w-full h-px bg-gradient-to-r from-transparent via-[#C778DD]/20 to-transparent mb-10" />
-
       <div className="w-full max-w-[1324px] flex flex-col sm:flex-row sm:items-center justify-between gap-8">
-        {/* Brand info */}
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-2.5">
             <img
@@ -44,8 +38,6 @@ export default function Footer() {
             agarwalkartik704@gmail.com
           </a>
         </div>
-
-        {/* Social links */}
         <div className="flex flex-col gap-3">
           <p className="text-[#C778DD] font-fira-code text-sm font-semibold tracking-wide">
             Connect
@@ -58,7 +50,6 @@ export default function Footer() {
                 </svg>
               </a>
             </TooltipButton>
-
             <TooltipButton text="LinkedIn">
               <a href="https://www.linkedin.com/in/kartik-agarwal-747289376/" target="_blank" rel="noopener noreferrer" className={mediaButtonClass} aria-label="LinkedIn">
                 <svg viewBox="0 0 24 24" className={footerIconClass} fill="currentColor">
@@ -66,7 +57,6 @@ export default function Footer() {
                 </svg>
               </a>
             </TooltipButton>
-
             <TooltipButton text="X / Twitter">
               <a href={xLink} target="_blank" rel="noopener noreferrer" className={mediaButtonClass} aria-label="X">
                 <svg viewBox="0 0 24 24" className={footerIconClass} fill="currentColor">
@@ -74,7 +64,6 @@ export default function Footer() {
                 </svg>
               </a>
             </TooltipButton>
-
             <TooltipButton text="Email">
               <a href="mailto:agarwalkartik704@gmail.com" className={mediaButtonClass} aria-label="Email">
                 <svg viewBox="0 0 24 24" className={footerIconClass} fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -83,7 +72,6 @@ export default function Footer() {
                 </svg>
               </a>
             </TooltipButton>
-
             <TooltipButton text="Schedule Call">
               <a href={calendarLink} target="_blank" rel="noopener noreferrer" className={mediaButtonClass} aria-label="Schedule call">
                 <svg viewBox="0 0 24 24" className={footerIconClass} fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -95,8 +83,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
-      {/* Bottom bar */}
       <div className="w-full max-w-[1324px] mt-8 pt-5 border-t border-white/[0.05] flex flex-col sm:flex-row items-center justify-between gap-2">
         <p className="font-fira-code text-[#ABB2BF] text-xs sm:text-sm">
           © {new Date().getFullYear()} Kartik. All rights reserved.

@@ -1,24 +1,19 @@
 "use client";
 import { useEffect, useRef } from "react";
-
 export default function ParticleBackground() {
   const canvasRef = useRef(null);
-
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     let particles = [];
     let animationFrameId;
-
     const resize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     };
-
     window.addEventListener("resize", resize);
     resize();
-
     class Particle {
       constructor() {
         this.x = Math.random() * canvas.width;
@@ -31,10 +26,8 @@ export default function ParticleBackground() {
       update() {
         this.x += this.speedX;
         this.y += this.speedY;
-
         if (this.x > canvas.width) this.x = 0;
         else if (this.x < 0) this.x = canvas.width;
-        
         if (this.y > canvas.height) this.y = 0;
         else if (this.y < 0) this.y = canvas.height;
       }
@@ -45,7 +38,6 @@ export default function ParticleBackground() {
         ctx.fill();
       }
     }
-
     const init = () => {
       particles = [];
       const numberOfParticles = Math.min(Math.floor((window.innerWidth * window.innerHeight) / 15000), 100);
@@ -53,19 +45,15 @@ export default function ParticleBackground() {
         particles.push(new Particle());
       }
     };
-
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (let i = 0; i < particles.length; i++) {
         particles[i].update();
         particles[i].draw();
-        
-        // Draw lines between close particles
         for (let j = i; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
           const distance = Math.sqrt(dx * dx + dy * dy);
-          
           if (distance < 100) {
             ctx.beginPath();
             ctx.strokeStyle = `rgba(199, 120, 221, ${0.1 - distance / 1000})`;
@@ -78,16 +66,13 @@ export default function ParticleBackground() {
       }
       animationFrameId = requestAnimationFrame(animate);
     };
-
     init();
     animate();
-
     return () => {
       window.removeEventListener("resize", resize);
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
-
   return (
     <canvas
       ref={canvasRef}

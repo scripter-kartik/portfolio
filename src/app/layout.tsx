@@ -4,24 +4,22 @@ import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
 import ParticleBackground from "@/components/ParticleBackground";
 import { Toaster } from "react-hot-toast";
+import CommandMenu from "@/components/CommandMenu";
 import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
-
 const outfit = Outfit({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-outfit",
 });
-
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
 const firaCode = Fira_Code({
   variable: "--font-fira-code",
   subsets: ["latin"],
@@ -59,6 +57,7 @@ export default function RootLayout({
         <SmoothScroll>
           <CustomCursor />
           <ParticleBackground />
+          <CommandMenu />
           <Toaster 
             position="bottom-center"
             toastOptions={{

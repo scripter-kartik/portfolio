@@ -5,7 +5,6 @@ export const SOCIAL_LINKS = {
   email: "agarwalkartik704@gmail.com",
   calendar: "https://cal.com/scripter-kartik",
 };
-
 export const NAV_LINKS = [
   { id: "home", label: "home" },
   { id: "works", label: "works" },
@@ -13,7 +12,6 @@ export const NAV_LINKS = [
   { id: "about-me", label: "about-me" },
   { id: "contacts", label: "contacts" },
 ];
-
 export const PROJECTS = [
   {
     slug: "blogforge",
@@ -66,7 +64,7 @@ export const PROJECTS = [
     tags: ["Next.js", "Socket.io", "Clerk", "Tailwind"],
     image: "/tunetogether.png",
     link: "https://tunetogether.vercel.app",
-    github: "https://github.com/scripter-kartik/TuneTogether",
+    github: "https://github.com/scripter-kartik/tune-together",
     year: "2024",
     features: [
       "Real-time messaging with Socket.io",
@@ -87,7 +85,7 @@ export const PROJECTS = [
     tags: ["Next.js", "React", "Tailwind", "Appwrite"],
     image: "/vidtube.png",
     link: "https://VidTube-platform.vercel.app",
-    github: "https://github.com/scripter-kartik/VidTube",
+    github: "https://github.com/scripter-kartik/YouTube-Clone",
     year: "2023",
     features: [
       "Video upload and adaptive streaming",
@@ -108,7 +106,7 @@ export const PROJECTS = [
     tags: ["React", "Tailwind", "CSS"],
     image: "/edusity.png",
     link: "https://edu-sity-website.vercel.app",
-    github: "https://github.com/scripter-kartik/Edusity",
+    github: "https://github.com/scripter-kartik/Edusity-website",
     year: "2023",
     features: [
       "Smooth scroll-triggered animations",
@@ -121,7 +119,6 @@ export const PROJECTS = [
       "Achieving buttery smooth scroll animations without a library meant writing custom IntersectionObserver logic. Carefully tuned thresholds and CSS transitions to make every section feel alive.",
   },
 ];
-
 export const FULL_STACK_SKILLS = [
   { name: "HTML", tag: "HT", tone: "text-orange-300" },
   { name: "CSS", tag: "CS", tone: "text-sky-300" },
@@ -134,7 +131,6 @@ export const FULL_STACK_SKILLS = [
   { name: "Tailwind", tag: "TW", tone: "text-teal-300" },
   { name: "Git", tag: "GT", tone: "text-red-300" },
 ];
-
 export const SKILL_GROUPS = [
   {
     title: "languages",

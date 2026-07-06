@@ -1,8 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* ─── Font Variables ─────────────────────────────────────────── */
 :root {
   --font-fira-code: "Fira Code", monospace;
   --purple: #c778dd;
@@ -12,26 +10,21 @@
   --dark-card: #070a11;
   --gray: #abb2bf;
 }
-
-/* ─── Reset ──────────────────────────────────────────────────── */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   background-color: transparent;
 }
-
 html,
 body {
   width: 100%;
   overflow-x: hidden;
 }
-
 body {
   min-height: 100svh;
   background-color: #000000;
 }
-
 img,
 picture,
 video,
@@ -41,20 +34,16 @@ svg {
   max-width: 100%;
   height: auto;
 }
-
 .footer-icon-svg {
   width: 1.125rem;
   height: 1.125rem;
   flex: 0 0 1.125rem;
 }
-
 .github-calendar-green rect[data-level="0"] { fill: #07130c; }
 .github-calendar-green rect[data-level="1"] { fill: #0e4429; }
 .github-calendar-green rect[data-level="2"] { fill: #006d32; }
 .github-calendar-green rect[data-level="3"] { fill: #26a641; }
 .github-calendar-green rect[data-level="4"] { fill: #39d353; }
-
-/* ─── Scrollbar ───────────────────────────────────────────────── */
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -62,7 +51,6 @@ svg {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-
 html::-webkit-scrollbar {
   width: 3px;
 }
@@ -77,14 +65,10 @@ html {
   scrollbar-width: thin;
   scrollbar-color: #c778dd #000000;
 }
-
-/* ─── Scroll Margin ───────────────────────────────────────────── */
 section,
 div[id] {
   scroll-margin-top: 100px;
 }
-
-/* ─── Marquee ─────────────────────────────────────────────────── */
 .marquee {
   overflow: hidden;
   white-space: nowrap;
@@ -112,8 +96,6 @@ div[id] {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-
-/* ─── Dual Border ─────────────────────────────────────────────── */
 .dual-border {
   border-top: 0.5px solid #abb2bf;
   border-bottom: 0.5px solid #c778dd;
@@ -124,8 +106,6 @@ div[id] {
   50%  { border-top-color: #c778dd; border-bottom-color: #abb2bf; }
   100% { border-top-color: #abb2bf; border-bottom-color: #c778dd; }
 }
-
-/* ─── Fade In ─────────────────────────────────────────────────── */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateX(20px); }
   to   { opacity: 1; transform: translateX(0); }
@@ -133,8 +113,6 @@ div[id] {
 .animate-fadeIn {
   animation: fadeIn 0.3s ease-out forwards;
 }
-
-/* ─── Fade Up (scroll-reveal) ─────────────────────────────────── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -145,13 +123,9 @@ div[id] {
 .animate-fade-up-delay-1 { animation-delay: 0.1s; opacity: 0; animation-fill-mode: forwards; animation-name: fadeUp; animation-duration: 0.55s; animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
 .animate-fade-up-delay-2 { animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards; animation-name: fadeUp; animation-duration: 0.55s; animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
 .animate-fade-up-delay-3 { animation-delay: 0.35s; opacity: 0; animation-fill-mode: forwards; animation-name: fadeUp; animation-duration: 0.55s; animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
-
-/* ─── Blink ───────────────────────────────────────────────────── */
 @keyframes blink {
   50% { opacity: 0; }
 }
-
-/* ─── Float ───────────────────────────────────────────────────── */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50%       { transform: translateY(-8px); }
@@ -159,8 +133,6 @@ div[id] {
 .animate-float {
   animation: float 4s ease-in-out infinite;
 }
-
-/* ─── Shimmer ─────────────────────────────────────────────────── */
 @keyframes shimmer {
   0%   { background-position: -200% center; }
   100% { background-position: 200% center; }
@@ -173,8 +145,6 @@ div[id] {
   background-clip: text;
   animation: shimmer 3s linear infinite;
 }
-
-/* ─── Gradient Background ─────────────────────────────────────── */
 .gradient-bg {
   background: #000000;
   background-image:
@@ -189,16 +159,12 @@ div[id] {
   50%  { background-position: 100% 100%; }
   100% { background-position: 0% 0%; }
 }
-
-/* ─── Glow Utilities ──────────────────────────────────────────── */
 .glow-purple {
   box-shadow: 0 0 20px rgba(199, 120, 221, 0.2), 0 0 60px rgba(199, 120, 221, 0.06);
 }
 .glow-purple-hover:hover {
   box-shadow: 0 0 25px rgba(199, 120, 221, 0.3), 0 0 80px rgba(199, 120, 221, 0.08);
 }
-
-/* ─── Card glass ──────────────────────────────────────────────── */
 .glass-card {
   background: rgba(7, 10, 17, 0.6);
   backdrop-filter: blur(16px);
@@ -210,8 +176,6 @@ div[id] {
   border-color: rgba(199, 120, 221, 0.3);
   box-shadow: 0 0 30px rgba(199, 120, 221, 0.08);
 }
-
-/* ─── Noise texture overlay ───────────────────────────────────── */
 .noise::after {
   content: "";
   position: absolute;
@@ -221,16 +185,12 @@ div[id] {
   border-radius: inherit;
   z-index: 0;
 }
-
-/* ─── Section divider line ────────────────────────────────────── */
 .section-line {
   height: 1px;
   flex: 1;
   background: linear-gradient(to right, #c778dd, rgba(171, 178, 191, 0.4), transparent);
   margin-left: 0.75rem;
 }
-
-/* ─── Gradient border button ──────────────────────────────────── */
 .btn-gradient-border {
   position: relative;
   padding: 1.5px;
@@ -250,8 +210,6 @@ div[id] {
 .btn-gradient-border:hover > span {
   background: #0b0e17;
 }
-
-/* ─── Spin slow ───────────────────────────────────────────────── */
 @keyframes spinSlow {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
@@ -259,16 +217,33 @@ div[id] {
 .animate-spin-slow {
   animation: spinSlow 8s linear infinite;
 }
-
 .animate-marquee {
   animation: marquee 35s linear infinite;
 }
-
 .animate-marquee:hover {
   animation-play-state: paused;
 }
-
 @keyframes marquee {
   0% { transform: translateX(0%); }
   100% { transform: translateX(-50%); }
+}
+
+/* Command Menu Styles */
+.cmdk-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 2px;
+  background: transparent;
+  outline: none;
+}
+.cmdk-item[aria-selected="true"] {
+  background: rgba(199, 120, 221, 0.1);
+  color: white;
+}
+.cmdk-item[aria-selected="true"] svg {
+  color: #C778DD;
 }

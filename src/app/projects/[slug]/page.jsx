@@ -2,11 +2,9 @@ import { PROJECTS } from "@/constants";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import PageTransition from "@/components/PageTransition";
-
 export async function generateStaticParams() {
   return PROJECTS.map((p) => ({ slug: p.slug }));
 }
-
 export async function generateMetadata({ params }) {
   const project = PROJECTS.find((p) => p.slug === params.slug);
   if (!project) return {};
@@ -15,32 +13,24 @@ export async function generateMetadata({ params }) {
     description: project.longDescription,
   };
 }
-
 export default function ProjectPage({ params }) {
   const project = PROJECTS.find((p) => p.slug === params.slug);
   if (!project) notFound();
-
   const currentIndex = PROJECTS.findIndex((p) => p.slug === params.slug);
   const prev = PROJECTS[currentIndex - 1] ?? null;
   const next = PROJECTS[currentIndex + 1] ?? null;
-
   return (
     <PageTransition>
       <div className="min-h-screen bg-black selection:bg-[#C778DD]/30 overflow-x-hidden">
-      {/* Ambient glows */}
       <div className="fixed inset-0 pointer-events-none z-0" style={{
         background: [
           "radial-gradient(ellipse 60% 50% at 10% 20%, rgba(199,120,221,0.08) 0%, transparent 65%)",
           "radial-gradient(ellipse 50% 50% at 90% 80%, rgba(123,45,146,0.09) 0%, transparent 65%)",
         ].join(","),
       }} />
-      {/* Dot grid */}
       <div className="fixed inset-0 pointer-events-none z-0 opacity-[0.025]"
         style={{ backgroundImage: "radial-gradient(circle, #c778dd 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
-
       <main className="relative z-10 mx-auto max-w-[900px] px-5 sm:px-8 pb-24">
-
-        {/* ── Back nav ── */}
         <div className="pt-8 pb-2">
           <Link
             href="/#works"
@@ -52,8 +42,6 @@ export default function ProjectPage({ params }) {
             Back to projects
           </Link>
         </div>
-
-        {/* ── Hero ── */}
         <section className="pt-10 pb-10 border-b border-white/[0.06]">
           <div className="flex flex-wrap items-center gap-3 mb-6">
             <span className="font-fira-code text-[11px] text-[#C778DD] border border-[#C778DD]/25 bg-[#C778DD]/[0.07] px-3 py-1 rounded-full uppercase tracking-widest">
@@ -65,19 +53,15 @@ export default function ProjectPage({ params }) {
               </span>
             ))}
           </div>
-
           <h1 className="text-[clamp(2.4rem,6vw,4rem)] font-extrabold leading-tight tracking-tight text-white mb-4">
             {project.title}
             <span className="block text-[clamp(1rem,2.5vw,1.4rem)] font-medium text-[#C778DD]/70 mt-2 tracking-normal">
               {project.description}
             </span>
           </h1>
-
           <p className="text-[15px] leading-[1.85] text-[#8a8490] max-w-[65ch] font-fira-code">
             {project.longDescription}
           </p>
-
-          {/* CTA buttons */}
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href={project.link}
@@ -103,11 +87,8 @@ export default function ProjectPage({ params }) {
             </a>
           </div>
         </section>
-
-        {/* ── Screenshot ── */}
         <section className="py-10 border-b border-white/[0.06]">
           <div className="relative rounded-2xl overflow-hidden border border-white/[0.07] shadow-[0_0_60px_rgba(199,120,221,0.07)]">
-            {/* Browser chrome */}
             <div className="flex items-center gap-2 px-4 py-3 bg-[#0a0014] border-b border-white/[0.06]">
               <div className="flex gap-1.5">
                 <div className="w-3 h-3 rounded-full bg-[#ff5f57]/70" />
@@ -128,11 +109,7 @@ export default function ProjectPage({ params }) {
             />
           </div>
         </section>
-
-        {/* ── Features + Challenge grid ── */}
         <section className="py-10 border-b border-white/[0.06] grid gap-8 md:grid-cols-2">
-
-          {/* Features */}
           <div>
             <div className="flex items-center gap-2 mb-6">
               <span className="text-[#C778DD] font-fira-code text-sm">#</span>
@@ -149,8 +126,6 @@ export default function ProjectPage({ params }) {
               ))}
             </ul>
           </div>
-
-          {/* Challenge */}
           <div>
             <div className="flex items-center gap-2 mb-6">
               <span className="text-[#C778DD] font-fira-code text-sm">#</span>
@@ -165,8 +140,6 @@ export default function ProjectPage({ params }) {
                 {project.challenges}
               </p>
             </div>
-
-            {/* Tech stack used */}
             <div className="mt-6">
               <p className="text-[11px] uppercase tracking-widest text-[#3a3050] font-fira-code mb-3">Built with</p>
               <div className="flex flex-wrap gap-2">
@@ -179,8 +152,6 @@ export default function ProjectPage({ params }) {
             </div>
           </div>
         </section>
-
-        {/* ── Prev / Next ── */}
         <section className="pt-10">
           <div className="grid gap-4 sm:grid-cols-2">
             {prev ? (
@@ -196,7 +167,6 @@ export default function ProjectPage({ params }) {
                 <span className="text-xs text-[#6b7280] font-fira-code">{prev.description}</span>
               </Link>
             ) : <div />}
-
             {next ? (
               <Link
                 href={`/projects/${next.slug}`}
@@ -212,7 +182,6 @@ export default function ProjectPage({ params }) {
             ) : <div />}
           </div>
         </section>
-
       </main>
       </div>
     </PageTransition>

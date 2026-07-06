@@ -1,5 +1,4 @@
 import React from "react";
-
 const SectionHeader = ({ title }) => {
   return (
     <div className="flex items-center gap-3 w-full max-w-[1324px] mb-8 sm:mb-10 md:mb-12 lg:mb-16">
@@ -13,5 +12,4 @@ const SectionHeader = ({ title }) => {
     </div>
   );
 };
-
 export default SectionHeader;

@@ -1,18 +1,15 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-
 export default function CustomCursor() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-
   useEffect(() => {
     const updateMousePosition = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
       if (!isVisible) setIsVisible(true);
     };
-
     const handleMouseOver = (e) => {
       const target = e.target;
       if (
@@ -26,24 +23,19 @@ export default function CustomCursor() {
         setIsHovering(false);
       }
     };
-
     const handleMouseLeave = () => setIsVisible(false);
-
     window.addEventListener("mousemove", updateMousePosition);
     window.addEventListener("mouseover", handleMouseOver);
     document.addEventListener("mouseleave", handleMouseLeave);
-
     return () => {
       window.removeEventListener("mousemove", updateMousePosition);
       window.removeEventListener("mouseover", handleMouseOver);
       document.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, [isVisible]);
-
   if (typeof window !== "undefined" && window.matchMedia("(max-width: 768px)").matches) {
-    return null; // Disable on mobile
+    return null; 
   }
-
   return (
     <motion.div
       className="fixed top-0 left-0 z-[9999] pointer-events-none rounded-full mix-blend-screen"

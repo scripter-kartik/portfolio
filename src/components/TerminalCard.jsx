@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-
 const sequences = [
   {
     cmd: "npm install @kartik/skills",
@@ -46,7 +45,6 @@ const sequences = [
       },
     ],
   },
-
   {
     cmd: "whoami --verbose",
     outputs: [
@@ -58,7 +56,6 @@ const sequences = [
     ],
   },
 ];
-
 export default function TerminalCard() {
   const [typedCmd, setTypedCmd] = useState("");
   const [outputs, setOutputs] = useState([]);
@@ -67,19 +64,15 @@ export default function TerminalCard() {
   const charRef = useRef(0);
   const outRef = useRef(0);
   const bodyRef = useRef(null);
-
   useEffect(() => {
     if (bodyRef.current) {
       bodyRef.current.scrollTop = bodyRef.current.scrollHeight;
     }
   }, [outputs]);
-
   useEffect(() => {
     let timer;
-
     const tick = () => {
       const seq = sequences[seqRef.current];
-
       if (phaseRef.current === "typing") {
         if (charRef.current < seq.cmd.length) {
           setTypedCmd(seq.cmd.slice(0, ++charRef.current));
@@ -107,11 +100,9 @@ export default function TerminalCard() {
         timer = setTimeout(tick, 400);
       }
     };
-
     tick();
     return () => clearTimeout(timer);
   }, []);
-
   const textColor = (type) => {
     if (type === "success") return "text-green-400";
     if (type === "purple") return "text-violet-400";
@@ -121,7 +112,6 @@ export default function TerminalCard() {
     if (type === "red") return "text-red-400";
     return "text-slate-500";
   };
-
   return (
     <div className="border border-white/[0.08] hover:border-[#C778DD]/40 rounded-xl overflow-hidden bg-[#070A11]/60 backdrop-blur-md w-full h-full font-mono shadow-[0_0_40px_rgba(199,120,221,0.05)] hover:shadow-[0_0_45px_rgba(199,120,221,0.12)] transition-all duration-300 flex flex-col">
       <div className="bg-[#0b0e14]/80 px-3.5 py-2.5 flex items-center gap-2 border-b border-white/[0.06]">
@@ -130,7 +120,6 @@ export default function TerminalCard() {
         <span className="w-2.5 h-2.5 rounded-full bg-[#22c55e]/60" />
         <span className="text-gray-500 text-xs ml-2 font-fira-code">kartik@dev ~ bash</span>
       </div>
-
       <div
         ref={bodyRef}
         className="p-3.5 flex-1 min-h-0 overflow-y-auto text-xs leading-relaxed sm:text-sm"
@@ -141,7 +130,6 @@ export default function TerminalCard() {
           <span className="text-slate-200">{typedCmd}</span>
           <span className="inline-block w-1.5 h-3.5 bg-violet-600 align-middle animate-[blink_1s_step-end_infinite]" />
         </div>
-
         <div className="mt-1 space-y-0.5">
           {outputs.map((line, i) => (
             <div key={i} className={`pl-4 ${textColor(line.type)}`}>

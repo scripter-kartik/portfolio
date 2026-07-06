@@ -1,5 +1,4 @@
 import SectionHeader from "./SectionHeader";
-
 export default function About() {
   return (
     <div
@@ -7,9 +6,7 @@ export default function About() {
       className="w-full flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 py-16 sm:py-20 relative"
     >
       <SectionHeader title="about me" />
-
       <div className="w-full max-w-[1324px] flex flex-col lg:flex-row gap-10 md:gap-12 lg:gap-16 xl:gap-24">
-        {/* Bio */}
         <div className="w-full lg:w-[55%] flex flex-col gap-5">
           <h2 className="text-2xl sm:text-3xl font-bold text-white">
             Hello, I'm{" "}
@@ -17,7 +14,6 @@ export default function About() {
               Kartik!
             </span>
           </h2>
-
           <div className="font-fira-code text-[#ABB2BF] text-sm sm:text-base flex flex-col gap-4 leading-relaxed">
             <p>
               I'm a self-taught full-stack developer based in Delhi, India.
@@ -37,8 +33,6 @@ export default function About() {
               intuitive, and enjoyable to use.
             </p>
           </div>
-
-          {/* Stat pills */}
           <div className="flex flex-wrap gap-3 mt-2">
             {[
               { value: "1+", label: "Years experience" },
@@ -55,19 +49,14 @@ export default function About() {
             ))}
           </div>
         </div>
-
-        {/* JSON card */}
         <div className="w-full lg:w-[45%] flex justify-center lg:justify-end">
           <div className="w-full max-w-[420px] glass-card rounded-xl overflow-hidden">
-            {/* Title bar */}
             <div className="flex items-center gap-2 px-4 py-3 border-b border-white/[0.06] bg-white/[0.01]">
               <div className="w-3 h-3 rounded-full bg-[#ef4444]/70" />
               <div className="w-3 h-3 rounded-full bg-[#eab308]/70" />
               <div className="w-3 h-3 rounded-full bg-[#22c55e]/70" />
               <span className="ml-2 text-gray-500 font-fira-code text-xs">kartik.json</span>
             </div>
-
-            {/* JSON body */}
             <div className="p-5 sm:p-6 font-fira-code text-sm sm:text-base flex flex-col gap-2.5 break-words">
               <p className="text-gray-600">{"{"}</p>
               <div className="flex flex-col gap-2 pl-4">
@@ -84,7 +73,6 @@ export default function About() {
                     <span className="text-gray-400">,</span>
                   </p>
                 ))}
-
                 <p>
                   <span className="text-[#C778DD]">"stack"</span>
                   <span className="text-gray-400">: [</span>
@@ -98,7 +86,6 @@ export default function About() {
                   ))}
                 </div>
                 <p><span className="text-gray-400">],</span></p>
-
                 <p>
                   <span className="text-[#C778DD]">"available"</span>
                   <span className="text-gray-400">: </span>
@@ -106,8 +93,6 @@ export default function About() {
                 </p>
               </div>
               <p className="text-gray-600">{"}"}</p>
-
-              {/* Terminal prompt */}
               <div className="mt-3 pt-3 border-t border-white/[0.05] flex items-center gap-1.5">
                 <span className="text-[#C778DD] font-bold">$</span>
                 <span className="text-white text-sm">open to work</span>

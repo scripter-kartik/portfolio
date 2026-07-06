@@ -1,12 +1,11 @@
 "use client";
-
 import Navbar from "@/components/Navbar";
 import TerminalCard from "@/components/TerminalCard";
 import ActiveCard from "@/components/ActiveCard";
+import Hero3D from "@/components/Hero3D";
 import { GitHubCalendar } from "react-github-calendar";
 import { useState, useEffect } from "react";
-
-/* ── Social links data ───────────────────────────────────────── */
+import { useUISound } from "@/hooks/useUISound";
 const SOCIALS = [
   {
     label: "GitHub",
@@ -56,54 +55,47 @@ const SOCIALS = [
     ),
   },
 ];
-
-/* ── Stats ───────────────────────────────────────────────────── */
 const STATS = [
   { value: "1+", label: "yrs exp" },
   { value: "5+", label: "projects" },
   { value: "347", label: "commits" },
 ];
-
 export default function Home() {
   const [mounted, setMounted] = useState(false);
-
+  const { playClick } = useUISound();
   useEffect(() => {
     setMounted(true);
   }, []);
-
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
     if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 100, behavior: "smooth" });
   };
-
   return (
     <div id="home" className="relative min-h-screen overflow-x-hidden bg-transparent">
       <Navbar />
-
-      <main className="mx-auto flex w-full max-w-[1324px] flex-col px-5 pb-12 pt-24 sm:px-8 sm:pt-28 lg:px-10 lg:pt-24 xl:pt-28">
-        <section className="grid grid-cols-1 items-start gap-9 lg:grid-cols-[minmax(0,1fr)_minmax(430px,0.86fr)] lg:gap-10">
+      <main className="mx-auto flex w-full max-w-[1324px] flex-col px-5 pb-12 pt-24 sm:px-8 sm:pt-28 lg:px-10 lg:pt-24 xl:pt-28 relative">
+        <Hero3D />
+        <section className="grid grid-cols-1 items-start gap-9 lg:grid-cols-[minmax(0,1fr)_minmax(430px,0.86fr)] lg:gap-10 relative z-10">
           <div className="min-w-0">
             <div className="animate-fade-up mb-6 inline-flex items-center gap-2 rounded-full border border-[#C778DD]/25 bg-[#C778DD]/[0.08] px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-[#C778DD] font-fira-code">
               <span className="h-1.5 w-1.5 rounded-full bg-[#C778DD] animate-pulse" />
               Full Stack Engineer
             </div>
-
             <h1 className="animate-fade-up-delay-1 max-w-[14ch] text-left text-[clamp(2.65rem,8.5vw,5.35rem)] font-bold leading-[0.98] tracking-normal text-white lg:text-[clamp(4.15rem,5.45vw,5.45rem)]">
               Full-stack products,
               <span className="mt-1 block bg-gradient-to-r from-white via-[#e8d0f6] to-[#C778DD] bg-clip-text text-transparent">
                 shipped clean.
               </span>
             </h1>
-
             <p className="animate-fade-up-delay-2 mt-6 max-w-[58ch] text-sm leading-relaxed text-[#ABB2BF] font-fira-code sm:text-[15px]">
               I build responsive, high-performance web applications from
               scratch, designed with visual precision and backed by clean,
               scalable code.
             </p>
-
             <div className="animate-fade-up-delay-2 mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <button
-                onClick={() => scrollToSection("contacts")}
+                onClick={() => { playClick(); scrollToSection("contacts"); }}
+
                 className="btn-gradient-border h-[46px] w-full sm:w-[190px]"
               >
                 <span className="text-sm font-medium tracking-wide text-white font-fira-code">
@@ -111,7 +103,8 @@ export default function Home() {
                 </span>
               </button>
               <button
-                onClick={() => scrollToSection("works")}
+                onClick={() => { playClick(); scrollToSection("works"); }}
+
                 className="flex h-[46px] items-center justify-center gap-2 rounded-xl border border-white/[0.1] bg-white/[0.03] px-4 text-sm text-[#E5E7EB] transition-all duration-200 font-fira-code hover:border-white/[0.2] hover:bg-white/[0.07] sm:px-5"
               >
                 View Work
@@ -123,6 +116,8 @@ export default function Home() {
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={playClick}
+
                 className="flex h-[46px] items-center justify-center gap-2 rounded-xl border border-white/[0.1] bg-white/[0.03] px-4 text-sm text-[#ABB2BF] transition-all duration-200 font-fira-code hover:border-[#C778DD]/30 hover:bg-white/[0.07] hover:text-white sm:px-5"
               >
                 <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -132,7 +127,6 @@ export default function Home() {
                 Resume
               </a>
             </div>
-
             <div className="animate-fade-up-delay-3 mt-8 rounded-2xl border border-white/[0.08] bg-[#070A11]/55 p-4 backdrop-blur-md sm:p-5">
               <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex items-center gap-2">
@@ -142,7 +136,6 @@ export default function Home() {
                   </span>
                   <span className="text-xs text-[#ABB2BF] font-fira-code">Available for new work</span>
                 </div>
-
                 <div className="grid grid-cols-3 gap-3 sm:min-w-[285px]">
                   {STATS.map((s) => (
                     <div key={s.label} className="min-w-0 border-l border-white/[0.08] pl-3 leading-tight first:border-l-0 first:pl-0 sm:first:border-l sm:first:pl-3">
@@ -152,7 +145,6 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-
               <div className="mt-5 flex flex-wrap items-center gap-2 border-t border-white/[0.06] pt-4">
                 {SOCIALS.map((s) => (
                   <a
@@ -169,7 +161,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-
           <aside className="hidden lg:grid min-w-0 gap-4">
             <div className="relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[#070A11]/60 p-4 shadow-[0_0_50px_rgba(199,120,221,0.07)] backdrop-blur-md sm:p-5">
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#C778DD]/70 to-transparent" />
@@ -180,7 +171,6 @@ export default function Home() {
                 </div>
                 <span className="text-[11px] text-[#6b7280] font-fira-code">Delhi, India</span>
               </div>
-
               <div className="mt-5 grid items-end gap-4 sm:grid-cols-[minmax(170px,240px)_1fr]">
                 <div className="relative flex min-h-[220px] items-center justify-center overflow-hidden rounded-xl border border-[#C778DD]/[0.12] bg-[linear-gradient(180deg,rgba(199,120,221,0.06),rgba(199,120,221,0.01))] sm:min-h-[250px]">
                   <div className="absolute h-40 w-40 rounded-full border border-[#C778DD]/15 bg-[#C778DD]/[0.05] blur-xl" />
@@ -201,7 +191,6 @@ export default function Home() {
                     <span className="sr-only">Developer avatar</span>
                   </div>
                 </div>
-
                 <div className="grid gap-2.5">
                   {["Next.js interfaces", "Node.js APIs", "Realtime systems"].map((item) => (
                     <div key={item} className="flex items-center justify-between gap-3 rounded-lg border border-[#C778DD]/[0.1] bg-[#C778DD]/[0.03] px-3 py-2.5 hover:border-[#C778DD]/25 hover:bg-[#C778DD]/[0.06] transition-colors duration-200">
@@ -212,7 +201,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
             <div className="grid auto-rows-[228px] items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
               <div className="min-h-0 min-w-0">
                 <TerminalCard />
@@ -223,9 +211,7 @@ export default function Home() {
             </div>
           </aside>
         </section>
-
         <section className="mt-6 pb-4 grid grid-cols-1 xl:grid-cols-[1fr_350px] gap-6">
-          {/* GitHub Calendar */}
           <div className="w-full overflow-hidden rounded-2xl border border-white/[0.08] bg-[#070A11]/55 backdrop-blur-md flex flex-col">
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/[0.05] px-4 py-3 sm:px-5">
               <div className="flex min-w-0 items-center gap-2">
@@ -260,8 +246,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-
-          {/* Side Card: Current Focus */}
           <div className="w-full overflow-hidden rounded-2xl border border-white/[0.08] bg-[#070A11]/55 backdrop-blur-md p-5 flex flex-col justify-between relative group">
             <div className="absolute top-0 right-0 p-4 opacity-10">
               <svg viewBox="0 0 24 24" className="w-24 h-24 text-[#C778DD]" fill="currentColor">
@@ -271,8 +255,8 @@ export default function Home() {
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-white/[0.05] bg-white/[0.02] px-3 py-1 mb-4">
                 <span className="relative flex h-1.5 w-1.5">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
-                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#C778DD] opacity-60" />
+                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#C778DD]" />
                 </span>
                 <span className="text-[10px] uppercase tracking-widest text-[#ABB2BF] font-fira-code">Current Focus</span>
               </div>
@@ -281,7 +265,6 @@ export default function Home() {
                 Deep diving into Docker, Redis caching strategies, and building scalable microservices.
               </p>
             </div>
-            
             <div className="pt-4 border-t border-white/[0.05]">
               <div className="flex flex-wrap gap-2">
                 {["Docker", "Redis", "Microservices", "AWS"].map((tag) => (
