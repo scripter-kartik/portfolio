@@ -188,12 +188,13 @@ export default function Project() {
                     Live
                     <svg viewBox="0 0 24 24" className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2.5">
                       <path d="M7 17L17 7M17 7H7M17 7V17" />
-                    </svg>
-                </div>
+                  </svg>
+                </a>
               </div>
-            </motion.div>
-          );
-        })}
+            </div>
+          </motion.div>
+        );
+      })}
         </motion.div>
 
         {/* Carousel Indicators (Dots) */}
