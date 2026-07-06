@@ -224,8 +224,9 @@ export default function Home() {
           </aside>
         </section>
 
-        <section className="mt-6 pb-4">
-          <div className="w-full overflow-hidden rounded-2xl border border-white/[0.08] bg-[#070A11]/55 backdrop-blur-md">
+        <section className="mt-6 pb-4 grid grid-cols-1 xl:grid-cols-[1fr_350px] gap-6">
+          {/* GitHub Calendar */}
+          <div className="w-full overflow-hidden rounded-2xl border border-white/[0.08] bg-[#070A11]/55 backdrop-blur-md flex flex-col">
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/[0.05] px-4 py-3 sm:px-5">
               <div className="flex min-w-0 items-center gap-2">
                 <div className="flex shrink-0 gap-1.5">
@@ -240,14 +241,14 @@ export default function Home() {
                 <span className="text-[11px] text-[#6b7280] font-fira-code">@scripter-kartik</span>
               </div>
             </div>
-            <div className="overflow-x-auto hide-scrollbar px-3 py-4 sm:px-5" style={{ WebkitOverflowScrolling: "touch" }}>
+            <div className="overflow-x-auto hide-scrollbar px-3 py-4 sm:px-5 flex-grow flex items-center justify-center" style={{ WebkitOverflowScrolling: "touch" }}>
               <div style={{ minWidth: "max-content" }}>
                 {mounted && (
                   <GitHubCalendar
                     className="github-calendar-purple"
                     username="scripter-kartik"
                     colorScheme="dark"
-                    blockSize={11}
+                    blockSize={12}
                     blockMargin={4}
                     fontSize={11}
                     theme={{
@@ -256,6 +257,38 @@ export default function Home() {
                     }}
                   />
                 )}
+              </div>
+            </div>
+          </div>
+
+          {/* Side Card: Current Focus */}
+          <div className="w-full overflow-hidden rounded-2xl border border-white/[0.08] bg-[#070A11]/55 backdrop-blur-md p-5 flex flex-col justify-between relative group">
+            <div className="absolute top-0 right-0 p-4 opacity-10">
+              <svg viewBox="0 0 24 24" className="w-24 h-24 text-[#C778DD]" fill="currentColor">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/[0.05] bg-white/[0.02] px-3 py-1 mb-4">
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
+                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                </span>
+                <span className="text-[10px] uppercase tracking-widest text-[#ABB2BF] font-fira-code">Current Focus</span>
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2 leading-tight">Mastering System Design & Cloud</h3>
+              <p className="text-xs text-[#8a8490] font-fira-code leading-relaxed mb-4">
+                Deep diving into Docker, Redis caching strategies, and building scalable microservices.
+              </p>
+            </div>
+            
+            <div className="pt-4 border-t border-white/[0.05]">
+              <div className="flex flex-wrap gap-2">
+                {["Docker", "Redis", "Microservices", "AWS"].map((tag) => (
+                  <span key={tag} className="px-2.5 py-1 text-[10px] font-fira-code text-[#C778DD]/80 bg-[#C778DD]/[0.05] border border-[#C778DD]/10 rounded-md">
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
           </div>

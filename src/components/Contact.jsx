@@ -117,9 +117,14 @@ export default function Contact() {
                 <span className="font-fira-code text-sm">@0xkar7ik</span>
               </a>
 
-              <a
-                href="mailto:agarwalkartik704@gmail.com"
-                className="flex items-center gap-3 p-3 rounded-xl border border-white/[0.05] bg-white/[0.01] hover:bg-[#C778DD]/5 hover:border-[#C778DD]/30 text-[#ABB2BF] hover:text-white transition-all duration-200"
+              <button
+                onClick={() => {
+                  navigator.clipboard.writeText("agarwalkartik704@gmail.com");
+                  import("react-hot-toast").then((module) => {
+                    module.toast.success("Email copied to clipboard!");
+                  });
+                }}
+                className="flex w-full items-center gap-3 p-3 rounded-xl border border-white/[0.05] bg-white/[0.01] hover:bg-[#C778DD]/5 hover:border-[#C778DD]/30 text-[#ABB2BF] hover:text-white transition-all duration-200 cursor-copy"
               >
                 <span className="h-9 w-9 rounded-lg border border-white/[0.08] bg-[#070A11] inline-flex items-center justify-center text-[#C778DD] flex-shrink-0">
                   <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -128,7 +133,7 @@ export default function Contact() {
                   </svg>
                 </span>
                 <span className="font-fira-code text-sm break-all">agarwalkartik704@gmail.com</span>
-              </a>
+              </button>
 
               <a
                 href={calendarLink}

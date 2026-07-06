@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Outfit, Fira_Code } from "next/font/google";
+import SmoothScroll from "@/components/SmoothScroll";
+import CustomCursor from "@/components/CustomCursor";
+import ParticleBackground from "@/components/ParticleBackground";
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -52,7 +56,22 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${firaCode.variable} ${outfit.variable} font-[var(--font-outfit)] antialiased gradient-bg`}
         suppressHydrationWarning
       >
-        {children}
+        <SmoothScroll>
+          <CustomCursor />
+          <ParticleBackground />
+          <Toaster 
+            position="bottom-center"
+            toastOptions={{
+              style: {
+                background: '#1A1025',
+                color: '#fff',
+                border: '1px solid rgba(199, 120, 221, 0.2)',
+                fontFamily: 'monospace'
+              },
+            }}
+          />
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );

@@ -36,20 +36,24 @@ export default function Skills() {
               The Magic Behind
             </h2>
 
-            <div className="flex flex-wrap justify-center gap-2.5 sm:gap-3">
-              {FULL_STACK_SKILLS.map((skill) => (
-                <span
-                  key={skill.name}
-                  className="group inline-flex items-center gap-2.5 h-10 sm:h-11 px-3.5 sm:px-4 rounded-xl border border-white/[0.07] bg-[#0c101b]/70 text-[#E5E7EB] font-fira-code text-xs sm:text-sm hover:border-[#C778DD]/40 hover:bg-[#C778DD]/5 hover:-translate-y-0.5 transition-all duration-200 cursor-default"
-                >
+            <div className="overflow-hidden relative w-full pt-2 pb-2">
+              <div className="absolute left-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-r from-[#0c101b] to-transparent pointer-events-none" />
+              <div className="absolute right-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-l from-[#0c101b] to-transparent pointer-events-none" />
+              <div className="flex w-max animate-marquee">
+                {[...FULL_STACK_SKILLS, ...FULL_STACK_SKILLS].map((skill, index) => (
                   <span
-                    className={`min-w-[1.5rem] h-6 rounded-md border inline-flex items-center justify-center text-[10px] sm:text-xs font-bold ${skill.tone} ${TONE_BG[skill.tone] || "bg-white/[0.04] border-white/[0.08]"}`}
+                    key={`${skill.name}-${index}`}
+                    className="group mx-2 inline-flex items-center gap-2.5 h-10 sm:h-11 px-3.5 sm:px-4 rounded-xl border border-white/[0.07] bg-[#0c101b]/70 text-[#E5E7EB] font-fira-code text-xs sm:text-sm hover:border-[#C778DD]/40 hover:bg-[#C778DD]/5 hover:-translate-y-0.5 transition-all duration-200 cursor-default"
                   >
-                    {skill.tag}
+                    <span
+                      className={`min-w-[1.5rem] h-6 rounded-md border inline-flex items-center justify-center text-[10px] sm:text-xs font-bold ${skill.tone} ${TONE_BG[skill.tone] || "bg-white/[0.04] border-white/[0.08]"}`}
+                    >
+                      {skill.tag}
+                    </span>
+                    {skill.name}
                   </span>
-                  {skill.name}
-                </span>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
