@@ -1,3 +1,6 @@
+"use client";
+import { useState } from "react";
+import { useUISound } from "@/hooks/useUISound";
 import SectionHeader from "./SectionHeader";
 import { FULL_STACK_SKILLS, SKILL_GROUPS } from "@/constants";
 const TONE_BG = {
@@ -13,6 +16,9 @@ const TONE_BG = {
   "text-red-300": "bg-red-400/10 border-red-400/20",
 };
 export default function Skills() {
+  const [activeTab, setActiveTab] = useState(0);
+  const { playClick } = useUISound();
+
   return (
     <div
       id="skills"
@@ -50,6 +56,32 @@ export default function Skills() {
             </div>
           </div>
         </div>
+
+        {/* Mobile Tabs for Skills */}
+        <div className="sm:hidden w-full flex flex-col gap-4">
+          <div className="flex border border-white/[0.06] p-1 bg-white/[0.01] rounded-xl backdrop-blur-sm">
+            {SKILL_GROUPS.map((group, idx) => (
+              <button
+                key={group.title}
+                onClick={() => { playClick(); setActiveTab(idx); }}
+                className={`flex-1 py-2 text-xs font-fira-code rounded-lg transition-all duration-200 capitalize ${activeTab === idx ? "bg-[#C778DD]/10 border border-[#C778DD]/25 text-[#C778DD] font-semibold" : "text-[#ABB2BF] border border-transparent hover:text-white"}`}
+              >
+                {group.title.split(" ")[0]}
+              </button>
+            ))}
+          </div>
+          <div className="w-full rounded-xl border border-white/[0.07] bg-[#070A11]/50 backdrop-blur-md p-4 min-h-[100px] flex flex-wrap gap-2">
+            {SKILL_GROUPS[activeTab].items.map((item) => (
+              <span
+                key={item}
+                className="font-fira-code text-xs px-2.5 py-1 rounded-lg border border-white/[0.06] bg-white/[0.025] text-[#ABB2BF]"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+
         <div className="hidden sm:grid w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {SKILL_GROUPS.map((group, i) => (
             <div
