@@ -56,7 +56,8 @@ export default function CommandMenu() {
         onClick={() => setOpen(false)}
       />
       
-      <div className="relative w-full max-w-[640px] shadow-2xl rounded-xl border border-white/[0.08] bg-[#070A11]/95 overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+      {/* Dialog */}
+      <div className="relative w-[95vw] max-w-[640px] shadow-2xl rounded-xl border border-white/[0.08] bg-[#070A11]/95 overflow-hidden animate-in fade-in zoom-in-95 duration-200">
         <Command 
           className="flex h-full w-full flex-col bg-transparent"
           shouldFilter={true}
