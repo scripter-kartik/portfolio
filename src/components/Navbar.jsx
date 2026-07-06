@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { useUISound } from "@/hooks/useUISound";
+import MenuPhysicsBg from "@/components/MenuPhysicsBg";
 const Navbar = () => {
   const { playClick } = useUISound();
   const navLinks = [
@@ -108,6 +109,8 @@ const Navbar = () => {
           isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0 pointer-events-none"
         }`}
       >
+        <MenuPhysicsBg />
+
         {/* Interactive Search Bar Widget */}
         <button
           onClick={() => {
@@ -115,7 +118,7 @@ const Navbar = () => {
             setIsMenuOpen(false);
             window.dispatchEvent(new CustomEvent("toggle-command-menu"));
           }}
-          className="w-full flex items-center justify-between px-4 py-3 rounded-xl border border-white/[0.08] bg-[#070A11]/60 text-xs font-fira-code text-[#ABB2BF] hover:text-white transition-all active:scale-[0.98] mt-2"
+          className="w-full flex items-center justify-between px-4 py-3 rounded-xl border border-white/[0.08] bg-[#070A11]/60 text-xs font-fira-code text-[#ABB2BF] hover:text-white transition-all active:scale-[0.98] mt-2 relative z-10"
         >
           <div className="flex items-center gap-2.5">
             <svg viewBox="0 0 24 24" className="w-4 h-4 text-[#C778DD]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -128,7 +131,7 @@ const Navbar = () => {
         </button>
 
         {/* Links list */}
-        <nav className="flex flex-col gap-2 flex-grow">
+        <nav className="flex flex-col gap-2 flex-grow relative z-10">
           {navLinks.map((link) => (
             <button
               key={link.id}
@@ -149,7 +152,7 @@ const Navbar = () => {
         </nav>
 
         {/* Bottom Social Handles */}
-        <div className="flex items-center justify-center gap-6 pt-6 border-t border-white/[0.05] pb-6">
+        <div className="flex items-center justify-center gap-6 pt-6 border-t border-white/[0.05] pb-6 relative z-10">
           <a href="https://github.com/scripter-kartik" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors" aria-label="GitHub">
             <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
               <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48v-1.7c-2.78.61-3.37-1.34-3.37-1.34-.45-1.16-1.12-1.47-1.12-1.47-.91-.63.07-.62.07-.62 1 .07 1.54 1.04 1.54 1.04.9 1.53 2.34 1.1 2.9.84.1-.64.35-1.1.64-1.35-2.22-.25-4.56-1.12-4.56-4.97 0-1.1.39-2 1.03-2.71-.1-.25-.45-1.28.1-2.66 0 0 .85-.27 2.78 1.03A9.62 9.62 0 0 1 12 6.85c.85 0 1.7.11 2.5.33 1.93-1.3 2.78-1.03 2.78-1.03.56 1.38.2 2.41.1 2.66.64.7 1.03 1.61 1.03 2.71 0 3.86-2.35 4.72-4.59 4.97.36.3.69.88.69 1.79v2.65c0 .26.18.58.69.48A10 10 0 0 0 12 2Z" />
