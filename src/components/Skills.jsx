@@ -60,18 +60,18 @@ export default function Skills() {
         {/* Mobile Tabs for Skills */}
         <div className="sm:hidden w-full flex flex-col gap-4 mt-2">
           {/* Custom Glass Tab Bar */}
-          <div className="flex border border-white/[0.08] p-1 bg-[#070A11]/60 backdrop-blur-md rounded-xl">
+          <div className="flex gap-1.5 border border-white/[0.08] p-1 bg-[#070A11]/60 backdrop-blur-md rounded-xl overflow-x-auto hide-scrollbar w-full" style={{ WebkitOverflowScrolling: "touch" }}>
             {SKILL_GROUPS.map((group, idx) => (
               <button
                 key={group.title}
                 onClick={() => { playClick(); setActiveTab(idx); }}
-                className={`flex-1 py-2 text-[11px] font-fira-code rounded-lg transition-all duration-300 capitalize ${
+                className={`py-2 px-4 text-[11px] font-fira-code rounded-lg transition-all duration-300 capitalize flex-shrink-0 whitespace-nowrap ${
                   activeTab === idx 
                     ? "bg-[#C778DD] text-black font-bold shadow-[0_0_15px_rgba(199,120,221,0.4)]" 
                     : "text-[#ABB2BF] hover:text-white"
                 }`}
               >
-                {group.title.split(" ")[0]}
+                {group.title}
               </button>
             ))}
           </div>
