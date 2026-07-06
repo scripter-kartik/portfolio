@@ -84,7 +84,41 @@ export default function Contact() {
             I'm interested in freelance opportunities. Share your idea using
             the form, and I'll reply with next steps and a timeline.
           </p>
-          <div className="glass-card rounded-xl p-5 w-full max-w-[520px]">
+          {/* Inline Action Row for Mobile/Tablet */}
+          <div className="flex flex-wrap gap-2.5 mt-2 xl:hidden">
+            <button
+              onClick={() => {
+                playClick();
+                navigator.clipboard.writeText("agarwalkartik704@gmail.com");
+                import("react-hot-toast").then((module) => {
+                  module.toast.success("Email copied to clipboard!");
+                });
+              }}
+              className="flex items-center gap-2 px-3.5 h-10 rounded-xl border border-white/[0.08] bg-[#070A11]/60 text-[#ABB2BF] hover:text-white font-fira-code text-xs transition-all duration-200"
+            >
+              <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 text-[#C778DD]" fill="none" stroke="currentColor" strokeWidth="1.8">
+                <rect x="3.5" y="5.5" width="17" height="13" rx="2" />
+                <path d="m4.5 7 7.5 6 7.5-6" />
+              </svg>
+              Copy Email
+            </button>
+            <a
+              href={calendarLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={playClick}
+              className="flex items-center gap-2 px-3.5 h-10 rounded-xl border border-[#C778DD]/60 bg-[#C778DD]/10 text-white hover:bg-[#C778DD]/20 font-fira-code text-xs transition-all duration-200"
+            >
+              <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 text-[#C778DD]" fill="none" stroke="currentColor" strokeWidth="2">
+                <rect x="3.5" y="5.5" width="17" height="15" rx="2" />
+                <path d="M8 3.5v4M16 3.5v4M3.5 9.5h17" />
+              </svg>
+              Book a Call
+            </a>
+          </div>
+
+          {/* Desktop Only Quick Connect Card */}
+          <div className="hidden xl:block glass-card rounded-xl p-5 w-full max-w-[520px]">
             <h3 className="text-sm font-semibold text-white font-fira-code mb-4 flex items-center gap-2">
               <span className="w-1 h-4 bg-[#C778DD] rounded-full" />
               Quick connect
@@ -94,7 +128,6 @@ export default function Contact() {
                 href={xLink}
                 target="_blank"
                 rel="noopener noreferrer"
-
                 onClick={playClick}
                 className="flex items-center gap-3 p-3 rounded-xl border border-white/[0.05] bg-white/[0.01] hover:bg-[#C778DD]/5 hover:border-[#C778DD]/30 text-[#ABB2BF] hover:text-white transition-all duration-200"
               >
@@ -113,7 +146,6 @@ export default function Contact() {
                     module.toast.success("Email copied to clipboard!");
                   });
                 }}
-
                 className="flex w-full items-center gap-3 p-3 rounded-xl border border-white/[0.05] bg-white/[0.01] hover:bg-[#C778DD]/5 hover:border-[#C778DD]/30 text-[#ABB2BF] hover:text-white transition-all duration-200 cursor-copy"
               >
                 <span className="h-9 w-9 rounded-lg border border-white/[0.08] bg-[#070A11] inline-flex items-center justify-center text-[#C778DD] flex-shrink-0">
@@ -128,7 +160,6 @@ export default function Contact() {
                 href={calendarLink}
                 target="_blank"
                 rel="noopener noreferrer"
-
                 onClick={playClick}
                 className="flex items-center justify-center gap-2 px-4 h-11 rounded-xl border border-[#C778DD]/60 bg-[#C778DD]/5 text-white hover:bg-[#C778DD]/12 hover:border-[#C778DD] transition-all duration-200 font-fira-code text-sm mt-1"
               >
