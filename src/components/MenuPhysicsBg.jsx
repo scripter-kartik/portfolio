@@ -30,14 +30,15 @@ export default function MenuPhysicsBg() {
       constructor(x, y, radius) {
         this.x = x || Math.random() * width;
         this.y = y || Math.random() * height;
-        this.radius = radius || 15 + Math.random() * 20;
-        this.vx = (Math.random() - 0.5) * 1.5;
-        this.vy = (Math.random() - 0.5) * 1.5;
-        this.alpha = 0.15 + Math.random() * 0.15;
+        this.radius = radius || 15 + Math.random() * 25;
+        this.vx = (Math.random() - 0.5) * 0.4;
+        this.vy = (Math.random() - 0.5) * 0.4;
+        this.alpha = 0.12 + Math.random() * 0.12;
         this.life = 1;
       }
 
       draw() {
+        // 1. Transparent gradient fill
         ctx.beginPath();
         const gradient = ctx.createRadialGradient(
           this.x - this.radius * 0.3,
@@ -47,23 +48,48 @@ export default function MenuPhysicsBg() {
           this.y,
           this.radius
         );
-        gradient.addColorStop(0, "rgba(255, 255, 255, 0.6)");
-        gradient.addColorStop(0.4, "rgba(199, 120, 221, 0.25)");
-        gradient.addColorStop(1, "rgba(123, 45, 146, 0.05)");
+        gradient.addColorStop(0, "rgba(255, 255, 255, 0.2)");
+        gradient.addColorStop(0.5, "rgba(255, 255, 255, 0.01)");
+        gradient.addColorStop(0.9, "rgba(180, 230, 255, 0.06)"); // cyan hint
+        gradient.addColorStop(1, "rgba(255, 180, 220, 0.08)");  // pink hint
 
         ctx.fillStyle = gradient;
-        ctx.strokeStyle = `rgba(199, 120, 221, ${this.alpha * 1.5})`;
-        ctx.lineWidth = 1;
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         ctx.fill();
+
+        // 2. Cyan outer shimmer stroke
+        ctx.beginPath();
+        ctx.strokeStyle = `rgba(180, 230, 255, ${this.alpha * 1.4})`;
+        ctx.lineWidth = 1;
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         ctx.stroke();
 
+        // 3. Pink inner refraction stroke
         ctx.beginPath();
-        ctx.fillStyle = "rgba(255, 255, 255, 0.4)";
+        ctx.strokeStyle = `rgba(255, 180, 220, ${this.alpha * 1.1})`;
+        ctx.lineWidth = 0.8;
+        ctx.arc(this.x + 0.5, this.y + 0.5, this.radius - 1, 0, Math.PI * 2);
+        ctx.stroke();
+
+        // 4. Specular highlight (main reflection)
+        ctx.beginPath();
+        ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
         ctx.arc(
           this.x - this.radius * 0.35,
           this.y - this.radius * 0.35,
-          this.radius * 0.12,
+          this.radius * 0.15,
+          0,
+          Math.PI * 2
+        );
+        ctx.fill();
+
+        // 5. Specular highlight (tiny secondary pin-point)
+        ctx.beginPath();
+        ctx.fillStyle = "rgba(255, 255, 255, 0.65)";
+        ctx.arc(
+          this.x - this.radius * 0.22,
+          this.y - this.radius * 0.45,
+          this.radius * 0.05,
           0,
           Math.PI * 2
         );
@@ -101,7 +127,7 @@ export default function MenuPhysicsBg() {
         this.radius = 1 + Math.random() * 2;
         this.alpha = 1;
         this.decay = 0.02 + Math.random() * 0.02;
-        this.color = color || "rgba(199, 120, 221, 0.8)";
+        this.color = color || (Math.random() < 0.5 ? "rgba(180, 230, 255, 0.8)" : "rgba(255, 180, 220, 0.8)");
       }
 
       draw() {
