@@ -13,11 +13,11 @@ export default function Project() {
       className="w-full flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 pt-6 pb-16 sm:py-20 relative"
     >
       <SectionHeader title="projects" />
-      <div className="w-full max-w-[1324px] grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
+      <div className="w-full max-w-[1324px] flex md:grid md:grid-cols-2 xl:grid-cols-3 overflow-x-auto md:overflow-x-visible snap-x snap-mandatory gap-6 md:gap-8 pb-5 md:pb-0 hide-scrollbar scroll-smooth">
         {PROJECTS.map((project, idx) => (
           <div
             key={project.title}
-            className="group w-full rounded-2xl border border-white/[0.07] bg-[#070A11]/60 backdrop-blur-md overflow-hidden transition-all duration-400 hover:-translate-y-2 hover:border-[#C778DD]/40 hover:shadow-[0_8px_40px_rgba(199,120,221,0.14)] flex flex-col h-full"
+            className="group w-[82vw] sm:w-[60vw] md:w-full rounded-2xl border border-white/[0.07] bg-[#070A11]/60 backdrop-blur-md overflow-hidden transition-all duration-400 hover:-translate-y-2 hover:border-[#C778DD]/40 hover:shadow-[0_8px_40px_rgba(199,120,221,0.14)] flex flex-col h-full flex-shrink-0 snap-center"
             style={{ animationDelay: `${idx * 0.08}s` }}
           >
             <Link 
