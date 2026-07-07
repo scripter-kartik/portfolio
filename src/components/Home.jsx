@@ -75,7 +75,7 @@ export default function Home() {
       <Navbar />
       <main className="mx-auto flex w-full max-w-[1324px] flex-col px-5 pb-12 pt-24 sm:px-8 sm:pt-28 lg:px-10 lg:pt-24 xl:pt-28 relative">
         <Hero3D />
-        <section className="grid grid-cols-1 items-start gap-9 lg:grid-cols-[minmax(0,1fr)_minmax(430px,0.86fr)] lg:gap-10 relative z-10">
+        <section className="grid grid-cols-1 items-stretch gap-9 lg:grid-cols-[minmax(0,1fr)_minmax(420px,0.82fr)] lg:gap-8 relative z-10">
           <div className="min-w-0">
             <div className="animate-fade-up mb-6 inline-flex items-center gap-2 rounded-full border border-[#C778DD]/25 bg-[#C778DD]/[0.08] px-3 py-1 text-[11px] font-semibold uppercase tracking-widest text-[#C778DD] font-fira-code">
               <span className="h-1.5 w-1.5 rounded-full bg-[#C778DD] animate-pulse" />
@@ -95,7 +95,6 @@ export default function Home() {
             <div className="animate-fade-up-delay-2 mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <button
                 onClick={() => { playClick(); scrollToSection("contacts"); }}
-
                 className="btn-gradient-border h-[46px] w-full sm:w-[190px]"
               >
                 <span className="text-sm font-medium tracking-wide text-white font-fira-code">
@@ -104,7 +103,6 @@ export default function Home() {
               </button>
               <button
                 onClick={() => { playClick(); scrollToSection("works"); }}
-
                 className="flex h-[46px] items-center justify-center gap-2 rounded-xl border border-white/[0.1] bg-white/[0.03] px-4 text-sm text-[#E5E7EB] transition-all duration-200 font-fira-code hover:border-white/[0.2] hover:bg-white/[0.07] sm:px-5"
               >
                 View Work
@@ -117,7 +115,6 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={playClick}
-
                 className="flex h-[46px] items-center justify-center gap-2 rounded-xl border border-white/[0.1] bg-white/[0.03] px-4 text-sm text-[#ABB2BF] transition-all duration-200 font-fira-code hover:border-[#C778DD]/30 hover:bg-white/[0.07] hover:text-white sm:px-5"
               >
                 <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -161,57 +158,31 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <aside className="hidden lg:grid min-w-0 gap-4">
-            <div className="relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[#070A11]/60 p-4 shadow-[0_0_50px_rgba(199,120,221,0.07)] backdrop-blur-md sm:p-5">
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#C778DD]/70 to-transparent" />
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <div className="inline-flex items-center gap-2 rounded-full border border-[#C778DD]/25 bg-[#C778DD]/[0.08] px-3 py-1 text-[11px] uppercase tracking-widest text-[#C778DD] font-fira-code">
+          <aside className="hidden lg:flex min-w-0 flex-col gap-4" style={{ height: "100%" }}>
+            <div className="relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[#070A11]/60 p-5 backdrop-blur-md shadow-[0_0_40px_rgba(199,120,221,0.05)] flex-1 flex flex-col">
+              <div className="flex items-center justify-between gap-2 mb-4">
+                <div className="inline-flex items-center gap-2 rounded-full border border-[#C778DD]/25 bg-[#C778DD]/[0.08] px-2.5 py-1 text-[10px] uppercase tracking-widest text-[#C778DD] font-fira-code">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#C778DD] animate-pulse" />
                   Building now
                 </div>
                 <span className="text-[11px] text-[#6b7280] font-fira-code">Delhi, India</span>
               </div>
-              <div className="mt-5 grid items-end gap-4 sm:grid-cols-[minmax(170px,240px)_1fr]">
-                <div className="relative flex min-h-[220px] items-center justify-center overflow-hidden rounded-xl border border-[#C778DD]/[0.12] bg-[linear-gradient(180deg,rgba(199,120,221,0.06),rgba(199,120,221,0.01))] sm:min-h-[250px]">
-                  <div className="absolute h-40 w-40 rounded-full border border-[#C778DD]/15 bg-[#C778DD]/[0.05] blur-xl" />
-                  <div className="relative flex h-32 w-32 items-center justify-center rounded-full border border-[#C778DD]/30 bg-[#0d0118] shadow-[0_0_42px_rgba(199,120,221,0.2)] sm:h-36 sm:w-36">
-                    <div className="absolute inset-3 rounded-full border border-[#C778DD]/[0.1]" />
-                    <svg
-                      viewBox="0 0 120 120"
-                      className="h-24 w-24 sm:h-28 sm:w-28"
-                      fill="none"
-                      aria-hidden="true"
-                    >
-                      <circle cx="60" cy="43" r="22" fill="#e8c8ff" opacity="0.85" />
-                      <path d="M36 93c4.1-17.1 12.1-25.6 24-25.6S79.9 75.9 84 93" fill="#1a0a2e" />
-                      <path d="M39 47c4.8-14 11.8-21 21-21s16.2 7 21 21" stroke="#C778DD" strokeWidth="6" strokeLinecap="round" />
-                      <path d="M45 45h30M45 54h30" stroke="#0d0118" strokeWidth="4" strokeLinecap="round" />
-                      <path d="M36 93c4.1-17.1 12.1-25.6 24-25.6S79.9 75.9 84 93" stroke="#d4a0e8" strokeWidth="5" strokeLinecap="round" />
-                    </svg>
-                    <span className="sr-only">Developer avatar</span>
+              <div className="flex flex-col gap-2 flex-1 justify-center">
+                {["Next.js interfaces", "Node.js APIs", "Realtime systems"].map((item) => (
+                  <div key={item} className="flex items-center justify-between gap-3 rounded-lg border border-[#C778DD]/[0.1] bg-[#C778DD]/[0.03] px-3 py-3.5 hover:border-[#C778DD]/25 hover:bg-[#C778DD]/[0.06] transition-colors duration-200">
+                    <span className="text-xs text-[#ABB2BF] font-fira-code">{item}</span>
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#C778DD] flex-shrink-0" />
                   </div>
-                </div>
-                <div className="grid gap-2.5">
-                  {["Next.js interfaces", "Node.js APIs", "Realtime systems"].map((item) => (
-                    <div key={item} className="flex items-center justify-between gap-3 rounded-lg border border-[#C778DD]/[0.1] bg-[#C778DD]/[0.03] px-3 py-2.5 hover:border-[#C778DD]/25 hover:bg-[#C778DD]/[0.06] transition-colors duration-200">
-                      <span className="text-xs text-[#ABB2BF] font-fira-code">{item}</span>
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#C778DD]" />
-                    </div>
-                  ))}
-                </div>
+                ))}
               </div>
             </div>
-            <div className="hidden md:grid grid-cols-2 lg:grid-cols-1 gap-6">
-              <div className="h-[280px] w-full">
-                <TerminalCard />
-              </div>
-              <div className="h-[280px] w-full">
-                <ActiveCard />
-              </div>
+            <div className="grid grid-cols-2 gap-4" style={{ height: "190px", flexShrink: 0 }}>
+              <TerminalCard />
+              <ActiveCard />
             </div>
           </aside>
         </section>
-        <section className="hidden md:grid mt-6 pb-4 grid-cols-1 xl:grid-cols-[1fr_350px] gap-6">
+        <section className="grid mt-6 pb-4 grid-cols-1 xl:grid-cols-[1fr_350px] gap-6">
           <div className="w-full overflow-hidden rounded-2xl border border-white/[0.08] bg-[#070A11]/55 backdrop-blur-md flex flex-col">
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/[0.05] px-4 py-3 sm:px-5">
               <div className="flex min-w-0 items-center gap-2">

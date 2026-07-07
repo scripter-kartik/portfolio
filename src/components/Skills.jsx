@@ -18,7 +18,6 @@ const TONE_BG = {
 export default function Skills() {
   const [activeTab, setActiveTab] = useState(0);
   const { playClick } = useUISound();
-
   return (
     <div
       id="skills"
@@ -56,10 +55,7 @@ export default function Skills() {
             </div>
           </div>
         </div>
-
-        {/* Mobile Tabs for Skills */}
         <div className="sm:hidden w-full flex flex-col gap-4 mt-2">
-          {/* Custom Glass Tab Bar */}
           <div className="flex gap-1.5 border border-white/[0.08] p-1 bg-[#070A11]/60 backdrop-blur-md rounded-xl overflow-x-auto hide-scrollbar w-full" style={{ WebkitOverflowScrolling: "touch" }}>
             {SKILL_GROUPS.map((group, idx) => (
               <button
@@ -75,8 +71,6 @@ export default function Skills() {
               </button>
             ))}
           </div>
-
-          {/* Active Skills List Panel */}
           <div className="w-full rounded-xl border border-white/[0.07] bg-[#070A11]/60 backdrop-blur-md p-5 min-h-[120px] flex flex-wrap gap-2.5 shadow-[0_4px_24px_rgba(0,0,0,0.3)]">
             {SKILL_GROUPS[activeTab].items.map((item) => (
               <span
@@ -88,7 +82,6 @@ export default function Skills() {
             ))}
           </div>
         </div>
-
         <div className="hidden sm:grid w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {SKILL_GROUPS.map((group, i) => (
             <div

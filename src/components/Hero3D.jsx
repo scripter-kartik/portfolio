@@ -1,19 +1,15 @@
 "use client";
-
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Float, Sphere, MeshDistortMaterial } from "@react-three/drei";
 import { useRef } from "react";
-
 function AnimatedSphere() {
   const meshRef = useRef(null);
-  
   useFrame((state) => {
     if (meshRef.current) {
       meshRef.current.rotation.x = state.clock.getElapsedTime() * 0.2;
       meshRef.current.rotation.y = state.clock.getElapsedTime() * 0.3;
     }
   });
-
   return (
     <Float speed={2} rotationIntensity={1} floatIntensity={2}>
       <mesh ref={meshRef} scale={1.8}>
@@ -25,7 +21,6 @@ function AnimatedSphere() {
           opacity={0.15} 
         />
       </mesh>
-      
       <Sphere args={[0.8, 64, 64]}>
         <MeshDistortMaterial 
           color="#C778DD"
@@ -43,10 +38,9 @@ function AnimatedSphere() {
     </Float>
   );
 }
-
 export default function Hero3D() {
   return (
-    <div className="absolute top-0 right-0 w-full sm:w-[600px] h-[400px] sm:h-[600px] z-[-1] opacity-40 sm:opacity-70 pointer-events-none sm:translate-x-[20%] -translate-y-[10%]">
+    <div className="absolute top-0 right-0 w-full sm:w-[600px] h-[400px] sm:h-[600px] z-[-1] opacity-55 sm:opacity-70 pointer-events-none sm:translate-x-[20%] -translate-y-[10%]">
       <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
         <ambientLight intensity={0.2} />
         <directionalLight position={[10, 10, 5]} intensity={2} color="#C778DD" />

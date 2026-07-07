@@ -20,7 +20,7 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState({ type: "idle", message: "" });
   const calendarLink =
-    "https://calendar.google.com/calendar/u/0/r/eventedit?text=Project%20Call%20with%20Kartik%20Labs&details=Let%20us%20discuss%20your%20project%20requirements.";
+    "https:
   const xLink = "https://x.com/0xkar7ik";
   const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
   const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
@@ -84,7 +84,6 @@ export default function Contact() {
             I'm interested in freelance opportunities. Share your idea using
             the form, and I'll reply with next steps and a timeline.
           </p>
-          {/* Inline Action Row for Mobile/Tablet */}
           <div className="flex flex-wrap gap-2.5 mt-2 xl:hidden">
             <button
               onClick={() => {
@@ -116,8 +115,6 @@ export default function Contact() {
               Book a Call
             </a>
           </div>
-
-          {/* Desktop Only Quick Connect Card */}
           <div className="hidden xl:block glass-card rounded-xl p-5 w-full max-w-[520px]">
             <h3 className="text-sm font-semibold text-white font-fira-code mb-4 flex items-center gap-2">
               <span className="w-1 h-4 bg-[#C778DD] rounded-full" />
@@ -190,13 +187,25 @@ export default function Contact() {
                 <span className="text-[#ABB2BF] font-fira-code text-xs">Email *</span>
                 <input type="email" name="email" value={formData.email} onChange={handleChange} className={inputClass} placeholder="you@email.com" />
               </label>
-              <label className="hidden sm:flex flex-col gap-1.5">
+              <label className="flex flex-col gap-1.5">
                 <span className="text-[#ABB2BF] font-fira-code text-xs">Company</span>
                 <input type="text" name="company" value={formData.company} onChange={handleChange} className={inputClass} placeholder="Company or brand" />
               </label>
-              <label className="hidden sm:flex flex-col gap-1.5">
+              <label className="flex flex-col gap-1.5">
                 <span className="text-[#ABB2BF] font-fira-code text-xs">Budget</span>
-                <select name="budget" value={formData.budget} onChange={handleChange} className={inputClass}>
+                <select 
+                  name="budget" 
+                  value={formData.budget} 
+                  onChange={handleChange} 
+                  className={`${inputClass} appearance-none`}
+                  style={{
+                    backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ABB2BF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "right 14px center",
+                    backgroundSize: "16px",
+                    paddingRight: "40px"
+                  }}
+                >
                   <option value="" className="bg-[#070A11]">Select range</option>
                   <option value="under-500" className="bg-[#070A11]">Under $500</option>
                   <option value="500-1500" className="bg-[#070A11]">$500 – $1,500</option>
@@ -204,11 +213,11 @@ export default function Contact() {
                   <option value="5000+" className="bg-[#070A11]">$5,000+</option>
                 </select>
               </label>
-              <label className="hidden sm:flex flex-col gap-1.5">
+              <label className="flex flex-col gap-1.5">
                 <span className="text-[#ABB2BF] font-fira-code text-xs">Preferred Date</span>
                 <input type="date" name="preferredDate" value={formData.preferredDate} onChange={handleChange} className={inputClass} />
               </label>
-              <label className="hidden sm:flex flex-col gap-1.5">
+              <label className="flex flex-col gap-1.5">
                 <span className="text-[#ABB2BF] font-fira-code text-xs">Preferred Time</span>
                 <input type="time" name="preferredTime" value={formData.preferredTime} onChange={handleChange} className={inputClass} />
               </label>
@@ -228,7 +237,6 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-
                 onClick={playClick}
                 className="h-11 px-6 rounded-xl bg-gradient-to-r from-white to-[#C778DD] text-[#050505] font-bold font-fira-code text-sm hover:shadow-[0_0_24px_rgba(199,120,221,0.45)] hover:opacity-95 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
               >
@@ -238,7 +246,6 @@ export default function Contact() {
                 href={calendarLink}
                 target="_blank"
                 rel="noopener noreferrer"
-
                 onClick={playClick}
                 className="h-11 px-5 rounded-xl border border-white/[0.08] bg-white/[0.02] text-[#ABB2BF] font-fira-code text-sm hover:border-white/[0.18] hover:text-white transition-all duration-200 inline-flex items-center"
               >

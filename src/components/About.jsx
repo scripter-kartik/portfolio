@@ -49,7 +49,7 @@ export default function About() {
             ))}
           </div>
         </div>
-        <div className="hidden lg:flex w-full lg:w-[45%] justify-center lg:justify-end">
+        <div className="flex w-full lg:w-[45%] justify-center lg:justify-end mt-4 lg:mt-0">
           <div className="w-full max-w-[420px] glass-card rounded-xl overflow-hidden">
             <div className="flex items-center gap-2 px-4 py-3 border-b border-white/[0.06] bg-white/[0.01]">
               <div className="w-3 h-3 rounded-full bg-[#ef4444]/70" />

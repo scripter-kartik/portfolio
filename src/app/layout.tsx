@@ -6,7 +6,6 @@ import ParticleBackground from "@/components/ParticleBackground";
 import { Toaster } from "react-hot-toast";
 import CommandMenu from "@/components/CommandMenu";
 import "./globals.css";
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -25,7 +24,6 @@ const firaCode = Fira_Code({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
 });
-
 export const metadata: Metadata = {
   title: "Kartik | Full Stack Developer",
   description:
@@ -42,14 +40,12 @@ export const metadata: Metadata = {
     icon: "/kartikLabsLogo.png",
   },
 };
-
 export const viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{

@@ -123,7 +123,7 @@ export default function TerminalCard() {
       <div
         ref={bodyRef}
         className="p-3.5 flex-1 min-h-0 overflow-y-auto text-xs leading-relaxed sm:text-sm"
-        style={{ scrollbarWidth: "none" }}
+        style={{ scrollbarWidth: "none", scrollBehavior: "smooth" }}
       >
         <div className="flex items-baseline gap-1.5">
           <span className="text-violet-600 select-none">❯</span>

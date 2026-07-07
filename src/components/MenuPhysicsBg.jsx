@@ -1,240 +1,67 @@
 "use client";
-
 import { useEffect, useRef } from "react";
-
-export default function MenuPhysicsBg() {
+const ORBS = [
+  { x: 0.25, y: 0.3,  r: 90,  color: "#C778DD", speed: 0.00018 },
+  { x: 0.75, y: 0.65, r: 110, color: "#61AFEF", speed: 0.00014 },
+  { x: 0.5,  y: 0.8,  r: 70,  color: "#56B6C2", speed: 0.00022 },
+  { x: 0.15, y: 0.75, r: 55,  color: "#C778DD", speed: 0.00020 },
+  { x: 0.85, y: 0.2,  r: 65,  color: "#61AFEF", speed: 0.00016 },
+];
+export default function MenuPhysicsBg({ isOpen = false }) {
   const canvasRef = useRef(null);
-
   useEffect(() => {
+    if (!isOpen) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    let animationFrameId;
-    let width = (canvas.width = canvas.offsetWidth);
-    let height = (canvas.height = canvas.offsetHeight);
-
-    const handleResize = () => {
-      if (!canvas) return;
-      width = canvas.width = canvas.offsetWidth;
-      height = canvas.height = canvas.offsetHeight;
+    let raf;
+    let w, h;
+    const resize = () => {
+      const dpr = window.devicePixelRatio || 1;
+      const rect = canvas.getBoundingClientRect();
+      w = rect.width;
+      h = rect.height;
+      canvas.width  = w * dpr;
+      canvas.height = h * dpr;
+      ctx.scale(dpr, dpr);
     };
-    window.addEventListener("resize", handleResize);
-
-    const bubbles = [];
-    const particles = [];
-    const maxBubbles = 12;
-
-    class Bubble {
-      constructor(x, y, radius) {
-        this.x = x || Math.random() * width;
-        this.y = y || Math.random() * height;
-        this.radius = radius || 15 + Math.random() * 25;
-        this.vx = (Math.random() - 0.5) * 0.4;
-        this.vy = (Math.random() - 0.5) * 0.4;
-        this.alpha = 0.12 + Math.random() * 0.12;
-        this.life = 1;
-      }
-
-      draw() {
-        // 1. Transparent gradient fill
+    resize();
+    window.addEventListener("resize", resize);
+    const offsets = ORBS.map(() => Math.random() * Math.PI * 2);
+    const draw = (t) => {
+      ctx.clearRect(0, 0, w, h);
+      ORBS.forEach((orb, i) => {
+        const ox = offsets[i];
+        const x = orb.x * w + Math.sin(t * orb.speed * 1.0 + ox) * w * 0.09;
+        const y = orb.y * h + Math.cos(t * orb.speed * 0.7 + ox) * h * 0.07;
+        const grad = ctx.createRadialGradient(x, y, 0, x, y, orb.r);
+        grad.addColorStop(0,   hexAlpha(orb.color, 0.18));
+        grad.addColorStop(0.5, hexAlpha(orb.color, 0.07));
+        grad.addColorStop(1,   hexAlpha(orb.color, 0.0));
         ctx.beginPath();
-        const gradient = ctx.createRadialGradient(
-          this.x - this.radius * 0.3,
-          this.y - this.radius * 0.3,
-          this.radius * 0.1,
-          this.x,
-          this.y,
-          this.radius
-        );
-        gradient.addColorStop(0, "rgba(255, 255, 255, 0.2)");
-        gradient.addColorStop(0.5, "rgba(255, 255, 255, 0.01)");
-        gradient.addColorStop(0.9, "rgba(180, 230, 255, 0.06)"); // cyan hint
-        gradient.addColorStop(1, "rgba(255, 180, 220, 0.08)");  // pink hint
-
-        ctx.fillStyle = gradient;
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.arc(x, y, orb.r, 0, Math.PI * 2);
+        ctx.fillStyle = grad;
         ctx.fill();
-
-        // 2. Cyan outer shimmer stroke
-        ctx.beginPath();
-        ctx.strokeStyle = `rgba(180, 230, 255, ${this.alpha * 1.4})`;
-        ctx.lineWidth = 1;
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.stroke();
-
-        // 3. Pink inner refraction stroke
-        ctx.beginPath();
-        ctx.strokeStyle = `rgba(255, 180, 220, ${this.alpha * 1.1})`;
-        ctx.lineWidth = 0.8;
-        ctx.arc(this.x + 0.5, this.y + 0.5, this.radius - 1, 0, Math.PI * 2);
-        ctx.stroke();
-
-        // 4. Specular highlight (main reflection)
-        ctx.beginPath();
-        ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
-        ctx.arc(
-          this.x - this.radius * 0.35,
-          this.y - this.radius * 0.35,
-          this.radius * 0.15,
-          0,
-          Math.PI * 2
-        );
-        ctx.fill();
-
-        // 5. Specular highlight (tiny secondary pin-point)
-        ctx.beginPath();
-        ctx.fillStyle = "rgba(255, 255, 255, 0.65)";
-        ctx.arc(
-          this.x - this.radius * 0.22,
-          this.y - this.radius * 0.45,
-          this.radius * 0.05,
-          0,
-          Math.PI * 2
-        );
-        ctx.fill();
-      }
-
-      update() {
-        this.x += this.vx;
-        this.y += this.vy;
-
-        if (this.x - this.radius < 0) {
-          this.x = this.radius;
-          this.vx = -this.vx;
-        } else if (this.x + this.radius > width) {
-          this.x = width - this.radius;
-          this.vx = -this.vx;
-        }
-
-        if (this.y - this.radius < 0) {
-          this.y = this.radius;
-          this.vy = -this.vy;
-        } else if (this.y + this.radius > height) {
-          this.y = height - this.radius;
-          this.vy = -this.vy;
-        }
-      }
-    }
-
-    class PopParticle {
-      constructor(x, y, color) {
-        this.x = x;
-        this.y = y;
-        this.vx = (Math.random() - 0.5) * 4;
-        this.vy = (Math.random() - 0.5) * 4;
-        this.radius = 1 + Math.random() * 2;
-        this.alpha = 1;
-        this.decay = 0.02 + Math.random() * 0.02;
-        this.color = color || (Math.random() < 0.5 ? "rgba(180, 230, 255, 0.8)" : "rgba(255, 180, 220, 0.8)");
-      }
-
-      draw() {
-        ctx.beginPath();
-        ctx.fillStyle = this.color.replace("0.8", this.alpha.toString());
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fill();
-      }
-
-      update() {
-        this.x += this.vx;
-        this.y += this.vy;
-        this.alpha -= this.decay;
-      }
-    }
-
-    for (let i = 0; i < maxBubbles; i++) {
-      bubbles.push(new Bubble());
-    }
-
-    const spawnBurst = (x, y) => {
-      for (let i = 0; i < 8; i++) {
-        particles.push(new PopParticle(x, y));
-      }
-    };
-
-    const resolveCollisions = () => {
-      for (let i = 0; i < bubbles.length; i++) {
-        for (let j = i + 1; j < bubbles.length; j++) {
-          const b1 = bubbles[i];
-          const b2 = bubbles[j];
-
-          const dx = b2.x - b1.x;
-          const dy = b2.y - b1.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          const minDist = b1.radius + b2.radius;
-
-          if (dist < minDist) {
-            const overlap = minDist - dist;
-            const nx = dx / dist;
-            const ny = dy / dist;
-
-            b1.x -= nx * overlap * 0.5;
-            b1.y -= ny * overlap * 0.5;
-            b2.x += nx * overlap * 0.5;
-            b2.y += ny * overlap * 0.5;
-
-            const kx = b1.vx - b2.vx;
-            const ky = b1.vy - b2.vy;
-            const p = 2 * (nx * kx + ny * ky) / 2;
-
-            const speedDiff = Math.sqrt(kx * kx + ky * ky);
-
-            b1.vx -= p * nx;
-            b1.vy -= p * ny;
-            b2.vx += p * nx;
-            b2.vy += p * ny;
-
-            if (speedDiff > 1.2 && Math.random() < 0.25) {
-              const cx = b1.x + nx * b1.radius;
-              const cy = b1.y + ny * b1.radius;
-              spawnBurst(cx, cy);
-              
-              if (Math.random() < 0.3) {
-                bubbles.splice(j, 1);
-                bubbles.push(new Bubble(undefined, height + 50, 10 + Math.random() * 15));
-              }
-            }
-          }
-        }
-      }
-    };
-
-    const tick = () => {
-      ctx.clearRect(0, 0, width, height);
-
-      bubbles.forEach((bubble) => {
-        bubble.update();
-        bubble.draw();
       });
-
-      resolveCollisions();
-
-      for (let i = particles.length - 1; i >= 0; i--) {
-        const p = particles[i];
-        p.update();
-        p.draw();
-        if (p.alpha <= 0) {
-          particles.splice(i, 1);
-        }
-      }
-
-      animationFrameId = requestAnimationFrame(tick);
+      raf = requestAnimationFrame(draw);
     };
-
-    tick();
-
+    raf = requestAnimationFrame(draw);
     return () => {
-      window.removeEventListener("resize", handleResize);
-      cancelAnimationFrame(animationFrameId);
+      cancelAnimationFrame(raf);
+      window.removeEventListener("resize", resize);
     };
-  }, []);
-
+  }, [isOpen]);
+  if (!isOpen) return null;
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-60"
+      className="absolute inset-0 w-full h-full pointer-events-none z-0"
     />
   );
+}
+function hexAlpha(hex, alpha) {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  return `rgba(${r},${g},${b},${alpha})`;
 }

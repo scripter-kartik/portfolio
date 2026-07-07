@@ -247,3 +247,10 @@ div[id] {
 .cmdk-item[aria-selected="true"] svg {
   color: #C778DD;
 }
+
+/* Fix date/time picker icon visibility on dark mode */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(1) opacity(0.8);
+  cursor: pointer;
+}

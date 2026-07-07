@@ -7,15 +7,23 @@ const Navbar = () => {
   const navLinks = [
     { id: "home", label: "home" },
     { id: "works", label: "works" },
+    { id: "skills", label: "skills" },
     { id: "about-me", label: "about-me" },
     { id: "contacts", label: "contacts" },
   ];
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [isMac, setIsMac] = useState(false);
+  useEffect(() => {
+    setIsMac(/Mac|iPhone|iPad/.test(navigator.platform));
+  }, []);
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+      const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+      setScrollProgress(scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0);
       const sections = navLinks.map((l) => document.getElementById(l.id)).filter(Boolean);
       let current = "home";
       for (const section of sections) {
@@ -48,7 +56,6 @@ const Navbar = () => {
       <div className="flex justify-center py-2 px-4 sm:px-6 lg:px-8">
         <div className="w-full max-w-[1324px] h-[52px] sm:h-[58px] flex items-center justify-between">
           <button
-
             onClick={() => scrollToSection("home")}
             className="flex items-center gap-2.5 hover:opacity-80 transition-opacity group"
             aria-label="Go to top"
@@ -69,7 +76,6 @@ const Navbar = () => {
             {navLinks.map((link) => (
               <button
                 key={link.id}
-    
                 onClick={() => scrollToSection(link.id)}
                 className={`relative flex items-center gap-1 px-3.5 py-2 rounded-lg font-fira-code text-sm transition-all duration-200 group ${
                   activeSection === link.id
@@ -102,16 +108,12 @@ const Navbar = () => {
           </button>
         </div>
       </div>
-
-      {/* Premium Mobile Menu Slide-in Panel */}
       <div
         className={`lg:hidden fixed top-[52px] sm:top-[58px] left-0 right-0 bottom-0 bg-[#05070c] border-t border-white/[0.05] transition-all duration-300 flex flex-col p-6 gap-6 z-40 ${
           isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0 pointer-events-none"
         }`}
       >
-        <MenuPhysicsBg />
-
-        {/* Interactive Search Bar Widget */}
+        <MenuPhysicsBg isOpen={isMenuOpen} />
         <button
           onClick={() => {
             playClick();
@@ -127,10 +129,8 @@ const Navbar = () => {
             </svg>
             <span>Search or run commands...</span>
           </div>
-          <span className="text-[10px] text-white/30 border border-white/10 px-1.5 py-0.5 rounded font-sans">⌘K</span>
+          <span className="text-[10px] text-white/30 border border-white/10 px-1.5 py-0.5 rounded font-sans">{isMac ? '⌘K' : 'Ctrl+K'}</span>
         </button>
-
-        {/* Links list */}
         <nav className="flex flex-col gap-2 flex-grow relative z-10">
           {navLinks.map((link) => (
             <button
@@ -150,9 +150,7 @@ const Navbar = () => {
             </button>
           ))}
         </nav>
-
-        {/* Bottom Social Handles */}
-        <div className="flex items-center justify-center gap-6 pt-6 border-t border-white/[0.05] pb-6 relative z-10">
+        <div className="flex items-center justify-center gap-6 pt-6 border-t border-white/[0.05] pb-4 relative z-10">
           <a href="https://github.com/scripter-kartik" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors" aria-label="GitHub">
             <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
               <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48v-1.7c-2.78.61-3.37-1.34-3.37-1.34-.45-1.16-1.12-1.47-1.12-1.47-.91-.63.07-.62.07-.62 1 .07 1.54 1.04 1.54 1.04.9 1.53 2.34 1.1 2.9.84.1-.64.35-1.1.64-1.35-2.22-.25-4.56-1.12-4.56-4.97 0-1.1.39-2 1.03-2.71-.1-.25-.45-1.28.1-2.66 0 0 .85-.27 2.78 1.03A9.62 9.62 0 0 1 12 6.85c.85 0 1.7.11 2.5.33 1.93-1.3 2.78-1.03 2.78-1.03.56 1.38.2 2.41.1 2.66.64.7 1.03 1.61 1.03 2.71 0 3.86-2.35 4.72-4.59 4.97.36.3.69.88.69 1.79v2.65c0 .26.18.58.69.48A10 10 0 0 0 12 2Z" />
@@ -169,6 +167,13 @@ const Navbar = () => {
             </svg>
           </a>
         </div>
+        <button
+          onClick={() => { playClick(); window.scrollTo({ top: 0, behavior: "smooth" }); setIsMenuOpen(false); }}
+          className="relative z-10 flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border border-white/[0.06] text-[#ABB2BF] hover:text-white hover:border-[#C778DD]/30 font-fira-code text-xs transition-all duration-200 mb-2"
+        >
+          <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 19V5M5 12l7-7 7 7" /></svg>
+          Back to top
+        </button>
       </div>
     </div>
   );
