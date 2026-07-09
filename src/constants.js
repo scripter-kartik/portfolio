@@ -14,6 +14,28 @@ export const NAV_LINKS = [
 ];
 export const PROJECTS = [
   {
+    slug: "hirex",
+    title: "HireX",
+    description: "ai technical interview platform",
+    longDescription:
+      "HireX is a full-stack AI mock-interview platform that runs adaptive, voice-driven technical interviews, a live in-browser coding round, and produces deep, shareable evaluation reports. It works with zero API keys via an adaptive local engine, and becomes fully AI-driven the moment a single LLM key is added.",
+    tags: ["Next.js", "Prisma", "PostgreSQL", "Clerk", "Monaco"],
+    image: "/hirex.png",
+    link: "https://hirex-beta.vercel.app",
+    github: "https://github.com/scripter-kartik/hireX",
+    year: "2026",
+    features: [
+      "Adaptive AI interviewer with token-by-token streaming",
+      "Neural voice interviewer with animated speaking avatar",
+      "Résumé/JD personalization via in-browser PDF parsing",
+      "Live coding round in Monaco run against sandboxed test cases",
+      "Scored evaluation report with PDF export and public share links",
+      "Lightweight proctoring with a session integrity score",
+    ],
+    challenges:
+      "Making the platform impressive with zero API keys while staying genuinely AI-driven when a key is present meant building an adaptive local engine behind the same interface as the LLM path. Streaming one question at a time and scaling difficulty to answer quality required careful session-state orchestration.",
+  },
+  {
     slug: "blogforge",
     title: "BlogForge",
     description: "your blogging workspace",
