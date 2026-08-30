@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Outfit, Fira_Code } from "next/font/google";
 import SmoothScroll from "@/components/SmoothScroll";
-import CustomCursor from "@/components/CustomCursor";
 import ParticleBackground from "@/components/ParticleBackground";
 import { Toaster } from "react-hot-toast";
 import CommandMenu from "@/components/CommandMenu";
@@ -58,7 +57,6 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <SmoothScroll>
-          <CustomCursor />
           <ParticleBackground />
           <CommandMenu />
           <Toaster 
