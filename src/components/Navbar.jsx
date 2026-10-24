@@ -49,7 +49,7 @@ const Navbar = () => {
     <div
       className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-500 ${
         scrolled || isMenuOpen
-          ? "bg-[#05070c] border-b border-white/[0.06] shadow-[0_4px_30px_rgba(0,0,0,0.4)]"
+          ? "bg-[#05070c] shadow-[0_4px_30px_rgba(0,0,0,0.4)]"
           : "bg-transparent"
       }`}
     >

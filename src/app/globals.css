@@ -19,7 +19,7 @@
 html,
 body {
   width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 body {
   min-height: 100svh;
@@ -51,19 +51,26 @@ svg {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-html::-webkit-scrollbar {
-  width: 3px;
+@supports not selector(::-webkit-scrollbar) {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: #abb2bf55 #05070c;
+  }
 }
-html::-webkit-scrollbar-track {
-  background: #000000;
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
-html::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #c778dd, #7b2d92);
+::-webkit-scrollbar-track {
+  background: #05070c;
+}
+::-webkit-scrollbar-thumb {
+  background: #abb2bf55;
   border-radius: 10px;
+  border: 2px solid #05070c;
 }
-html {
-  scrollbar-width: thin;
-  scrollbar-color: #c778dd #000000;
+::-webkit-scrollbar-thumb:hover {
+  background: #c778dd;
 }
 section,
 div[id] {

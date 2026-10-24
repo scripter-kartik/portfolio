@@ -8,7 +8,7 @@ import PageTransition from "@/components/PageTransition";
 export default function Page() {
   return (
     <PageTransition>
-      <div className="min-h-screen overflow-x-hidden overflow-y-auto hide-scrollbar flex flex-col items-stretch">
+      <div className="min-h-screen overflow-x-clip flex flex-col items-stretch">
       <Home />
       <div>
         <Project />
