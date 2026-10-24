@@ -14,6 +14,10 @@
 *::before,
 *::after {
   box-sizing: border-box;
+}
+input,
+textarea,
+select {
   background-color: transparent;
 }
 html,
@@ -229,10 +233,6 @@ div[id] {
 }
 .animate-marquee:hover {
   animation-play-state: paused;
-}
-@keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
 }
 
 /* Command Menu Styles */

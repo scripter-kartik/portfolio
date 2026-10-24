@@ -2,39 +2,46 @@
 import React, { useState, useEffect } from "react";
 import { useUISound } from "@/hooks/useUISound";
 import MenuPhysicsBg from "@/components/MenuPhysicsBg";
+const navLinks = [
+  { id: "home", label: "home" },
+  { id: "works", label: "works" },
+  { id: "skills", label: "skills" },
+  { id: "about-me", label: "about-me" },
+  { id: "contacts", label: "contacts" },
+];
 const Navbar = () => {
   const { playClick } = useUISound();
-  const navLinks = [
-    { id: "home", label: "home" },
-    { id: "works", label: "works" },
-    { id: "skills", label: "skills" },
-    { id: "about-me", label: "about-me" },
-    { id: "contacts", label: "contacts" },
-  ];
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
-  const [scrollProgress, setScrollProgress] = useState(0);
   const [isMac, setIsMac] = useState(false);
   useEffect(() => {
-    setIsMac(/Mac|iPhone|iPad/.test(navigator.platform));
+    const platform = navigator.userAgentData?.platform || navigator.userAgent;
+    setIsMac(/Mac|iPhone|iPad/i.test(platform));
   }, []);
   useEffect(() => {
-    const handleScroll = () => {
+    let frame = 0;
+    const update = () => {
+      frame = 0;
       setScrolled(window.scrollY > 20);
-      const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
-      setScrollProgress(scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0);
-      const sections = navLinks.map((l) => document.getElementById(l.id)).filter(Boolean);
       let current = "home";
-      for (const section of sections) {
-        if (window.scrollY >= section.offsetTop - 160) {
-          current = section.id;
+      for (const link of navLinks) {
+        const section = document.getElementById(link.id);
+        if (section && window.scrollY >= section.offsetTop - 160) {
+          current = link.id;
         }
       }
       setActiveSection(current);
     };
+    const handleScroll = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    update();
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      cancelAnimationFrame(frame);
+    };
   }, []);
   const scrollToSection = (sectionId) => {
     playClick();
@@ -109,7 +116,7 @@ const Navbar = () => {
         </div>
       </div>
       <div
-        className={`lg:hidden fixed top-[52px] sm:top-[58px] left-0 right-0 bottom-0 bg-[#05070c] border-t border-white/[0.05] transition-all duration-300 flex flex-col p-6 gap-6 z-40 ${
+        className={`lg:hidden fixed top-[68px] sm:top-[74px] left-0 right-0 bottom-0 bg-[#05070c] border-t border-white/[0.05] transition-all duration-300 flex flex-col p-6 gap-6 z-40 ${
           isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0 pointer-events-none"
         }`}
       >

@@ -2,10 +2,11 @@
 import Navbar from "@/components/Navbar";
 import TerminalCard from "@/components/TerminalCard";
 import ActiveCard from "@/components/ActiveCard";
-import Hero3D from "@/components/Hero3D";
+import dynamic from "next/dynamic";
 import { GitHubCalendar } from "react-github-calendar";
 import { useState, useEffect } from "react";
 import { useUISound } from "@/hooks/useUISound";
+const Hero3D = dynamic(() => import("@/components/Hero3D"), { ssr: false });
 const SOCIALS = [
   {
     label: "GitHub",
